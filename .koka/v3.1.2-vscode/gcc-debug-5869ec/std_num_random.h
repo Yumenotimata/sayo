@@ -264,7 +264,7 @@ static inline int32_t kk_std_num_random_random_int32(kk_context_t* _ctx) { /* ()
       }
       {
         kk_function_t _fun_unbox_x17 = _fun_random_int32.clause;
-        _x_x187 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x17, (_fun_unbox_x17, m, ev_10051, _ctx), _ctx); /*35*/
+        _x_x187 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x17, (_fun_unbox_x17, m, ev_10051, _ctx), _ctx); /*1005*/
       }
     }
   }
@@ -319,7 +319,7 @@ static inline kk_function_t kk_std_num_random_new_strong_random_fun195(kk_contex
 static inline kk_box_t kk_std_num_random_strong_random(kk_function_t action, kk_context_t* _ctx) { /* forall<a,e> (action : () -> <random,ndet|e> a) -> <ndet|e> a */ 
   kk_function_t _b_x20_21 = kk_std_num_random_new_strong_random_fun190(_ctx); /*() -> ndet int32*/;
   kk_std_num_random__random _x_x191;
-  kk_std_core_hnd__clause0 _x_x192 = kk_std_core_hnd_clause_tail0(kk_std_num_random_new_strong_random_fun193(_b_x20_21, _ctx), _ctx); /*hnd/clause0<6234,6233,6231,6232>*/
+  kk_std_core_hnd__clause0 _x_x192 = kk_std_core_hnd_clause_tail0(kk_std_num_random_new_strong_random_fun193(_b_x20_21, _ctx), _ctx); /*hnd/clause0<1003,1002,1000,1001>*/
   _x_x191 = kk_std_num_random__new_Hnd_random(kk_reuse_null, 0, kk_integer_from_small(1), _x_x192, _ctx); /*std/num/random/random<5,6>*/
   return kk_std_num_random__handle_random(_x_x191, kk_std_num_random_new_strong_random_fun195(_ctx), action, _ctx);
 }
@@ -366,7 +366,7 @@ static inline kk_function_t kk_std_num_random__new_default_random_fun201(kk_cont
 static inline kk_box_t kk_std_num_random__default_random(kk_function_t action, kk_context_t* _ctx) { /* forall<a,e> (action : () -> <random,ndet|e> a) -> <ndet|e> a */ 
   kk_function_t _b_x22_23 = kk_std_num_random__new_default_random_fun196(_ctx); /*() -> ndet int32*/;
   kk_std_num_random__random _x_x197;
-  kk_std_core_hnd__clause0 _x_x198 = kk_std_core_hnd_clause_tail0(kk_std_num_random__new_default_random_fun199(_b_x22_23, _ctx), _ctx); /*hnd/clause0<6234,6233,6231,6232>*/
+  kk_std_core_hnd__clause0 _x_x198 = kk_std_core_hnd_clause_tail0(kk_std_num_random__new_default_random_fun199(_b_x22_23, _ctx), _ctx); /*hnd/clause0<1003,1002,1000,1001>*/
   _x_x197 = kk_std_num_random__new_Hnd_random(kk_reuse_null, 0, kk_integer_from_small(1), _x_x198, _ctx); /*std/num/random/random<5,6>*/
   return kk_std_num_random__handle_random(_x_x197, kk_std_num_random__new_default_random_fun201(_ctx), action, _ctx);
 }

@@ -70,7 +70,7 @@ kk_string_t kk_std_core_show_show_hex(kk_integer_t i, kk_std_core_types__optiona
     _brw_x59 = kk_integer_from_small(1); /*int*/
   }
   kk_string_t _brw_x61;
-  kk_std_core_types__optional _x_x72 = kk_std_core_types__new_Optional(kk_char_box(_b_x3_4, _ctx), _ctx); /*? 7*/
+  kk_std_core_types__optional _x_x72 = kk_std_core_types__new_Optional(kk_char_box(_b_x3_4, _ctx), _ctx); /*? 1003*/
   _brw_x61 = kk_std_core_string_pad_left(_own_x60, _brw_x59, _x_x72, _ctx); /*string*/
   kk_integer_drop(_brw_x59, _ctx);
   _x_x69 = _brw_x61; /*string*/
@@ -114,8 +114,8 @@ kk_string_t kk_std_core_show_show_char(kk_char_t c, kk_context_t* _ctx) { /* (c 
             kk_define_string_literal(, _s_x78, 2, "\\x", _ctx)
             _x_x77 = kk_string_dup(_s_x78, _ctx); /*string*/
             kk_string_t _x_x79;
-            kk_std_core_types__optional _x_x80 = kk_std_core_types__new_Optional(kk_integer_box(_b_x5_17, _ctx), _ctx); /*? 7*/
-            kk_std_core_types__optional _x_x81 = kk_std_core_types__new_Optional(kk_string_box(_b_x6_18), _ctx); /*? 7*/
+            kk_std_core_types__optional _x_x80 = kk_std_core_types__new_Optional(kk_integer_box(_b_x5_17, _ctx), _ctx); /*? 1003*/
+            kk_std_core_types__optional _x_x81 = kk_std_core_types__new_Optional(kk_string_box(_b_x6_18), _ctx); /*? 1003*/
             _x_x79 = kk_std_core_show_show_hex(_arg_x229, _x_x80, kk_std_core_types__new_None(_ctx), _x_x81, _ctx); /*string*/
             return kk_std_core_types__lp__plus__plus__rp_(_x_x77, _x_x79, _ctx);
           }
@@ -135,8 +135,8 @@ kk_string_t kk_std_core_show_show_char(kk_char_t c, kk_context_t* _ctx) { /* (c 
               kk_define_string_literal(, _s_x84, 2, "\\u", _ctx)
               _x_x83 = kk_string_dup(_s_x84, _ctx); /*string*/
               kk_string_t _x_x85;
-              kk_std_core_types__optional _x_x86 = kk_std_core_types__new_Optional(kk_integer_box(_b_x7_19, _ctx), _ctx); /*? 7*/
-              kk_std_core_types__optional _x_x87 = kk_std_core_types__new_Optional(kk_string_box(_b_x8_20), _ctx); /*? 7*/
+              kk_std_core_types__optional _x_x86 = kk_std_core_types__new_Optional(kk_integer_box(_b_x7_19, _ctx), _ctx); /*? 1003*/
+              kk_std_core_types__optional _x_x87 = kk_std_core_types__new_Optional(kk_string_box(_b_x8_20), _ctx); /*? 1003*/
               _x_x85 = kk_std_core_show_show_hex(_arg_x281, _x_x86, kk_std_core_types__new_None(_ctx), _x_x87, _ctx); /*string*/
               return kk_std_core_types__lp__plus__plus__rp_(_x_x83, _x_x85, _ctx);
             }
@@ -148,8 +148,8 @@ kk_string_t kk_std_core_show_show_char(kk_char_t c, kk_context_t* _ctx) { /* (c 
               kk_define_string_literal(, _s_x90, 2, "\\U", _ctx)
               _x_x89 = kk_string_dup(_s_x90, _ctx); /*string*/
               kk_string_t _x_x91;
-              kk_std_core_types__optional _x_x92 = kk_std_core_types__new_Optional(kk_integer_box(_b_x9_21, _ctx), _ctx); /*? 7*/
-              kk_std_core_types__optional _x_x93 = kk_std_core_types__new_Optional(kk_string_box(_b_x10_22), _ctx); /*? 7*/
+              kk_std_core_types__optional _x_x92 = kk_std_core_types__new_Optional(kk_integer_box(_b_x9_21, _ctx), _ctx); /*? 1003*/
+              kk_std_core_types__optional _x_x93 = kk_std_core_types__new_Optional(kk_string_box(_b_x10_22), _ctx); /*? 1003*/
               _x_x91 = kk_std_core_show_show_hex(_arg_x323, _x_x92, kk_std_core_types__new_None(_ctx), _x_x93, _ctx); /*string*/
               return kk_std_core_types__lp__plus__plus__rp_(_x_x89, _x_x91, _ctx);
             }
@@ -192,8 +192,8 @@ kk_string_t kk_std_core_show_show_char(kk_char_t c, kk_context_t* _ctx) { /* (c 
               kk_define_string_literal(, _s_x99, 2, "\\x", _ctx)
               _x_x98 = kk_string_dup(_s_x99, _ctx); /*string*/
               kk_string_t _x_x100;
-              kk_std_core_types__optional _x_x101 = kk_std_core_types__new_Optional(kk_integer_box(_b_x11_23, _ctx), _ctx); /*? 7*/
-              kk_std_core_types__optional _x_x102 = kk_std_core_types__new_Optional(kk_string_box(_b_x12_24), _ctx); /*? 7*/
+              kk_std_core_types__optional _x_x101 = kk_std_core_types__new_Optional(kk_integer_box(_b_x11_23, _ctx), _ctx); /*? 1003*/
+              kk_std_core_types__optional _x_x102 = kk_std_core_types__new_Optional(kk_string_box(_b_x12_24), _ctx); /*? 1003*/
               _x_x100 = kk_std_core_show_show_hex(_arg_x229_0, _x_x101, kk_std_core_types__new_None(_ctx), _x_x102, _ctx); /*string*/
               return kk_std_core_types__lp__plus__plus__rp_(_x_x98, _x_x100, _ctx);
             }
@@ -213,8 +213,8 @@ kk_string_t kk_std_core_show_show_char(kk_char_t c, kk_context_t* _ctx) { /* (c 
                 kk_define_string_literal(, _s_x105, 2, "\\u", _ctx)
                 _x_x104 = kk_string_dup(_s_x105, _ctx); /*string*/
                 kk_string_t _x_x106;
-                kk_std_core_types__optional _x_x107 = kk_std_core_types__new_Optional(kk_integer_box(_b_x13_25, _ctx), _ctx); /*? 7*/
-                kk_std_core_types__optional _x_x108 = kk_std_core_types__new_Optional(kk_string_box(_b_x14_26), _ctx); /*? 7*/
+                kk_std_core_types__optional _x_x107 = kk_std_core_types__new_Optional(kk_integer_box(_b_x13_25, _ctx), _ctx); /*? 1003*/
+                kk_std_core_types__optional _x_x108 = kk_std_core_types__new_Optional(kk_string_box(_b_x14_26), _ctx); /*? 1003*/
                 _x_x106 = kk_std_core_show_show_hex(_arg_x281_0, _x_x107, kk_std_core_types__new_None(_ctx), _x_x108, _ctx); /*string*/
                 return kk_std_core_types__lp__plus__plus__rp_(_x_x104, _x_x106, _ctx);
               }
@@ -226,8 +226,8 @@ kk_string_t kk_std_core_show_show_char(kk_char_t c, kk_context_t* _ctx) { /* (c 
                 kk_define_string_literal(, _s_x111, 2, "\\U", _ctx)
                 _x_x110 = kk_string_dup(_s_x111, _ctx); /*string*/
                 kk_string_t _x_x112;
-                kk_std_core_types__optional _x_x113 = kk_std_core_types__new_Optional(kk_integer_box(_b_x15_27, _ctx), _ctx); /*? 7*/
-                kk_std_core_types__optional _x_x114 = kk_std_core_types__new_Optional(kk_string_box(_b_x16_28), _ctx); /*? 7*/
+                kk_std_core_types__optional _x_x113 = kk_std_core_types__new_Optional(kk_integer_box(_b_x15_27, _ctx), _ctx); /*? 1003*/
+                kk_std_core_types__optional _x_x114 = kk_std_core_types__new_Optional(kk_string_box(_b_x16_28), _ctx); /*? 1003*/
                 _x_x112 = kk_std_core_show_show_hex(_arg_x323_0, _x_x113, kk_std_core_types__new_None(_ctx), _x_x114, _ctx); /*string*/
                 return kk_std_core_types__lp__plus__plus__rp_(_x_x110, _x_x112, _ctx);
               }

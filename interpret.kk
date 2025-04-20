@@ -35,7 +35,7 @@ pub fun eq(v1: value, v2: value): bool
 
 pub alias env = list<(string, value)>
 
-pub alias cont<a> = value -> <div, exn, console> a
+pub alias cont<a> = value -> <div, exn> a
 
 pub fun extend(prev: env, new: (string, value)): env
   prev.append([new])
@@ -43,7 +43,7 @@ pub fun extend(prev: env, new: (string, value)): env
 pub fun eval(e: expr)
   eval'(e, [], fn(x) x)
 
-pub fun eval'(e: expr, env: env, c: cont<value>): <div, exn, console> value
+pub fun eval'(e: expr, env: env, c: cont<value>): <div, exn> value
   match e
     Var(i) -> 
       match env.find(fn((i', _)) i == i')
@@ -81,7 +81,7 @@ pub fun apply(f: value, arg: value, c: cont<value>)
       c (c'(arg))
     _ -> throw("literal was handled as function!")
 
-pub fun run(e: expr): <console, div> either<exception, value>
+pub fun run(e: expr): <div> either<exception, value>
   try(fn() eval'(e, [], fn(x) x)).either()
 
 fun (==)(e1: either<exception, value>, e2: either<exception, value>): bool

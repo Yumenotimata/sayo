@@ -16,4 +16,8 @@ fun main()
 
   // run-test(interpret-tests)
 
+  run-test fn()
+    // test("ok test") fn()
+    assert-eq(fn() 0, fn() 1)
+
   return ()

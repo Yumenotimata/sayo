@@ -30,7 +30,7 @@
 
 // value declarations
 
-kk_unit_t kk_main__mlift_main_10005(kk_interpret__value ret, kk_context_t* _ctx); /* (ret : interpret/value) -> <pure,console/console> () */ 
+kk_unit_t kk_main__mlift_main_10008(kk_interpret__value ret, kk_context_t* _ctx); /* (ret : interpret/value) -> pure () */ 
 
 kk_unit_t kk_main_main(kk_context_t* _ctx); /* () -> <console/console,div> () */ 
 

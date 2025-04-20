@@ -143,7 +143,7 @@ bool kk_interpret__lp__eq__eq__rp_(kk_std_core_types__either e1, kk_std_core_typ
  
 // monadic lift
 
-kk_interpret__value kk_interpret__mlift_eval_10035_sq_(kk_function_t c_0, kk_string_t i, kk_std_core_types__maybe _y_x10009, kk_context_t* _ctx) { /* (c@0 : cont<value>, i : string, maybe<(string, value)>) -> <console/console,div,exn> value */ 
+kk_interpret__value kk_interpret__mlift_eval_10035_sq_(kk_function_t c_0, kk_string_t i, kk_std_core_types__maybe _y_x10009, kk_context_t* _ctx) { /* (c@0 : cont<value>, i : string, maybe<(string, value)>) -> <div,exn> value */ 
   if (kk_std_core_types__is_Just(_y_x10009, _ctx)) {
     kk_box_t _box_x8 = _y_x10009._cons.Just.value;
     kk_std_core_types__tuple2 _pat_3 = kk_std_core_types__tuple2_unbox(_box_x8, KK_BORROWED, _ctx);
@@ -192,7 +192,7 @@ static kk_box_t kk_interpret_apply_fun135(kk_function_t _fself, kk_box_t _b_x24,
   return kk_interpret__value_box(_x_x136, _ctx);
 }
 
-kk_interpret__value kk_interpret_apply(kk_interpret__value f, kk_interpret__value arg, kk_function_t c, kk_context_t* _ctx) { /* (f : value, arg : value, c : cont<value>) -> <pure,console/console> value */ 
+kk_interpret__value kk_interpret_apply(kk_interpret__value f, kk_interpret__value arg, kk_function_t c, kk_context_t* _ctx) { /* (f : value, arg : value, c : cont<value>) -> pure value */ 
   if (kk_interpret__is_FnVal(f, _ctx)) {
     struct kk_interpret_FnVal* _con_x129 = kk_interpret__as_FnVal(f, _ctx);
     kk_string_t x = _con_x129->x;
@@ -448,7 +448,7 @@ static kk_interpret__value kk_interpret_eval_fun168_sq_(kk_function_t _fself, kk
     kk_std_core_types__list _b_x56_65 = kk_std_core_types__new_Nil(_ctx); /*list<(string, interpret/value)>*/;
     kk_std_core_types__list _x_x172;
     kk_std_core_types__list _x_x173 = kk_std_core_types__new_Cons(kk_reuse_null, 0, kk_std_core_types__tuple2_box(_b_x55_64, _ctx), _b_x56_65, _ctx); /*list<1024>*/
-    _x_x172 = kk_std_core_list_append(env_0_0_sq_, _x_x173, _ctx); /*list<1001>*/
+    _x_x172 = kk_std_core_list_append(env_0_0_sq_, _x_x173, _ctx); /*list<1016>*/
     return kk_interpret_eval_sq_(body_0, _x_x172, kk_interpret_new_eval_fun174_sq_(_ctx), _ctx);
   }
   {
@@ -503,7 +503,7 @@ static kk_box_t kk_interpret_eval_fun181_sq_(kk_function_t _fself, kk_box_t _b_x
   return kk_interpret__value_box(_x_x182, _ctx);
 }
 
-kk_interpret__value kk_interpret_eval_sq_(kk_interpret__expr e, kk_std_core_types__list env_0, kk_function_t c_0_0, kk_context_t* _ctx) { /* (e : expr, env : env, c : cont<value>) -> <pure,console/console> value */ 
+kk_interpret__value kk_interpret_eval_sq_(kk_interpret__expr e, kk_std_core_types__list env_0, kk_function_t c_0_0, kk_context_t* _ctx) { /* (e : expr, env : env, c : cont<value>) -> pure value */ 
   kk__tailcall: ;
   if (kk_interpret__is_Var(e, _ctx)) {
     struct kk_interpret_Var* _con_x141 = kk_interpret__as_Var(e, _ctx);
@@ -518,7 +518,7 @@ kk_interpret__value kk_interpret_eval_sq_(kk_interpret__expr e, kk_std_core_type
     kk_std_core_types__maybe x_1_10038;
     kk_function_t _x_x142;
     kk_string_dup(i_0, _ctx);
-    _x_x142 = kk_interpret_new_eval_fun143_sq_(i_0, _ctx); /*(1001) -> 1002 bool*/
+    _x_x142 = kk_interpret_new_eval_fun143_sq_(i_0, _ctx); /*(1515) -> 1516 bool*/
     x_1_10038 = kk_std_core_list_find(env_0, _x_x142, _ctx); /*maybe<(string, interpret/value)>*/
     if (kk_yielding(kk_context())) {
       kk_std_core_types__maybe_drop(x_1_10038, _ctx);
@@ -564,7 +564,7 @@ kk_interpret__value kk_interpret_eval_sq_(kk_interpret__expr e, kk_std_core_type
     }
     { // tailcall
       kk_std_core_types__list _x_x152 = kk_std_core_types__list_dup(env_0, _ctx); /*interpret/env*/
-      kk_function_t _x_x153 = kk_interpret_new_eval_fun154_sq_(c_0_0, e2, env_0, name, _ctx); /*(e1' : interpret/value) -> <div,exn,console/console> interpret/value*/
+      kk_function_t _x_x153 = kk_interpret_new_eval_fun154_sq_(c_0_0, e2, env_0, name, _ctx); /*(e1' : interpret/value) -> <div,exn> interpret/value*/
       e = e1;
       env_0 = _x_x152;
       c_0_0 = _x_x153;
@@ -600,7 +600,7 @@ kk_interpret__value kk_interpret_eval_sq_(kk_interpret__expr e, kk_std_core_type
     }
     { // tailcall
       kk_std_core_types__list _x_x161 = kk_std_core_types__list_dup(env_0, _ctx); /*interpret/env*/
-      kk_function_t _x_x162 = kk_interpret_new_eval_fun163_sq_(c_0_0, e2_0, env_0, _ctx); /*(f@0 : interpret/value) -> <div,exn,console/console> interpret/value*/
+      kk_function_t _x_x162 = kk_interpret_new_eval_fun163_sq_(c_0_0, e2_0, env_0, _ctx); /*(f@0 : interpret/value) -> <div,exn> interpret/value*/
       e = e1_1;
       env_0 = _x_x161;
       c_0_0 = _x_x162;
@@ -631,7 +631,7 @@ kk_interpret__value kk_interpret_eval_sq_(kk_interpret__expr e, kk_std_core_type
       kk_datatype_ptr_decref(e, _ctx);
     }
     { // tailcall
-      kk_function_t _x_x167 = kk_interpret_new_eval_fun168_sq_(c_0_0, _ctx); /*(e' : interpret/value) -> <div,exn,console/console> interpret/value*/
+      kk_function_t _x_x167 = kk_interpret_new_eval_fun168_sq_(c_0_0, _ctx); /*(e' : interpret/value) -> <div,exn> interpret/value*/
       e = x_0_0_0;
       c_0_0 = _x_x167;
       goto kk__tailcall;
@@ -701,7 +701,7 @@ static kk_box_t kk_interpret_run_fun185(kk_function_t _fself, kk_context_t* _ctx
   return kk_interpret__value_box(_x_x186, _ctx);
 }
 
-kk_std_core_types__either kk_interpret_run(kk_interpret__expr e, kk_context_t* _ctx) { /* (e : expr) -> <console/console,div> either<exception,value> */ 
+kk_std_core_types__either kk_interpret_run(kk_interpret__expr e, kk_context_t* _ctx) { /* (e : expr) -> div either<exception,value> */ 
   kk_std_core_exn__error t_10002 = kk_std_core_exn_try(kk_interpret_new_run_fun185(e, _ctx), _ctx); /*error<interpret/value>*/;
   if (kk_std_core_exn__is_Error(t_10002, _ctx)) {
     kk_std_core_exn__exception exn_0 = t_10002._cons.Error.exception;

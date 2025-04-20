@@ -41,56 +41,29 @@ import std/core/list = std/core/list = "";
 
 // Operations:
 // ```koka
-// fun append
+// fun test-append
 // ```
-pub recursive effect type test[6,1,6,15] <(e :: E),(e1 :: E),a> :: (E, E, V) -> V {
-  pub con @Hnd-test[6,1,6,15](@cfc: std/core/types/int, @fun-append: (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>){0,2,8} : forall<(e :: E),(e1 :: E),a> (std/core/types/int, (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) -> (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>;
-};
-
-// Operations:
-// ```koka
-// fun test-case-append
-// ```
-pub recursive effect type test-case[9,1,9,20] <(e :: E),(e1 :: E),a> :: (E, E, V) -> V {
-  pub con @Hnd-test-case[9,1,9,20](@cfc: std/core/types/int, @fun-test-case-append: (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>){0,2,8} : forall<(e :: E),(e1 :: E),a> (std/core/types/int, (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) -> (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>;
+pub recursive effect type test[25,1,25,15] <(e :: E),(e1 :: E),a> :: (E, E, V) -> V {
+  pub con @Hnd-test[25,1,25,15](@cfc: std/core/types/int, @fun-test-append: forall<b> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(() -> (e :: E) b, () -> (e :: E) b, (b, b) -> std/core/types/bool, (b) -> std/core/types/string),(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>){0,2,8} : forall<(e :: E),(e1 :: E),a> (std/core/types/int, forall<b> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(() -> (e :: E) b, () -> (e :: E) b, (b, b) -> std/core/types/bool, (b) -> std/core/types/string),(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) -> (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>;
 };
  
 //------------------------------
 //#kki: declarations
  
 // Automatically generated. Retrieves the `@cfc` constructor field of the `:test` type.
- fun test/@cfc[6,1,6,15] : forall<(e :: E),(e1 :: E),a> (^ test : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>) -> std/core/types/int;
-// Automatically generated. Retrieves the `@fun-append` constructor field of the `:test` type.
- fun test/@fun-append[7,7,7,33] : forall<(e :: E),(e1 :: E),a> (^ test : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>) -> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>;
-// Automatically generated. Retrieves the `@cfc` constructor field of the `:test-case` type.
- fun test-case/@cfc[9,1,9,20] : forall<(e :: E),(e1 :: E),a> (^ @this : (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>) -> std/core/types/int;
-// Automatically generated. Retrieves the `@fun-test-case-append` constructor field of the `:test-case` type.
- fun test-case/@fun-test-case-append[10,7,10,43] : forall<(e :: E),(e1 :: E),a> (^ @this : (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>) -> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>;
+ fun test/@cfc[25,1,25,15] : forall<(e :: E),(e1 :: E),a> (^ test : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>) -> std/core/types/int;
+// Automatically generated. Retrieves the `@fun-test-append` constructor field of the `:test` type.
+ fun test/@fun-test-append[26,7,26,88] : forall<(e :: E),(e1 :: E),a,b> (^ test : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>) -> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(() -> (e :: E) b, () -> (e :: E) b, (b, b) -> std/core/types/bool, (b) -> std/core/types/string),(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>;
 // runtime tag for the effect `:test`
-pub val @tag-test[6,1,6,15] : forall<(e :: E)> (std/core/hnd/htag :: ((E, V) -> V) -> V)<(test :: (E, E, V) -> V)<(e :: E)>>;
+pub val @tag-test[25,1,25,15] : forall<(e :: E)> (std/core/hnd/htag :: ((E, V) -> V) -> V)<(test :: (E, E, V) -> V)<(e :: E)>>;
 // handler for the effect `:test`
-pub  fun @handle-test[6,12,6,15] : forall<(e :: E),a,(e1 :: E),b> (hnd : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),b>, ret : (res : a) -> (e1 :: E) b, action : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>|(e1 :: E)> a) -> (e1 :: E) b;
-// select `append` operation out of effect `:test`
-pub  fun @select-append[7,7,7,33] : forall<(e :: E),(e1 :: E),a> (^ hnd : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>) -> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>;
-// Call the `fun append` operation of the effect `:test`
-pub  fun append[7,7,7,12] : forall<(e :: E)> (f : () -> (e :: E) std/core/types/bool) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>> ();
-// runtime tag for the effect `:test-case`
-pub val @tag-test-case[9,1,9,20] : forall<(e :: E)> (std/core/hnd/htag :: ((E, V) -> V) -> V)<(test-case :: (E, E, V) -> V)<(e :: E)>>;
-// handler for the effect `:test-case`
-pub  fun @handle-test-case[9,12,9,20] : forall<(e :: E),a,(e1 :: E),b> (hnd : (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),b>, ret : (res : a) -> (e1 :: E) b, action : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (E, E, V) -> V)<(e :: E)>>|(e1 :: E)> a) -> (e1 :: E) b;
-// select `test-case-append` operation out of effect `:test-case`
-pub  fun @select-test-case-append[10,7,10,43] : forall<(e :: E),(e1 :: E),a> (^ hnd : (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>) -> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>;
-// Call the `fun test-case-append` operation of the effect `:test-case`
-pub  fun test-case-append[10,7,10,22] : forall<(e :: E)> (f : () -> (e :: E) std/core/types/bool) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (E, E, V) -> V)<(e :: E)>>> ();
-// monadic lift
- fun @mlift-assert-eq@10016[1,0,1,0] : forall<a,(e :: E)> (@y-x10006 : a, ?(==) : (a, a) -> std/core/types/bool, @y-x10007 : a) -> (e :: E) std/core/types/bool;
-// monadic lift
- fun @mlift-assert-eq@10017[1,0,1,0] : forall<a,(e :: E)> (g : () -> (e :: E) a, ?(==) : (a, a) -> std/core/types/bool, @y-x10006 : a) -> (e :: E) std/core/types/bool;
-pub  fun assert-eq[12,9,12,17] : forall<a,(e :: E)> (f : () -> (e :: E) a, g : () -> (e :: E) a, ?(==) : (a, a) -> std/core/types/bool) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>> ();
-pub  fun test[15,9,15,12] : forall<(e :: E)> (name : std/core/types/string, tests : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>> ()) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (E, E, V) -> V)<(e :: E)>>> ();
-// monadic lift
- fun @mlift-run-test@10018[1,0,1,0] : forall<(e :: E)> (@y-x10011 : std/core/types/bool) -> <(std/core/console/console :: X)|(e :: E)> ();
-pub  fun run-test[20,9,20,16] : forall<(e :: E)> (cases : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (E, E, V) -> V)<<(std/core/console/console :: X)|(e :: E)>>>> ()) -> <(std/core/console/console :: X)|(e :: E)> ();
+pub  fun @handle-test[25,12,25,15] : forall<(e :: E),a,(e1 :: E),b> (hnd : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),b>, ret : (res : a) -> (e1 :: E) b, action : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>|(e1 :: E)> a) -> (e1 :: E) b;
+// select `test-append` operation out of effect `:test`
+pub  fun @select-test-append[26,7,26,88] : forall<(e :: E),a,(e1 :: E),b> (^ hnd : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),b>) -> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(() -> (e :: E) a, () -> (e :: E) a, (a, a) -> std/core/types/bool, (a) -> std/core/types/string),(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),b>;
+// Call the `fun test-append` operation of the effect `:test`
+pub  fun test-append[26,7,26,17] : forall<(e :: E),a> (f : () -> (e :: E) a, g : () -> (e :: E) a, eq : (a, a) -> std/core/types/bool, show : (a) -> std/core/types/string) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>> ();
+pub  fun assert-eq[28,9,28,17] : forall<a,(e :: E)> (f : () -> (e :: E) a, g : () -> (e :: E) a, ?(==) : (a, a) -> std/core/types/bool, ?show : (a) -> std/core/types/string) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>> ();
+pub  fun run-test[31,9,31,16] : (tests : forall<(e :: E)> () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>> ()) -> <(std/core/console/console :: X)> ();
  
 //------------------------------
 //#kki: external declarations
@@ -101,52 +74,27 @@ pub  fun run-test[20,9,20,16] : forall<(e :: E)> (cases : () -> <(std/core/types
  
 //.inline-section
 inline borrow "^"  fun test/@cfc // inline size: 0
-  = forall<(e :: E),(e1 :: E),a> fn(test@0: (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>){
-    (match (test@0) {
-      ((@skip etest/@Hnd-test((@x: std/core/types/int) : std/core/types/int, (@pat@0: (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a> ) as @pat: ((test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>))
+  = forall<(e :: E),(e1 :: E),a> fn(test: (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>){
+    (match (test) {
+      ((@skip etest/@Hnd-test((@x: std/core/types/int) : std/core/types/int, (@pat@0: (forall<b> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(() -> (e :: E) b, () -> (e :: E) b, (b, b) -> std/core/types/bool, (b) -> std/core/types/string),(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>)) : (forall<b> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(() -> (e :: E) b, () -> (e :: E) b, (b, b) -> std/core/types/bool, (b) -> std/core/types/string),(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>)) : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a> ) as @pat: ((test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>))
          -> @x;
     });
   };
-inline borrow "^"  fun test/@fun-append // inline size: 0
-  = forall<(e :: E),(e1 :: E),a> fn(test@0: (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>){
-    (match (test@0) {
-      ((@skip etest/@Hnd-test((@pat@0: std/core/types/int) : std/core/types/int, (@x: (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a> ) as @pat: ((test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>))
-         -> @x;
+inline borrow "^"  fun test/@fun-test-append // inline size: 0
+  = forall<(e :: E),(e1 :: E),a,b> fn(test: (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>){
+    (match (test) {
+      ((@skip etest/@Hnd-test((@pat@0: std/core/types/int) : std/core/types/int, (@x: (forall<c> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(() -> (e :: E) c, () -> (e :: E) c, (c, c) -> std/core/types/bool, (c) -> std/core/types/string),(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>)) : (forall<c> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(() -> (e :: E) c, () -> (e :: E) c, (c, c) -> std/core/types/bool, (c) -> std/core/types/string),(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>)) : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a> ) as @pat: ((test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>))
+         -> @x<b>;
     });
   };
-inline borrow "^"  fun test-case/@cfc // inline size: 0
-  = forall<(e :: E),(e1 :: E),a> fn(@this: (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>){
-    (match (@this) {
-      ((@skip etest/@Hnd-test-case((@x: std/core/types/int) : std/core/types/int, (@pat@0: (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a> ) as @pat: ((test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>))
-         -> @x;
-    });
-  };
-inline borrow "^"  fun test-case/@fun-test-case-append // inline size: 0
-  = forall<(e :: E),(e1 :: E),a> fn(@this: (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>){
-    (match (@this) {
-      ((@skip etest/@Hnd-test-case((@pat@0: std/core/types/int) : std/core/types/int, (@x: (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a> ) as @pat: ((test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>))
-         -> @x;
-    });
-  };
-inline borrow "^"  fun @select-append // inline size: 0
-  = forall<(e :: E),(e1 :: E),a> fn(hnd: (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>){
+inline borrow "^"  fun @select-test-append // inline size: 0
+  = forall<(e :: E),a,(e1 :: E),b> fn(hnd: (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),b>){
     (match (hnd) {
-      ((@skip etest/@Hnd-test((@pat@0: std/core/types/int) : std/core/types/int, (@fun-append: (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a> ) as @pat: ((test :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>))
-         -> @fun-append;
+      ((@skip etest/@Hnd-test((@pat@0: std/core/types/int) : std/core/types/int, (@fun-test-append: (forall<c> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(() -> (e :: E) c, () -> (e :: E) c, (c, c) -> std/core/types/bool, (c) -> std/core/types/string),(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),b>)) : (forall<c> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(() -> (e :: E) c, () -> (e :: E) c, (c, c) -> std/core/types/bool, (c) -> std/core/types/string),(),(test :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),b>)) : (test :: (E, E, V) -> V)<(e :: E),(e1 :: E),b> ) as @pat: ((test :: (E, E, V) -> V)<(e :: E),(e1 :: E),b>))
+         -> @fun-test-append<a>;
     });
   };
-inline  fun append // inline size: 5
-  = forall<(e :: E)> fn<<(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>>>(f: () -> (e :: E) std/core/types/bool){
-    std/core/hnd/@perform1<() -> (e :: E) std/core/types/bool,(),(test :: (E, E, V) -> V)<(e :: E)>,<(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>>>((std/core/types/@open<(std/core/types/total :: E),<(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>>,(i : std/core/hnd/ev-index) -> (std/core/hnd/ev :: ((E, V) -> V) -> V)<(test :: (E, E, V) -> V)<(e :: E)>>,(i : std/core/hnd/ev-index) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>> (std/core/hnd/ev :: ((E, V) -> V) -> V)<(test :: (E, E, V) -> V)<(e :: E)>>>((std/core/hnd/@evv-at<(test :: (E, E, V) -> V)<(e :: E)>>))((std/core/types/@open<(std/core/types/total :: E),<(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>>,(i : std/core/types/int) -> std/core/types/ssize_t,(i : std/core/types/int) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>> std/core/types/ssize_t>(std/core/types/@make-ssize_t)(0)))), (forall<(e1 :: E),a> etest/@select-append<(e :: E),(e1 :: E),a>), f);
-  };
-inline borrow "^"  fun @select-test-case-append // inline size: 0
-  = forall<(e :: E),(e1 :: E),a> fn(hnd: (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>){
-    (match (hnd) {
-      ((@skip etest/@Hnd-test-case((@pat@0: std/core/types/int) : std/core/types/int, (@fun-test-case-append: (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,(e1 :: E),a>) : (test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a> ) as @pat: ((test-case :: (E, E, V) -> V)<(e :: E),(e1 :: E),a>))
-         -> @fun-test-case-append;
-    });
-  };
-inline  fun test-case-append // inline size: 5
-  = forall<(e :: E)> fn<<(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (E, E, V) -> V)<(e :: E)>>>>(f: () -> (e :: E) std/core/types/bool){
-    std/core/hnd/@perform1<() -> (e :: E) std/core/types/bool,(),(test-case :: (E, E, V) -> V)<(e :: E)>,<(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (E, E, V) -> V)<(e :: E)>>>>((std/core/types/@open<(std/core/types/total :: E),<(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (E, E, V) -> V)<(e :: E)>>>,(i : std/core/hnd/ev-index) -> (std/core/hnd/ev :: ((E, V) -> V) -> V)<(test-case :: (E, E, V) -> V)<(e :: E)>>,(i : std/core/hnd/ev-index) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (E, E, V) -> V)<(e :: E)>>> (std/core/hnd/ev :: ((E, V) -> V) -> V)<(test-case :: (E, E, V) -> V)<(e :: E)>>>((std/core/hnd/@evv-at<(test-case :: (E, E, V) -> V)<(e :: E)>>))((std/core/types/@open<(std/core/types/total :: E),<(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (E, E, V) -> V)<(e :: E)>>>,(i : std/core/types/int) -> std/core/types/ssize_t,(i : std/core/types/int) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (E, E, V) -> V)<(e :: E)>>> std/core/types/ssize_t>(std/core/types/@make-ssize_t)(0)))), (forall<(e1 :: E),a> etest/@select-test-case-append<(e :: E),(e1 :: E),a>), f);
+inline  fun test-append // inline size: 5
+  = forall<(e :: E),a> fn<<(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>>>(f: () -> (e :: E) a, g: () -> (e :: E) a, eq: (a, a) -> std/core/types/bool, show: (a) -> std/core/types/string){
+    std/core/hnd/@perform4<() -> (e :: E) a,() -> (e :: E) a,(a, a) -> std/core/types/bool,(a) -> std/core/types/string,(),<(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>>,(test :: (E, E, V) -> V)<(e :: E)>>((std/core/types/@open<(std/core/types/total :: E),<(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>>,(i : std/core/hnd/ev-index) -> (std/core/hnd/ev :: ((E, V) -> V) -> V)<(test :: (E, E, V) -> V)<(e :: E)>>,(i : std/core/hnd/ev-index) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>> (std/core/hnd/ev :: ((E, V) -> V) -> V)<(test :: (E, E, V) -> V)<(e :: E)>>>((std/core/hnd/@evv-at<(test :: (E, E, V) -> V)<(e :: E)>>))((std/core/types/@open<(std/core/types/total :: E),<(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>>,(i : std/core/types/int) -> std/core/types/ssize_t,(i : std/core/types/int) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (E, E, V) -> V)<(e :: E)>>> std/core/types/ssize_t>(std/core/types/@make-ssize_t)(0)))), (forall<(e1 :: E),b> etest/@select-test-append<(e :: E),a,(e1 :: E),b>), f, g, eq, show);
   };

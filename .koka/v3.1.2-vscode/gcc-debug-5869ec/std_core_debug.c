@@ -37,7 +37,7 @@ kk_unit_t kk_std_core_debug_trace(kk_string_t message, kk_context_t* _ctx) { /* 
   bool _match_x17;
   kk_box_t _x_x24;
   kk_ref_t _x_x25 = kk_ref_dup(kk_std_core_debug_trace_enabled, _ctx); /*ref<global,bool>*/
-  _x_x24 = kk_ref_get(_x_x25,kk_context()); /*209*/
+  _x_x24 = kk_ref_get(_x_x25,kk_context()); /*1001*/
   _match_x17 = kk_bool_unbox(_x_x24); /*bool*/
   if (_match_x17) {
     kk_std_core_debug_xtrace(message, _ctx); return kk_Unit;
@@ -59,7 +59,7 @@ kk_unit_t kk_std_core_debug_trace_info(kk_string_t message, kk_string_t _implici
   bool _match_x16;
   kk_box_t _x_x29;
   kk_ref_t _x_x30 = kk_ref_dup(kk_std_core_debug_trace_enabled, _ctx); /*ref<global,bool>*/
-  _x_x29 = kk_ref_get(_x_x30,kk_context()); /*209*/
+  _x_x29 = kk_ref_get(_x_x30,kk_context()); /*1001*/
   _match_x16 = kk_bool_unbox(_x_x29); /*bool*/
   if (_match_x16) {
     kk_std_core_debug_xtrace(message_0_10002, _ctx); return kk_Unit;
@@ -82,7 +82,7 @@ kk_unit_t kk_std_core_debug_trace_show(kk_box_t x, kk_function_t _implicit_fs_sh
   bool _match_x15;
   kk_box_t _x_x34;
   kk_ref_t _x_x35 = kk_ref_dup(kk_std_core_debug_trace_enabled, _ctx); /*ref<global,bool>*/
-  _x_x34 = kk_ref_get(_x_x35,kk_context()); /*209*/
+  _x_x34 = kk_ref_get(_x_x35,kk_context()); /*1001*/
   _match_x15 = kk_bool_unbox(_x_x34); /*bool*/
   if (_match_x15) {
     kk_std_core_debug_xtrace(message_0_10002, _ctx); return kk_Unit;
@@ -97,7 +97,7 @@ kk_unit_t kk_std_core_debug_trace_any(kk_string_t message, kk_box_t x, kk_contex
   bool _match_x14;
   kk_box_t _x_x36;
   kk_ref_t _x_x37 = kk_ref_dup(kk_std_core_debug_trace_enabled, _ctx); /*ref<global,bool>*/
-  _x_x36 = kk_ref_get(_x_x37,kk_context()); /*1475*/
+  _x_x36 = kk_ref_get(_x_x37,kk_context()); /*1001*/
   _match_x14 = kk_bool_unbox(_x_x36); /*bool*/
   if (_match_x14) {
     kk_std_core_debug_xtrace_any(message, x, _ctx); return kk_Unit;

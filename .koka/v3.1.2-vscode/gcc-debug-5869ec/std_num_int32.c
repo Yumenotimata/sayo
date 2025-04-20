@@ -67,8 +67,8 @@ kk_string_t kk_std_num_int32_show_hex(int32_t i, kk_std_core_types__optional wid
     kk_std_core_types__optional_drop(width, _ctx);
     _x_x174 = kk_integer_from_small(1); /*int*/
   }
-  _x_x173 = kk_integer_box(_x_x174, _ctx); /*7*/
-  _x_x172 = kk_std_core_types__new_Optional(_x_x173, _ctx); /*? 7*/
+  _x_x173 = kk_integer_box(_x_x174, _ctx); /*1003*/
+  _x_x172 = kk_std_core_types__new_Optional(_x_x173, _ctx); /*? 1003*/
   kk_std_core_types__optional _x_x175;
   kk_box_t _x_x176;
   bool _x_x177;
@@ -82,8 +82,8 @@ kk_string_t kk_std_num_int32_show_hex(int32_t i, kk_std_core_types__optional wid
     kk_std_core_types__optional_drop(use_capitals, _ctx);
     _x_x177 = true; /*bool*/
   }
-  _x_x176 = kk_bool_box(_x_x177); /*7*/
-  _x_x175 = kk_std_core_types__new_Optional(_x_x176, _ctx); /*? 7*/
+  _x_x176 = kk_bool_box(_x_x177); /*1003*/
+  _x_x175 = kk_std_core_types__new_Optional(_x_x176, _ctx); /*? 1003*/
   kk_std_core_types__optional _x_x178;
   kk_box_t _x_x179;
   kk_string_t _x_x180;
@@ -99,8 +99,8 @@ kk_string_t kk_std_num_int32_show_hex(int32_t i, kk_std_core_types__optional wid
     kk_define_string_literal(, _s_x181, 2, "0x", _ctx)
     _x_x180 = kk_string_dup(_s_x181, _ctx); /*string*/
   }
-  _x_x179 = kk_string_box(_x_x180); /*7*/
-  _x_x178 = kk_std_core_types__new_Optional(_x_x179, _ctx); /*? 7*/
+  _x_x179 = kk_string_box(_x_x180); /*1003*/
+  _x_x178 = kk_std_core_types__new_Optional(_x_x179, _ctx); /*? 1003*/
   return kk_std_core_show_show_hex(_x_x171, _x_x172, _x_x175, _x_x178, _ctx);
 }
  
@@ -147,8 +147,8 @@ kk_string_t kk_std_num_int32_show_hex32(int32_t i, kk_std_core_types__optional w
     kk_std_core_types__optional_drop(width, _ctx);
     _x_x186 = kk_integer_from_small(8); /*int*/
   }
-  _x_x185 = kk_integer_box(_x_x186, _ctx); /*7*/
-  _x_x184 = kk_std_core_types__new_Optional(_x_x185, _ctx); /*? 7*/
+  _x_x185 = kk_integer_box(_x_x186, _ctx); /*1003*/
+  _x_x184 = kk_std_core_types__new_Optional(_x_x185, _ctx); /*? 1003*/
   kk_std_core_types__optional _x_x187;
   kk_box_t _x_x188;
   bool _x_x189;
@@ -162,8 +162,8 @@ kk_string_t kk_std_num_int32_show_hex32(int32_t i, kk_std_core_types__optional w
     kk_std_core_types__optional_drop(use_capitals, _ctx);
     _x_x189 = true; /*bool*/
   }
-  _x_x188 = kk_bool_box(_x_x189); /*7*/
-  _x_x187 = kk_std_core_types__new_Optional(_x_x188, _ctx); /*? 7*/
+  _x_x188 = kk_bool_box(_x_x189); /*1003*/
+  _x_x187 = kk_std_core_types__new_Optional(_x_x188, _ctx); /*? 1003*/
   kk_std_core_types__optional _x_x190;
   kk_box_t _x_x191;
   kk_string_t _x_x192;
@@ -179,8 +179,8 @@ kk_string_t kk_std_num_int32_show_hex32(int32_t i, kk_std_core_types__optional w
     kk_define_string_literal(, _s_x193, 2, "0x", _ctx)
     _x_x192 = kk_string_dup(_s_x193, _ctx); /*string*/
   }
-  _x_x191 = kk_string_box(_x_x192); /*7*/
-  _x_x190 = kk_std_core_types__new_Optional(_x_x191, _ctx); /*? 7*/
+  _x_x191 = kk_string_box(_x_x192); /*1003*/
+  _x_x190 = kk_std_core_types__new_Optional(_x_x191, _ctx); /*? 1003*/
   return kk_std_core_show_show_hex(_x_x183, _x_x184, _x_x187, _x_x190, _ctx);
 }
  
@@ -215,7 +215,7 @@ static kk_box_t kk_std_num_int32_abs_fun197(kk_function_t _fself, kk_box_t _b_x2
 int32_t kk_std_num_int32_abs(int32_t i, kk_context_t* _ctx) { /* (i : int32) -> exn int32 */ 
   bool _x_x1_10070 = 0 > i; /*bool*/;
   bool _match_x156;
-  kk_box_t _x_x196 = kk_std_core_hnd__open_none1(kk_std_num_int32_new_abs_fun197(_ctx), kk_bool_box(_x_x1_10070), _ctx); /*8580*/
+  kk_box_t _x_x196 = kk_std_core_hnd__open_none1(kk_std_num_int32_new_abs_fun197(_ctx), kk_bool_box(_x_x1_10070), _ctx); /*1001*/
   _match_x156 = kk_bool_unbox(_x_x196); /*bool*/
   if (_match_x156) {
     return i;
@@ -230,7 +230,7 @@ int32_t kk_std_num_int32_abs(int32_t i, kk_context_t* _ctx) { /* (i : int32) -> 
       kk_string_t _x_x200;
       kk_define_string_literal(, _s_x201, 79, "std/num/int32/abs: cannot make min-int32 into a positive int32 without overflow", _ctx)
       _x_x200 = kk_string_dup(_s_x201, _ctx); /*string*/
-      _x_x199 = kk_std_core_exn_throw(_x_x200, kk_std_core_types__new_None(_ctx), _ctx); /*2322*/
+      _x_x199 = kk_std_core_exn_throw(_x_x200, kk_std_core_types__new_None(_ctx), _ctx); /*1000*/
       return kk_int32_unbox(_x_x199, KK_OWNED, _ctx);
     }
   }
@@ -287,7 +287,7 @@ int32_t kk_std_num_int32_cdiv(int32_t i, int32_t j, kk_context_t* _ctx) { /* (i 
     kk_string_t _x_x203;
     kk_define_string_literal(, _s_x204, 35, "std/num/int32/cdiv: modulus by zero", _ctx)
     _x_x203 = kk_string_dup(_s_x204, _ctx); /*string*/
-    _x_x202 = kk_std_core_exn_throw(_x_x203, kk_std_core_types__new_None(_ctx), _ctx); /*2553*/
+    _x_x202 = kk_std_core_exn_throw(_x_x203, kk_std_core_types__new_None(_ctx), _ctx); /*3064*/
     return kk_int32_unbox(_x_x202, KK_OWNED, _ctx);
   }
   {
@@ -299,7 +299,7 @@ int32_t kk_std_num_int32_cdiv(int32_t i, int32_t j, kk_context_t* _ctx) { /* (i 
         kk_string_t _x_x206;
         kk_define_string_literal(, _s_x207, 65, "std/num/int32/cdiv: modulus overflow in cdiv(min-int32, -1.int32)", _ctx)
         _x_x206 = kk_string_dup(_s_x207, _ctx); /*string*/
-        _x_x205 = kk_std_core_exn_throw(_x_x206, kk_std_core_types__new_None(_ctx), _ctx); /*2635*/
+        _x_x205 = kk_std_core_exn_throw(_x_x206, kk_std_core_types__new_None(_ctx), _ctx); /*3146*/
         return kk_int32_unbox(_x_x205, KK_OWNED, _ctx);
       }
       {
@@ -321,7 +321,7 @@ int32_t kk_std_num_int32_cmod(int32_t i, int32_t j, kk_context_t* _ctx) { /* (i 
     kk_string_t _x_x209;
     kk_define_string_literal(, _s_x210, 35, "std/num/int32/cmod: modulus by zero", _ctx)
     _x_x209 = kk_string_dup(_s_x210, _ctx); /*string*/
-    _x_x208 = kk_std_core_exn_throw(_x_x209, kk_std_core_types__new_None(_ctx), _ctx); /*2661*/
+    _x_x208 = kk_std_core_exn_throw(_x_x209, kk_std_core_types__new_None(_ctx), _ctx); /*3172*/
     return kk_int32_unbox(_x_x208, KK_OWNED, _ctx);
   }
   {
@@ -333,7 +333,7 @@ int32_t kk_std_num_int32_cmod(int32_t i, int32_t j, kk_context_t* _ctx) { /* (i 
         kk_string_t _x_x212;
         kk_define_string_literal(, _s_x213, 65, "std/num/int32/cmod: modulus overflow in cmod(min-int32, -1.int32)", _ctx)
         _x_x212 = kk_string_dup(_s_x213, _ctx); /*string*/
-        _x_x211 = kk_std_core_exn_throw(_x_x212, kk_std_core_types__new_None(_ctx), _ctx); /*2743*/
+        _x_x211 = kk_std_core_exn_throw(_x_x212, kk_std_core_types__new_None(_ctx), _ctx); /*3254*/
         return kk_int32_unbox(_x_x211, KK_OWNED, _ctx);
       }
       {
@@ -719,7 +719,7 @@ kk_unit_t kk_std_num_int32_range_fs__lift_for32_2291(kk_function_t action_0, int
     kk_function_t _x_x224 = kk_function_dup(action_0, _ctx); /*(int32) -> 2092 ()*/
     kk_function_call(kk_unit_t, (kk_function_t, int32_t, kk_context_t*), _x_x224, (_x_x224, i_0, _ctx), _ctx);
     if (kk_yielding(kk_context())) {
-      kk_box_t _x_x225 = kk_std_core_hnd_yield_extend(kk_std_num_int32_range_fs__new_lift_for32_2291_fun226(action_0, end_0, i_0, _ctx), _ctx); /*2978*/
+      kk_box_t _x_x225 = kk_std_core_hnd_yield_extend(kk_std_num_int32_range_fs__new_lift_for32_2291_fun226(action_0, end_0, i_0, _ctx), _ctx); /*4093*/
       kk_unit_unbox(_x_x225); return kk_Unit;
     }
     {
@@ -790,7 +790,7 @@ kk_std_core_types__maybe kk_std_num_int32_range_fs__lift_for_while32_2292(kk_fun
     x_0_10084 = kk_function_call(kk_std_core_types__maybe, (kk_function_t, int32_t, kk_context_t*), _x_x228, (_x_x228, i_0, _ctx), _ctx); /*maybe<2173>*/
     if (kk_yielding(kk_context())) {
       kk_std_core_types__maybe_drop(x_0_10084, _ctx);
-      kk_box_t _x_x229 = kk_std_core_hnd_yield_extend(kk_std_num_int32_range_fs__new_lift_for_while32_2292_fun230(action_0, end_0, i_0, _ctx), _ctx); /*2978*/
+      kk_box_t _x_x229 = kk_std_core_hnd_yield_extend(kk_std_num_int32_range_fs__new_lift_for_while32_2292_fun230(action_0, end_0, i_0, _ctx), _ctx); /*4175*/
       return kk_std_core_types__maybe_unbox(_x_x229, KK_OWNED, _ctx);
     }
     if (kk_std_core_types__is_Nothing(x_0_10084, _ctx)) {

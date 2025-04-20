@@ -282,12 +282,12 @@ int32_t kk_std_num_random__mlift_pseudo_random_10044(kk_ref_t s, kk_std_num_rand
     kk_std_num_random__sfc _x = sfc.rstate;
     _x_x219 = _x; /*std/num/random/sfc*/
   }
-  _x_x218 = kk_std_num_random__sfc_box(_x_x219, _ctx); /*2060*/
+  _x_x218 = kk_std_num_random__sfc_box(_x_x219, _ctx); /*1000*/
   kk_ref_set_borrow(s,_x_x218,kk_context());
   kk_ref_drop(s, _ctx);
   _brw_x164;
   if (kk_yielding(kk_context())) {
-    kk_box_t _x_x220 = kk_std_core_hnd_yield_extend(kk_std_num_random__new_mlift_pseudo_random_10044_fun221(sfc, _ctx), _ctx); /*2978*/
+    kk_box_t _x_x220 = kk_std_core_hnd_yield_extend(kk_std_num_random__new_mlift_pseudo_random_10044_fun221(sfc, _ctx), _ctx); /*3003*/
     return kk_int32_unbox(_x_x220, KK_OWNED, _ctx);
   }
   {
@@ -351,11 +351,11 @@ static kk_box_t kk_std_num_random_pseudo_random_fun226(kk_function_t _fself, kk_
   kk_std_num_random__sfc x_10060;
   kk_box_t _x_x227;
   kk_ref_t _x_x228 = kk_ref_dup(loc, _ctx); /*local-var<798,std/num/random/sfc>*/
-  _x_x227 = kk_ref_get(_x_x228,kk_context()); /*2074*/
+  _x_x227 = kk_ref_get(_x_x228,kk_context()); /*1000*/
   x_10060 = kk_std_num_random__sfc_unbox(_x_x227, KK_OWNED, _ctx); /*std/num/random/sfc*/
   int32_t _x_x229;
   if (kk_yielding(kk_context())) {
-    kk_box_t _x_x230 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_pseudo_random_fun231(loc, _ctx), _ctx); /*2978*/
+    kk_box_t _x_x230 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_pseudo_random_fun231(loc, _ctx), _ctx); /*3003*/
     _x_x229 = kk_int32_unbox(_x_x230, KK_OWNED, _ctx); /*int32*/
   }
   else {
@@ -388,8 +388,8 @@ kk_box_t kk_std_num_random_pseudo_random(kk_integer_t seed, kk_function_t action
   kk_std_core_hnd__clause0 _x_x224;
   kk_function_t _x_x225;
   kk_ref_dup(loc, _ctx);
-  _x_x225 = kk_std_num_random_new_pseudo_random_fun226(loc, _ctx); /*() -> 6231 6234*/
-  _x_x224 = kk_std_core_hnd_clause_tail0(_x_x225, _ctx); /*hnd/clause0<6234,6233,6231,6232>*/
+  _x_x225 = kk_std_num_random_new_pseudo_random_fun226(loc, _ctx); /*() -> 1000 1003*/
+  _x_x224 = kk_std_core_hnd_clause_tail0(_x_x225, _ctx); /*hnd/clause0<1003,1002,1000,1001>*/
   _x_x223 = kk_std_num_random__new_Hnd_random(kk_reuse_null, 0, kk_integer_from_small(1), _x_x224, _ctx); /*std/num/random/random<5,6>*/
   res = kk_std_num_random__handle_random(_x_x223, kk_std_num_random_new_pseudo_random_fun234(_ctx), action, _ctx); /*804*/
   return kk_std_core_hnd_prompt_local_var(loc, res, _ctx);
@@ -440,13 +440,13 @@ bool kk_std_num_random_random_bool(kk_context_t* _ctx) { /* () -> random bool */
       }
       {
         kk_function_t _fun_unbox_x65 = _fun_random_int32.clause;
-        _x_x235 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x65, (_fun_unbox_x65, m, ev_10066, _ctx), _ctx); /*35*/
+        _x_x235 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x65, (_fun_unbox_x65, m, ev_10066, _ctx), _ctx); /*1005*/
       }
     }
   }
   x_10063 = kk_int32_unbox(_x_x235, KK_OWNED, _ctx); /*int32*/
   if (kk_yielding(kk_context())) {
-    kk_box_t _x_x238 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_random_bool_fun239(_ctx), _ctx); /*2978*/
+    kk_box_t _x_x238 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_random_bool_fun239(_ctx), _ctx); /*3003*/
     return kk_bool_unbox(_x_x238);
   }
   {
@@ -499,13 +499,13 @@ kk_integer_t kk_std_num_random_random_int(kk_context_t* _ctx) { /* () -> random 
       }
       {
         kk_function_t _fun_unbox_x74 = _fun_random_int32.clause;
-        _x_x242 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x74, (_fun_unbox_x74, m, ev_10071, _ctx), _ctx); /*35*/
+        _x_x242 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x74, (_fun_unbox_x74, m, ev_10071, _ctx), _ctx); /*1005*/
       }
     }
   }
   x_10068 = kk_int32_unbox(_x_x242, KK_OWNED, _ctx); /*int32*/
   if (kk_yielding(kk_context())) {
-    kk_box_t _x_x245 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_random_int_fun246(_ctx), _ctx); /*2978*/
+    kk_box_t _x_x245 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_random_int_fun246(_ctx), _ctx); /*3003*/
     return kk_integer_unbox(_x_x245, _ctx);
   }
   {
@@ -562,13 +562,13 @@ int64_t kk_std_num_random__mlift_random_int64_10048(int32_t _y_x10031, kk_contex
       }
       {
         kk_function_t _fun_unbox_x83 = _fun_random_int32.clause;
-        _x_x249 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x83, (_fun_unbox_x83, m, ev_10075, _ctx), _ctx); /*35*/
+        _x_x249 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x83, (_fun_unbox_x83, m, ev_10075, _ctx), _ctx); /*1005*/
       }
     }
   }
   x_10073 = kk_int32_unbox(_x_x249, KK_OWNED, _ctx); /*int32*/
   if (kk_yielding(kk_context())) {
-    kk_box_t _x_x252 = kk_std_core_hnd_yield_extend(kk_std_num_random__new_mlift_random_int64_10048_fun253(_y_x10031, _ctx), _ctx); /*2978*/
+    kk_box_t _x_x252 = kk_std_core_hnd_yield_extend(kk_std_num_random__new_mlift_random_int64_10048_fun253(_y_x10031, _ctx), _ctx); /*3003*/
     return kk_int64_unbox(_x_x252, KK_OWNED, _ctx);
   }
   {
@@ -642,13 +642,13 @@ int64_t kk_std_num_random_random_int64(kk_context_t* _ctx) { /* () -> random int
       }
       {
         kk_function_t _fun_unbox_x93 = _fun_random_int32.clause;
-        _x_x255 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x93, (_fun_unbox_x93, m, ev_10082, _ctx), _ctx); /*35*/
+        _x_x255 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x93, (_fun_unbox_x93, m, ev_10082, _ctx), _ctx); /*1005*/
       }
     }
   }
   x_10079 = kk_int32_unbox(_x_x255, KK_OWNED, _ctx); /*int32*/
   if (kk_yielding(kk_context())) {
-    kk_box_t _x_x258 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_random_int64_fun259(_ctx), _ctx); /*2978*/
+    kk_box_t _x_x258 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_random_int64_fun259(_ctx), _ctx); /*3003*/
     return kk_int64_unbox(_x_x258, KK_OWNED, _ctx);
   }
   {
@@ -675,13 +675,13 @@ int64_t kk_std_num_random_random_int64(kk_context_t* _ctx) { /* () -> random int
         }
         {
           kk_function_t _fun_unbox_x101 = _fun_random_int32_0.clause;
-          _x_x262 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x101, (_fun_unbox_x101, m_0, ev_0_10087, _ctx), _ctx); /*35*/
+          _x_x262 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x101, (_fun_unbox_x101, m_0, ev_0_10087, _ctx), _ctx); /*1005*/
         }
       }
     }
     x_0_10084 = kk_int32_unbox(_x_x262, KK_OWNED, _ctx); /*int32*/
     if (kk_yielding(kk_context())) {
-      kk_box_t _x_x265 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_random_int64_fun266(x_10079, _ctx), _ctx); /*2978*/
+      kk_box_t _x_x265 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_random_int64_fun266(x_10079, _ctx), _ctx); /*3003*/
       return kk_int64_unbox(_x_x265, KK_OWNED, _ctx);
     }
     {
@@ -755,14 +755,14 @@ static kk_box_t kk_std_num_random__mlift_random_float64_10049_fun282(kk_function
 double kk_std_num_random__mlift_random_float64_10049(int64_t _y_x10033, kk_context_t* _ctx) { /* (int64) -> random float64 */ 
   int64_t mag;
   int64_t _x_x268;
-  kk_box_t _x_x269 = kk_std_core_hnd__open_none2(kk_std_num_random__new_mlift_random_float64_10049_fun270(_ctx), kk_int64_box(_y_x10033, _ctx), kk_integer_box(kk_integer_from_small(12), _ctx), _ctx); /*8647*/
+  kk_box_t _x_x269 = kk_std_core_hnd__open_none2(kk_std_num_random__new_mlift_random_float64_10049_fun270(_ctx), kk_int64_box(_y_x10033, _ctx), kk_integer_box(kk_integer_from_small(12), _ctx), _ctx); /*1002*/
   _x_x268 = kk_int64_unbox(_x_x269, KK_OWNED, _ctx); /*int64*/
   int64_t _x_x275;
-  kk_box_t _x_x276 = kk_std_core_hnd__open_none1(kk_std_num_random__new_mlift_random_float64_10049_fun277(_ctx), kk_integer_box(kk_integer_from_str("4607182418800017408", _ctx), _ctx), _ctx); /*8580*/
+  kk_box_t _x_x276 = kk_std_core_hnd__open_none1(kk_std_num_random__new_mlift_random_float64_10049_fun277(_ctx), kk_integer_box(kk_integer_from_str("4607182418800017408", _ctx), _ctx), _ctx); /*1001*/
   _x_x275 = kk_int64_unbox(_x_x276, KK_OWNED, _ctx); /*int64*/
   mag = _x_x268 | _x_x275; /*int64*/
   double _x_x280;
-  kk_box_t _x_x281 = kk_std_core_hnd__open_none1(kk_std_num_random__new_mlift_random_float64_10049_fun282(_ctx), kk_int64_box(mag, _ctx), _ctx); /*8580*/
+  kk_box_t _x_x281 = kk_std_core_hnd__open_none1(kk_std_num_random__new_mlift_random_float64_10049_fun282(_ctx), kk_int64_box(mag, _ctx), _ctx); /*1001*/
   _x_x280 = kk_double_unbox(_x_x281, KK_OWNED, _ctx); /*float64*/
   return (_x_x280 - 0x1p0);
 }
@@ -851,20 +851,20 @@ static kk_box_t kk_std_num_random_random_float64_fun303(kk_function_t _fself, kk
 double kk_std_num_random_random_float64(kk_context_t* _ctx) { /* () -> random float64 */ 
   int64_t x_10091 = kk_std_num_random_random_int64(_ctx); /*int64*/;
   if (kk_yielding(kk_context())) {
-    kk_box_t _x_x285 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_random_float64_fun286(_ctx), _ctx); /*2978*/
+    kk_box_t _x_x285 = kk_std_core_hnd_yield_extend(kk_std_num_random_new_random_float64_fun286(_ctx), _ctx); /*3003*/
     return kk_double_unbox(_x_x285, KK_OWNED, _ctx);
   }
   {
     int64_t mag;
     int64_t _x_x289;
-    kk_box_t _x_x290 = kk_std_core_hnd__open_none2(kk_std_num_random_new_random_float64_fun291(_ctx), kk_int64_box(x_10091, _ctx), kk_integer_box(kk_integer_from_small(12), _ctx), _ctx); /*8647*/
+    kk_box_t _x_x290 = kk_std_core_hnd__open_none2(kk_std_num_random_new_random_float64_fun291(_ctx), kk_int64_box(x_10091, _ctx), kk_integer_box(kk_integer_from_small(12), _ctx), _ctx); /*1002*/
     _x_x289 = kk_int64_unbox(_x_x290, KK_OWNED, _ctx); /*int64*/
     int64_t _x_x296;
-    kk_box_t _x_x297 = kk_std_core_hnd__open_none1(kk_std_num_random_new_random_float64_fun298(_ctx), kk_integer_box(kk_integer_from_str("4607182418800017408", _ctx), _ctx), _ctx); /*8580*/
+    kk_box_t _x_x297 = kk_std_core_hnd__open_none1(kk_std_num_random_new_random_float64_fun298(_ctx), kk_integer_box(kk_integer_from_str("4607182418800017408", _ctx), _ctx), _ctx); /*1001*/
     _x_x296 = kk_int64_unbox(_x_x297, KK_OWNED, _ctx); /*int64*/
     mag = _x_x289 | _x_x296; /*int64*/
     double _x_x301;
-    kk_box_t _x_x302 = kk_std_core_hnd__open_none1(kk_std_num_random_new_random_float64_fun303(_ctx), kk_int64_box(mag, _ctx), _ctx); /*8580*/
+    kk_box_t _x_x302 = kk_std_core_hnd__open_none1(kk_std_num_random_new_random_float64_fun303(_ctx), kk_int64_box(mag, _ctx), _ctx); /*1001*/
     _x_x301 = kk_double_unbox(_x_x302, KK_OWNED, _ctx); /*float64*/
     return (_x_x301 - 0x1p0);
   }

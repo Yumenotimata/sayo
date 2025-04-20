@@ -43,11 +43,11 @@ local alias std/core/pure[52,1,52,26] :: E = <(std/core/types/handled :: ((E, V)
 //------------------------------
 //#kki: type declarations
  
-pub alias cont[38,1,38,50]<a> :: V -> V = (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/console/console :: X)> a = 1;
+pub alias cont[38,1,38,41]<a> :: V -> V = (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> a = 1;
 pub recursive rec type value[18,1,22,13] {
   pub con Int[19,3,19,5](x: std/core/types/int){0,1,8} : (x : std/core/types/int) -> value;
   pub con FnVal[20,3,20,7](x: std/core/types/string, body: expr, env: (std/core/types/list :: V -> V)<(std/core/types/string, value)>){0,3,8} : (x : std/core/types/string, body : expr, env : (std/core/types/list :: V -> V)<(std/core/types/string, value)>) -> value;
-  pub con Cont[21,3,21,6](c: ((cont :: V -> V)<value> == 1 (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/console/console :: X)> value)){0,1,8} : (c : ((cont :: V -> V)<value> == 1 (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/console/console :: X)> value)) -> value;
+  pub con Cont[21,3,21,6](c: ((cont :: V -> V)<value> == 1 (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value)){0,1,8} : (c : ((cont :: V -> V)<value> == 1 (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value)) -> value;
   pub con Exception[22,3,22,11]{0,0,0} : value;
 };
 pub recursive type expr[9,1,16,16] {
@@ -91,11 +91,11 @@ pub  fun eq[31,9,31,10] : (v1 : value, v2 : value) -> std/core/types/bool;
  fun (==)[87,5,87,8] : (e1 : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>, e2 : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>) -> std/core/types/bool;
 pub  fun extend[40,9,40,14] : (prev : env, new : (std/core/types/string, value)) -> env;
 // monadic lift
- fun @mlift-eval@10035'[1,0,1,0] : (c@0 : (cont :: V -> V)<value>, i : std/core/types/string, @y-x10009 : (std/core/types/maybe :: V -> V)<(std/core/types/string, value)>) -> <(std/core/console/console :: X),(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value;
-pub  fun apply[75,9,75,13] : (f : value, arg : value, c : (cont :: V -> V)<value>) -> <(std/core/pure :: E),(std/core/console/console :: X)> value;
-pub  fun eval'[46,9,46,13] : (e : expr, env : env, c : (cont :: V -> V)<value>) -> <(std/core/pure :: E),(std/core/console/console :: X)> value;
-pub  fun eval[43,9,43,12] : (e : expr) -> <(std/core/pure :: E),(std/core/console/console :: X)> value;
-pub  fun run[84,9,84,11] : (e : expr) -> <(std/core/console/console :: X),(std/core/types/div :: X)> (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>;
+ fun @mlift-eval@10035'[1,0,1,0] : (c@0 : (cont :: V -> V)<value>, i : std/core/types/string, @y-x10009 : (std/core/types/maybe :: V -> V)<(std/core/types/string, value)>) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value;
+pub  fun apply[75,9,75,13] : (f : value, arg : value, c : (cont :: V -> V)<value>) -> <(std/core/pure :: E)> value;
+pub  fun eval'[46,9,46,13] : (e : expr, env : env, c : (cont :: V -> V)<value>) -> <(std/core/pure :: E)> value;
+pub  fun eval[43,9,43,12] : (e : expr) -> <(std/core/pure :: E)> value;
+pub  fun run[84,9,84,11] : (e : expr) -> <(std/core/types/div :: X)> (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>;
  
 //------------------------------
 //#kki: external declarations
@@ -234,8 +234,8 @@ inline borrow "^" fip fun is-shift // inline size: 1
     std/core/list/append<(std/core/types/string, value)>(prev, (std/core/types/Cons<(std/core/types/string, value)>(new, (std/core/types/Nil<(std/core/types/string, value)>))));
   };
  fun eval // inline size: 1
-  = fn<<(std/core/console/console :: X),(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(e: expr){
-    interpret/eval'(e, (std/core/types/Nil<(std/core/types/string, value)>), (fn<<(std/core/pure :: E),(std/core/console/console :: X)>>(x: value){
+  = fn<<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(e: expr){
+    interpret/eval'(e, (std/core/types/Nil<(std/core/types/string, value)>), (fn<<(std/core/pure :: E)>>(x: value){
         x;
       }));
   };

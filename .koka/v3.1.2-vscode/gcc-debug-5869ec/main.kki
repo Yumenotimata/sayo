@@ -37,6 +37,8 @@ import etest = etest = "";
 //------------------------------
 //#kki: local imported aliases
  
+// An alias for pure effects: a pure function always returns the same result
+// when called with the same arguments but may not terminate or raise an exception.
 local alias std/core/pure[52,1,52,26] :: E = <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/div :: X)> = 1;
  
 //------------------------------
@@ -47,7 +49,7 @@ local alias std/core/pure[52,1,52,26] :: E = <(std/core/types/handled :: ((E, V)
 //#kki: declarations
  
 // monadic lift
- fun @mlift-main@10005[1,0,1,0] : (ret : interpret/value) -> <(std/core/pure :: E),(std/core/console/console :: X)> ();
+ fun @mlift-main@10008[1,0,1,0] : (ret : interpret/value) -> <(std/core/pure :: E)> ();
 pub  fun main[8,5,8,8] : () -> <(std/core/console/console :: X),(std/core/types/div :: X)> ();
  
 //------------------------------

@@ -14,13 +14,13 @@ pub effect test-suite<e>
 pub type test-failure<e, a>
   TestFailure { expected : e; actual : a; msg : string }
 
-pub fun assert-eq(expected : a, actual : a, ?(==) : (a, a) -> bool, ?show : a -> string) : <test<e>> ()
-  if expected != actual then
-    test-fail(expected.show(), actual.show())
+pub fun assert-eq(expected : () -> <div> a, actual : () -> <div> a, ?(==) : (a, a) -> bool, ?show : a -> string) : <div, test<e>> ()
+  if expected() != actual() then
+    test-fail(expected().show(), actual().show())
   else
     ()
 
-pub fun assert-eq-eff(expected: () -> <test<e>> a, actual: () -> <test<e>> a, ?(==): (a, a) -> bool, ?show: a -> string): <test<e>> ()
+pub fun assert-eq-eff(expected: () -> <div, test<e>> a, actual: () -> <div, test<e>> a, ?(==): (a, a) -> bool, ?show: a -> string): <div, test<e>> ()
   val expected' = expected()
   val actual' = actual()
   if expected' != actual' then
@@ -28,17 +28,17 @@ pub fun assert-eq-eff(expected: () -> <test<e>> a, actual: () -> <test<e>> a, ?(
   else
     return ()
 
-pub fun test(test-name : string, tests : () -> <test<e>> ()) : <test-case<e>> ()
+pub fun test(test-name : string, tests : () -> <div, test<e>> ()) : <div, test-case<e>> ()
   handle tests
     fun test-fail(expected, actual)
       test-case-fail(expected, actual)
 
-pub fun suite(suite-name : string, test-cases : () -> <test-case<e>> ()) : <test-suite<e>> ()
+pub fun suite(suite-name : string, test-cases : () -> <div, test-case<e>> ()) : <div, test-suite<e>> ()
   handle test-cases
     fun test-case-fail(expected, actual)
       test-suite-fail(suite-name, expected, actual)
 
-pub fun run-utest(test-suites : () -> <test-suite<e>> ()) 
+pub fun run-utest(test-suites : () -> <div, test-suite<e>> ()): <div, console> ()
   var failures := []
   handle test-suites
     fun test-suite-fail(suite-name, expected, actual)

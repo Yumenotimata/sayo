@@ -405,11 +405,11 @@ static inline kk_std_core_types__list kk_interpret_extend(kk_std_core_types__lis
   return kk_std_core_list_append(prev, _x_x124, _ctx);
 }
 
-kk_interpret__value kk_interpret__mlift_eval_10035_sq_(kk_function_t c_0, kk_string_t i, kk_std_core_types__maybe _y_x10009, kk_context_t* _ctx); /* (c@0 : cont<value>, i : string, maybe<(string, value)>) -> <console/console,div,exn> value */ 
+kk_interpret__value kk_interpret__mlift_eval_10035_sq_(kk_function_t c_0, kk_string_t i, kk_std_core_types__maybe _y_x10009, kk_context_t* _ctx); /* (c@0 : cont<value>, i : string, maybe<(string, value)>) -> <div,exn> value */ 
 
-kk_interpret__value kk_interpret_apply(kk_interpret__value f, kk_interpret__value arg, kk_function_t c, kk_context_t* _ctx); /* (f : value, arg : value, c : cont<value>) -> <pure,console/console> value */ 
+kk_interpret__value kk_interpret_apply(kk_interpret__value f, kk_interpret__value arg, kk_function_t c, kk_context_t* _ctx); /* (f : value, arg : value, c : cont<value>) -> pure value */ 
 
-kk_interpret__value kk_interpret_eval_sq_(kk_interpret__expr e, kk_std_core_types__list env_0, kk_function_t c_0_0, kk_context_t* _ctx); /* (e : expr, env : env, c : cont<value>) -> <pure,console/console> value */ 
+kk_interpret__value kk_interpret_eval_sq_(kk_interpret__expr e, kk_std_core_types__list env_0, kk_function_t c_0_0, kk_context_t* _ctx); /* (e : expr, env : env, c : cont<value>) -> pure value */ 
 
 
 // lift anonymous function
@@ -423,11 +423,11 @@ static inline kk_function_t kk_interpret_new_eval_fun184(kk_context_t* _ctx) {
 }
 
 
-static inline kk_interpret__value kk_interpret_eval(kk_interpret__expr e, kk_context_t* _ctx) { /* (e : expr) -> <pure,console/console> value */ 
+static inline kk_interpret__value kk_interpret_eval(kk_interpret__expr e, kk_context_t* _ctx) { /* (e : expr) -> pure value */ 
   return kk_interpret_eval_sq_(e, kk_std_core_types__new_Nil(_ctx), kk_interpret_new_eval_fun184(_ctx), _ctx);
 }
 
-kk_std_core_types__either kk_interpret_run(kk_interpret__expr e, kk_context_t* _ctx); /* (e : expr) -> <console/console,div> either<exception,value> */ 
+kk_std_core_types__either kk_interpret_run(kk_interpret__expr e, kk_context_t* _ctx); /* (e : expr) -> div either<exception,value> */ 
 
 void kk_interpret__init(kk_context_t* _ctx);
 
