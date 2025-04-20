@@ -28,9 +28,13 @@
 
 // value declarations
 
-kk_unit_t kk_main__main__expr(kk_context_t* _ctx); /* () -> console/console () */ 
+static inline kk_unit_t kk_main__main__expr(kk_context_t* _ctx) { /* () -> <console/console,div> () */ 
+  kk_main_main(_ctx); return kk_Unit;
+}
 
-kk_unit_t kk_main__main__main(kk_context_t* _ctx); /* () -> <st<global>,console/console,div,fsys,ndet,net,ui> () */ 
+static inline kk_unit_t kk_main__main__main(kk_context_t* _ctx) { /* () -> <st<global>,console/console,div,fsys,ndet,net,ui> () */ 
+  kk_main_main(_ctx); return kk_Unit;
+}
 
 void kk_main__main__init(kk_context_t* _ctx);
 

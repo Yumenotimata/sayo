@@ -45,7 +45,7 @@ local alias std/core/types/st[139,1,139,47]<(h :: H)> :: H -> E = <(std/core/typ
 //------------------------------
 //#kki: declarations
  
-pub  fun @expr[2,9,2,13] : () -> <(std/core/console/console :: X)> ();
+pub  fun @expr[2,9,2,13] : () -> <(std/core/console/console :: X),(std/core/types/div :: X)> ();
 pub  fun @main[3,9,3,13] : () -> <(std/core/types/st :: H -> E)<(std/core/types/global :: H)>,(std/core/console/console :: X),(std/core/types/div :: X),(std/core/fsys :: X),(std/core/types/ndet :: X),(std/core/net :: X),(std/core/ui :: X)> ();
  
 //------------------------------
@@ -55,3 +55,12 @@ pub  fun @main[3,9,3,13] : () -> <(std/core/types/st :: H -> E)<(std/core/types/
 //------------------------------
 //#kki: inline definitions
  
+//.inline-section
+ fun @expr // inline size: 1
+  = fn<<(std/core/console/console :: X),(std/core/types/div :: X)>>(){
+    main/main();
+  };
+ fun @main // inline size: 1
+  = fn<(std/core/io-noexn :: E)>(){
+    main/main();
+  };

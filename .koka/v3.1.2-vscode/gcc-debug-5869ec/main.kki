@@ -23,6 +23,8 @@ import std/core/delayed = std/core/delayed pub = "";
 import std/core/console = std/core/console pub = "";
 import std/core = std/core = "";
 import utest = utest = "";
+import interpret = interpret = "";
+import etest = etest = "";
  
 //------------------------------
 //#kki: external imports
@@ -35,6 +37,7 @@ import utest = utest = "";
 //------------------------------
 //#kki: local imported aliases
  
+local alias std/core/pure[52,1,52,26] :: E = <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/div :: X)> = 1;
  
 //------------------------------
 //#kki: type declarations
@@ -43,7 +46,9 @@ import utest = utest = "";
 //------------------------------
 //#kki: declarations
  
-pub  fun main[3,5,3,8] : () -> <(std/core/console/console :: X)> (std/core/types/list :: V -> V)<()>;
+// monadic lift
+ fun @mlift-main@10005[1,0,1,0] : (ret : interpret/value) -> <(std/core/pure :: E),(std/core/console/console :: X)> ();
+pub  fun main[8,5,8,8] : () -> <(std/core/console/console :: X),(std/core/types/div :: X)> ();
  
 //------------------------------
 //#kki: external declarations
@@ -52,14 +57,3 @@ pub  fun main[3,5,3,8] : () -> <(std/core/console/console :: X)> (std/core/types
 //------------------------------
 //#kki: inline definitions
  
-//.inline-section
- fun main // inline size: 4
-  = fn<<(std/core/console/console :: X)>>(){
-    utest/run-test((fn<<(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (E, V) -> V)>>>(){
-      (utest/suite("", (fn<<(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-case :: (E, V) -> V)>>>(){
-          (utest/test("", (fn<<(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test :: (E, V) -> V)>>>(){
-              (utest/assert-eq<std/core/types/string>("ab", "b", std/core/string/(==), std/core/show/#string/show));
-            })));
-        })));
-    }));
-  };
