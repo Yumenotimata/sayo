@@ -1,6 +1,106 @@
 // Koka generated module: main/@main, koka version: 3.1.2, platform: 64-bit
 #include "main__main.h"
 
+
+// lift anonymous function
+struct kk_main__main__expr_fun15__t {
+  struct kk_function_s _base;
+};
+static kk_box_t kk_main__main__expr_fun15(kk_function_t _fself, kk_box_t _b_x2, kk_context_t* _ctx);
+static kk_function_t kk_main__main__new_expr_fun15(kk_context_t* _ctx) {
+  kk_define_static_function(_fself, kk_main__main__expr_fun15, _ctx)
+  return kk_function_dup(_fself,kk_context());
+}
+
+
+
+// lift anonymous function
+struct kk_main__main__expr_fun17__t {
+  struct kk_function_s _base;
+  kk_box_t _b_x2;
+};
+static kk_unit_t kk_main__main__expr_fun17(kk_function_t _fself, kk_context_t* _ctx);
+static kk_function_t kk_main__main__new_expr_fun17(kk_box_t _b_x2, kk_context_t* _ctx) {
+  struct kk_main__main__expr_fun17__t* _self = kk_function_alloc_as(struct kk_main__main__expr_fun17__t, 2, _ctx);
+  _self->_base.fun = kk_kkfun_ptr_box(&kk_main__main__expr_fun17, kk_context());
+  _self->_b_x2 = _b_x2;
+  return kk_datatype_from_base(&_self->_base, kk_context());
+}
+
+static kk_unit_t kk_main__main__expr_fun17(kk_function_t _fself, kk_context_t* _ctx) {
+  struct kk_main__main__expr_fun17__t* _self = kk_function_as(struct kk_main__main__expr_fun17__t*, _fself, _ctx);
+  kk_box_t _b_x2 = _self->_b_x2; /* 1001 */
+  kk_drop_match(_self, {kk_box_dup(_b_x2, _ctx);}, {}, _ctx)
+  kk_box_t _x_x18;
+  kk_function_t _x_x19 = kk_function_unbox(_b_x2, _ctx); /*() -> <div,utest/test-suite<_56>> 3*/
+  _x_x18 = kk_function_call(kk_box_t, (kk_function_t, kk_context_t*), _x_x19, (_x_x19, _ctx), _ctx); /*3*/
+  kk_unit_unbox(_x_x18); return kk_Unit;
+}
+static kk_box_t kk_main__main__expr_fun15(kk_function_t _fself, kk_box_t _b_x2, kk_context_t* _ctx) {
+  kk_unused(_fself);
+  kk_unit_t _x_x16 = kk_Unit;
+  kk_utest_run_utest(kk_main__main__new_expr_fun17(_b_x2, _ctx), _ctx);
+  return kk_unit_box(_x_x16);
+}
+
+kk_unit_t kk_main__main__expr(kk_context_t* _ctx) { /* () -> <console/console,div> () */ 
+  kk_std_core_types__list __;
+  kk_std_core_types__list _x_x14 = kk_std_core_types__list_dup(kk_main_tests, _ctx); /*forall<a,e> list<() -> <div,utest/test-suite<a>|e> ()>*/
+  __ = kk_std_core_list_map(_x_x14, kk_main__main__new_expr_fun15(_ctx), _ctx); /*list<()>*/
+  kk_std_core_types__list_drop(__, _ctx);
+  kk_Unit; return kk_Unit;
+}
+
+
+// lift anonymous function
+struct kk_main__main__main_fun21__t {
+  struct kk_function_s _base;
+};
+static kk_box_t kk_main__main__main_fun21(kk_function_t _fself, kk_box_t _b_x9, kk_context_t* _ctx);
+static kk_function_t kk_main__main__new_main_fun21(kk_context_t* _ctx) {
+  kk_define_static_function(_fself, kk_main__main__main_fun21, _ctx)
+  return kk_function_dup(_fself,kk_context());
+}
+
+
+
+// lift anonymous function
+struct kk_main__main__main_fun23__t {
+  struct kk_function_s _base;
+  kk_box_t _b_x9;
+};
+static kk_unit_t kk_main__main__main_fun23(kk_function_t _fself, kk_context_t* _ctx);
+static kk_function_t kk_main__main__new_main_fun23(kk_box_t _b_x9, kk_context_t* _ctx) {
+  struct kk_main__main__main_fun23__t* _self = kk_function_alloc_as(struct kk_main__main__main_fun23__t, 2, _ctx);
+  _self->_base.fun = kk_kkfun_ptr_box(&kk_main__main__main_fun23, kk_context());
+  _self->_b_x9 = _b_x9;
+  return kk_datatype_from_base(&_self->_base, kk_context());
+}
+
+static kk_unit_t kk_main__main__main_fun23(kk_function_t _fself, kk_context_t* _ctx) {
+  struct kk_main__main__main_fun23__t* _self = kk_function_as(struct kk_main__main__main_fun23__t*, _fself, _ctx);
+  kk_box_t _b_x9 = _self->_b_x9; /* 1001 */
+  kk_drop_match(_self, {kk_box_dup(_b_x9, _ctx);}, {}, _ctx)
+  kk_box_t _x_x24;
+  kk_function_t _x_x25 = kk_function_unbox(_b_x9, _ctx); /*() -> <div,utest/test-suite<_56>> 10*/
+  _x_x24 = kk_function_call(kk_box_t, (kk_function_t, kk_context_t*), _x_x25, (_x_x25, _ctx), _ctx); /*10*/
+  kk_unit_unbox(_x_x24); return kk_Unit;
+}
+static kk_box_t kk_main__main__main_fun21(kk_function_t _fself, kk_box_t _b_x9, kk_context_t* _ctx) {
+  kk_unused(_fself);
+  kk_unit_t _x_x22 = kk_Unit;
+  kk_utest_run_utest(kk_main__main__new_main_fun23(_b_x9, _ctx), _ctx);
+  return kk_unit_box(_x_x22);
+}
+
+kk_unit_t kk_main__main__main(kk_context_t* _ctx) { /* () -> <st<global>,console/console,div,fsys,ndet,net,ui> () */ 
+  kk_std_core_types__list __;
+  kk_std_core_types__list _x_x20 = kk_std_core_types__list_dup(kk_main_tests, _ctx); /*forall<a,e> list<() -> <div,utest/test-suite<a>|e> ()>*/
+  __ = kk_std_core_list_map(_x_x20, kk_main__main__new_main_fun21(_ctx), _ctx); /*list<()>*/
+  kk_std_core_types__list_drop(__, _ctx);
+  kk_Unit; return kk_Unit;
+}
+
 // initialization
 void kk_main__main__init(kk_context_t* _ctx){
   static bool _kk_initialized = false;
@@ -26,6 +126,7 @@ void kk_main__main__init(kk_context_t* _ctx){
   kk_std_core_console__init(_ctx);
   kk_std_core__init(_ctx);
   kk_main__init(_ctx);
+  kk_utest__init(_ctx);
   #if defined(KK_CUSTOM_INIT)
     KK_CUSTOM_INIT (_ctx);
   #endif
@@ -39,6 +140,7 @@ void kk_main__main__done(kk_context_t* _ctx){
   #if defined(KK_CUSTOM_DONE)
     KK_CUSTOM_DONE (_ctx);
   #endif
+  kk_utest__done(_ctx);
   kk_main__done(_ctx);
   kk_std_core__done(_ctx);
   kk_std_core_console__done(_ctx);

@@ -23,6 +23,7 @@ import std/core/delayed = std/core/delayed pub = "";
 import std/core/console = std/core/console pub = "";
 import std/core = std/core = "";
 import main = main = "";
+import utest = utest inline = "";
  
 //------------------------------
 //#kki: external imports
@@ -56,11 +57,19 @@ pub  fun @main[3,9,3,13] : () -> <(std/core/types/st :: H -> E)<(std/core/types/
 //#kki: inline definitions
  
 //.inline-section
- fun @expr // inline size: 1
+ fun @expr // inline size: 2
   = fn<<(std/core/console/console :: X),(std/core/types/div :: X)>>(){
-    main/main();
+    val _[10,3,10,11] : (std/core/types/list :: V -> V)<()>
+          = std/core/list/map<() -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<_a>>> (),(),<(std/core/console/console :: X),(std/core/types/div :: X)>>((main/tests<_a,(std/core/types/total :: E)>), (fn<<(std/core/console/console :: X),(std/core/types/div :: X)>>(test: () -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<_56>>> ()){
+              (utest/run-utest<_a>(test));
+            }));
+    std/core/types/Unit;
   };
- fun @main // inline size: 1
+ fun @main // inline size: 2
   = fn<(std/core/io-noexn :: E)>(){
-    main/main();
+    val _[10,3,10,11] : (std/core/types/list :: V -> V)<()>
+          = std/core/list/map<() -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<_a>>> (),(),<(std/core/console/console :: X),(std/core/types/div :: X)>>((main/tests<_a,(std/core/types/total :: E)>), (fn<<(std/core/console/console :: X),(std/core/types/div :: X)>>(test: () -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<_56>>> ()){
+              (utest/run-utest<_a>(test));
+            }));
+    std/core/types/Unit;
   };

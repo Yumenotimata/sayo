@@ -223,7 +223,7 @@ kk_std_core_types__maybe kk_std_core_sslice_pred_fs__mlift_count_10122(kk_ref_t 
 
 static inline kk_integer_t kk_std_core_sslice_pred_fs__mlift_count_10123(kk_ref_t cnt, kk_std_core_types__maybe wild___0, kk_context_t* _ctx) { /* forall<_a,h,e> (cnt : local-var<h,int>, wild_@0 : maybe<_a>) -> <local<h>|e> int */ 
   kk_std_core_types__maybe_drop(wild___0, _ctx);
-  kk_box_t _x_x230 = kk_ref_get(cnt,kk_context()); /*1927*/
+  kk_box_t _x_x230 = kk_ref_get(cnt,kk_context()); /*1000*/
   return kk_integer_unbox(_x_x230, _ctx);
 }
 

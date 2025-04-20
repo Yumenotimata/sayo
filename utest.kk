@@ -14,19 +14,11 @@ pub effect test-suite<e>
 pub type test-failure<e, a>
   TestFailure { expected : e; actual : a; msg : string }
 
-pub fun assert-eq(expected : () -> <div> a, actual : () -> <div> a, ?(==) : (a, a) -> bool, ?show : a -> string) : <div, test<e>> ()
+pub fun assert-eq(actual : () -> <div> a, expected : () -> <div> a, ?(==) : (a, a) -> bool, ?show : a -> string) : <div, test<e>> ()
   if expected() != actual() then
     test-fail(expected().show(), actual().show())
   else
     ()
-
-pub fun assert-eq-eff(expected: () -> <div, test<e>> a, actual: () -> <div, test<e>> a, ?(==): (a, a) -> bool, ?show: a -> string): <div, test<e>> ()
-  val expected' = expected()
-  val actual' = actual()
-  if expected' != actual' then
-    test-fail(expected'.show(), actual'.show())
-  else
-    return ()
 
 pub fun test(test-name : string, tests : () -> <div, test<e>> ()) : <div, test-case<e>> ()
   handle tests
@@ -49,8 +41,8 @@ pub fun run-utest(test-suites : () -> <div, test-suite<e>> ()): <div, console> (
   if !failures.is-empty() then
     failures.map(fn((suite-name, expected, actual))
       println("failed at " ++ suite-name.show())
-      println("expected " ++ expected ++ ", but got " ++ actual)
+      println("  expected " ++ expected ++ ", but got " ++ actual)
     )
     return ()
   else
-    println("All Test Has Passed!")
+    println("All tests passed!")

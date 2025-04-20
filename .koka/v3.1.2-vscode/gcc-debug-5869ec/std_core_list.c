@@ -2664,7 +2664,7 @@ kk_string_t kk_std_core_list_join(kk_std_core_types__list xs, kk_context_t* _ctx
     }
   }
   {
-    kk_vector_t _x_x1393 = kk_std_core_vector_unvlist(xs, _ctx); /*vector<3000>*/
+    kk_vector_t _x_x1393 = kk_std_core_vector_unvlist(xs, _ctx); /*vector<832>*/
     return kk_string_join(_x_x1393,kk_context());
   }
 }
@@ -2729,7 +2729,7 @@ kk_string_t kk_std_core_list_joinsep(kk_std_core_types__list xs, kk_string_t sep
     }
   }
   {
-    kk_vector_t _x_x1401 = kk_std_core_vector_unvlist(xs, _ctx); /*vector<3000>*/
+    kk_vector_t _x_x1401 = kk_std_core_vector_unvlist(xs, _ctx); /*vector<832>*/
     return kk_string_join_with(_x_x1401,sep,kk_context());
   }
 }
@@ -2801,7 +2801,7 @@ kk_string_t kk_std_core_list__mlift_show_10298(kk_std_core_types__list _y_x10205
     }
   }
   {
-    kk_vector_t _x_x1415 = kk_std_core_vector_unvlist(_y_x10205, _ctx); /*vector<3000>*/
+    kk_vector_t _x_x1415 = kk_std_core_vector_unvlist(_y_x10205, _ctx); /*vector<832>*/
     kk_string_t _x_x1416;
     kk_define_string_literal(, _s_x1417, 1, ",", _ctx)
     _x_x1416 = kk_string_dup(_s_x1417, _ctx); /*string*/
@@ -2929,7 +2929,7 @@ kk_string_t kk_std_core_list_show(kk_std_core_types__list xs, kk_function_t _imp
       }
     }
     {
-      kk_vector_t _x_x1438 = kk_std_core_vector_unvlist(x_10376, _ctx); /*vector<3000>*/
+      kk_vector_t _x_x1438 = kk_std_core_vector_unvlist(x_10376, _ctx); /*vector<832>*/
       kk_string_t _x_x1439;
       kk_define_string_literal(, _s_x1440, 1, ",", _ctx)
       _x_x1439 = kk_string_dup(_s_x1440, _ctx); /*string*/
@@ -3734,7 +3734,7 @@ kk_string_t kk_std_core_list_reverse_join(kk_std_core_types__list xs, kk_context
     }
   }
   {
-    kk_vector_t _x_x1547 = kk_std_core_vector_unvlist(xs_0_10038, _ctx); /*vector<3000>*/
+    kk_vector_t _x_x1547 = kk_std_core_vector_unvlist(xs_0_10038, _ctx); /*vector<832>*/
     return kk_string_join(_x_x1547,kk_context());
   }
 }
@@ -4544,7 +4544,7 @@ kk_string_t kk_std_core_list_unlines(kk_std_core_types__list xs, kk_context_t* _
     }
   }
   {
-    kk_vector_t _x_x1624 = kk_std_core_vector_unvlist(xs, _ctx); /*vector<3000>*/
+    kk_vector_t _x_x1624 = kk_std_core_vector_unvlist(xs, _ctx); /*vector<832>*/
     kk_string_t _x_x1625;
     kk_define_string_literal(, _s_x1626, 1, "\n", _ctx)
     _x_x1625 = kk_string_dup(_s_x1626, _ctx); /*string*/

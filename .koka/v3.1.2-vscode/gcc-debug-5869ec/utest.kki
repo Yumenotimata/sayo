@@ -112,15 +112,10 @@ pub  fun @handle-test-suite[11,12,11,21] : forall<a,b,(e :: E),c> (hnd : (test-s
 pub  fun @select-test-suite-fail[12,7,12,83] : forall<a,(e :: E),b> (^ hnd : (test-suite :: (V, E, V) -> V)<a,(e :: E),b>) -> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<(std/core/types/string, std/core/types/string, std/core/types/string),(),(test-suite :: (V, E, V) -> V)<a>,(e :: E),b>;
 // Call the `fun test-suite-fail` operation of the effect `:test-suite`
 pub  fun test-suite-fail[12,7,12,21] : forall<a> (suite-name : std/core/types/string, expected : std/core/types/string, actual : std/core/types/string) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-suite :: (V, E, V) -> V)<a>>> ();
-pub  fun assert-eq[17,9,17,17] : forall<a,b> (expected : a, actual : a, ?(==) : (a, a) -> std/core/types/bool, ?show : (a) -> std/core/types/string) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (V, E, V) -> V)<b>>> ();
-// monadic lift
- fun @mlift-assert-eq-eff@10054[1,0,1,0] : forall<_a,b,c> (expected' : b, ?(==) : (b, b) -> std/core/types/bool, ?show : (b) -> std/core/types/string, actual' : b) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (V, E, V) -> V)<c>>> ();
-// monadic lift
- fun @mlift-assert-eq-eff@10055[1,0,1,0] : forall<_a,b,c> (actual : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (V, E, V) -> V)<c>>> b, ?(==) : (b, b) -> std/core/types/bool, ?show : (b) -> std/core/types/string, expected' : b) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (V, E, V) -> V)<c>>> ();
-pub  fun assert-eq-eff[23,9,23,21] : forall<a,b> (expected : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (V, E, V) -> V)<b>>> a, actual : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (V, E, V) -> V)<b>>> a, ?(==) : (a, a) -> std/core/types/bool, ?show : (a) -> std/core/types/string) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (V, E, V) -> V)<b>>> ();
-pub  fun test[31,9,31,12] : forall<a> (test-name : std/core/types/string, tests : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (V, E, V) -> V)<a>>> ()) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (V, E, V) -> V)<a>>> ();
-pub  fun suite[36,9,36,13] : forall<a> (suite-name : std/core/types/string, test-cases : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (V, E, V) -> V)<a>>> ()) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-suite :: (V, E, V) -> V)<a>>> ();
-pub  fun run-utest[41,9,41,17] : forall<a> (test-suites : () -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(test-suite :: (V, E, V) -> V)<a>>> ()) -> <(std/core/console/console :: X)> ();
+pub  fun assert-eq[17,9,17,17] : forall<a,b> (actual : () -> <(std/core/types/div :: X)> a, expected : () -> <(std/core/types/div :: X)> a, ?(==) : (a, a) -> std/core/types/bool, ?show : (a) -> std/core/types/string) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (V, E, V) -> V)<b>>> ();
+pub  fun test[23,9,23,12] : forall<a> (test-name : std/core/types/string, tests : () -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(test :: (V, E, V) -> V)<a>>> ()) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (V, E, V) -> V)<a>>> ();
+pub  fun suite[28,9,28,13] : forall<a> (suite-name : std/core/types/string, test-cases : () -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(test-case :: (V, E, V) -> V)<a>>> ()) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(test-suite :: (V, E, V) -> V)<a>>> ();
+pub  fun run-utest[33,9,33,17] : forall<a> (test-suites : () -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(test-suite :: (V, E, V) -> V)<a>>> ()) -> <(std/core/types/div :: X),(std/core/console/console :: X)> ();
  
 //------------------------------
 //#kki: external declarations
@@ -182,24 +177,24 @@ inline borrow "^"  fun test-failure/msg // inline size: 0
  fun test-failure/@copy // inline size: 4
   = forall<a,b> fn(@this: (test-failure :: (V, V) -> V)<a,b>, expected: (std/core/types/@optional :: V -> V)<a>, actual: (std/core/types/@optional :: V -> V)<b>, msg: (std/core/types/@optional :: V -> V)<std/core/types/string>){
     utest/TestFailure<a,b>((match (expected) {
-        ((std/core/types/@Optional((@uniq-expected@440: a) : a) : (std/core/types/@optional :: V -> V)<a> ) as @pat: ((std/core/types/@optional :: V -> V)<a>))
-           -> @uniq-expected@440;
+        ((std/core/types/@Optional((@uniq-expected@433: a) : a) : (std/core/types/@optional :: V -> V)<a> ) as @pat: ((std/core/types/@optional :: V -> V)<a>))
+           -> @uniq-expected@433;
         ((@skip std/core/types/@None() : (std/core/types/@optional :: V -> V)<a> ) as @pat@0: ((std/core/types/@optional :: V -> V)<a>))
            -> (match (@this) {
             ((@skip utest/TestFailure((@x: a) : a, (@pat@0@0: b) : b, (@pat@1@0: std/core/types/string) : std/core/types/string) : (test-failure :: (V, V) -> V)<a,b> ) as @pat@1: ((test-failure :: (V, V) -> V)<a,b>))
                -> @x;
           });
       }), (match (actual) {
-        ((std/core/types/@Optional((@uniq-actual@453: b) : b) : (std/core/types/@optional :: V -> V)<b> ) as @pat@1@1: ((std/core/types/@optional :: V -> V)<b>))
-           -> @uniq-actual@453;
+        ((std/core/types/@Optional((@uniq-actual@446: b) : b) : (std/core/types/@optional :: V -> V)<b> ) as @pat@1@1: ((std/core/types/@optional :: V -> V)<b>))
+           -> @uniq-actual@446;
         ((@skip std/core/types/@None() : (std/core/types/@optional :: V -> V)<b> ) as @pat@2: ((std/core/types/@optional :: V -> V)<b>))
            -> (match (@this) {
             ((@skip utest/TestFailure((@pat@0@1: a) : a, (@x@0: b) : b, (@pat@1@2: std/core/types/string) : std/core/types/string) : (test-failure :: (V, V) -> V)<a,b> ) as @pat@3: ((test-failure :: (V, V) -> V)<a,b>))
                -> @x@0;
           });
       }), (match (msg) {
-        ((std/core/types/@Optional((@uniq-msg@466: std/core/types/string) : std/core/types/string) : (std/core/types/@optional :: V -> V)<std/core/types/string> ) as @pat@3@0: ((std/core/types/@optional :: V -> V)<std/core/types/string>))
-           -> @uniq-msg@466;
+        ((std/core/types/@Optional((@uniq-msg@459: std/core/types/string) : std/core/types/string) : (std/core/types/@optional :: V -> V)<std/core/types/string> ) as @pat@3@0: ((std/core/types/@optional :: V -> V)<std/core/types/string>))
+           -> @uniq-msg@459;
         ((@skip std/core/types/@None() : (std/core/types/@optional :: V -> V)<std/core/types/string> ) as @pat@4: ((std/core/types/@optional :: V -> V)<std/core/types/string>))
            -> (match (@this) {
             ((@skip utest/TestFailure((@pat@0@2: a) : a, (@pat@1@3: b) : b, (@x@1: std/core/types/string) : std/core/types/string) : (test-failure :: (V, V) -> V)<a,b> ) as @pat@5: ((test-failure :: (V, V) -> V)<a,b>))

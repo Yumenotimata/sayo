@@ -1,0 +1,239 @@
+module interface interpret
+ 
+//------------------------------
+//#kki: import declarations
+ 
+import std/core/types = std/core/types pub = "";
+import std/core/hnd = std/core/hnd pub = "";
+import std/core/bool = std/core/bool pub = "";
+import std/core/order = std/core/order pub = "";
+import std/core/char = std/core/char pub = "";
+import std/core/int = std/core/int pub = "";
+import std/core/vector = std/core/vector pub = "";
+import std/core/string = std/core/string pub = "";
+import std/core/sslice = std/core/sslice pub = "";
+import std/core/list = std/core/list pub = "";
+import std/core/maybe = std/core/maybe pub = "";
+import std/core/tuple = std/core/tuple pub = "";
+import std/core/show = std/core/show pub = "";
+import std/core/debug = std/core/debug pub = "";
+import std/core/delayed = std/core/delayed pub = "";
+import std/core/console = std/core/console pub = "";
+import std/core = std/core = "";
+import std/core/either = std/core/either = "";
+import std/core/exn = std/core/exn = "";
+import std/num/random = std/num/random = "";
+import utest = utest = "";
+ 
+//------------------------------
+//#kki: external imports
+ 
+ 
+//------------------------------
+//#kki: fixity declarations
+ 
+ 
+//------------------------------
+//#kki: local imported aliases
+ 
+// An alias for pure effects: a pure function always returns the same result
+// when called with the same arguments but may not terminate or raise an exception.
+local alias std/core/pure[52,1,52,26] :: E = <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/div :: X)> = 1;
+ 
+//------------------------------
+//#kki: type declarations
+ 
+pub alias cont[37,1,37,41]<a> :: V -> V = (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> a = 1;
+pub recursive rec type value[18,1,21,22] {
+  pub con Int[19,3,19,5](x: std/core/types/int){0,1,8} : (x : std/core/types/int) -> value;
+  pub con FnVal[20,3,20,7](x: std/core/types/string, body: expr, env: (std/core/types/list :: V -> V)<(std/core/types/string, value)>){0,3,8} : (x : std/core/types/string, body : expr, env : (std/core/types/list :: V -> V)<(std/core/types/string, value)>) -> value;
+  pub con Cont[21,3,21,6](c: ((cont :: V -> V)<value> == 1 (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value)){0,1,8} : (c : ((cont :: V -> V)<value> == 1 (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value)) -> value;
+};
+pub recursive type expr[9,1,16,16] {
+  pub con Lit[10,3,10,5](value: value){0,1,8} : (value : value) -> expr;
+  pub con Var[11,3,11,5](x: std/core/types/string){0,1,8} : (x : std/core/types/string) -> expr;
+  pub con Let[12,3,12,5](name: std/core/types/string, e1: expr, e2: expr){0,3,8} : (name : std/core/types/string, e1 : expr, e2 : expr) -> expr;
+  pub con Fn[13,3,13,4](x: std/core/types/string, e1: expr){0,2,8} : (x : std/core/types/string, e1 : expr) -> expr;
+  pub con App[14,3,14,5](e1: expr, e2: expr){0,2,8} : (e1 : expr, e2 : expr) -> expr;
+  pub con Reset[15,3,15,7](e: expr){0,1,8} : (e : expr) -> expr;
+  pub con Shift[16,3,16,7](e: expr){0,1,8} : (e : expr) -> expr;
+};
+pub alias env[35,1,35,37] = (std/core/types/list :: V -> V)<(std/core/types/string, value)> = 1;
+ 
+//------------------------------
+//#kki: declarations
+ 
+// Automatically generated. Tests for the `Int` constructor of the `:value` type.
+pub fip fun is-int[19,3,19,5] : (^ value : value) -> std/core/types/bool;
+// Automatically generated. Tests for the `FnVal` constructor of the `:value` type.
+pub fip fun is-fnVal[20,3,20,7] : (^ value : value) -> std/core/types/bool;
+// Automatically generated. Tests for the `Cont` constructor of the `:value` type.
+pub fip fun is-cont[21,3,21,6] : (^ value : value) -> std/core/types/bool;
+// Automatically generated. Tests for the `Lit` constructor of the `:expr` type.
+pub fip fun is-lit[10,3,10,5] : (^ expr : expr) -> std/core/types/bool;
+// Automatically generated. Tests for the `Var` constructor of the `:expr` type.
+pub fip fun is-var[11,3,11,5] : (^ expr : expr) -> std/core/types/bool;
+// Automatically generated. Tests for the `Let` constructor of the `:expr` type.
+pub fip fun is-let[12,3,12,5] : (^ expr : expr) -> std/core/types/bool;
+// Automatically generated. Tests for the `Fn` constructor of the `:expr` type.
+pub fip fun is-fn[13,3,13,4] : (^ expr : expr) -> std/core/types/bool;
+// Automatically generated. Tests for the `App` constructor of the `:expr` type.
+pub fip fun is-app[14,3,14,5] : (^ expr : expr) -> std/core/types/bool;
+// Automatically generated. Tests for the `Reset` constructor of the `:expr` type.
+pub fip fun is-reset[15,3,15,7] : (^ expr : expr) -> std/core/types/bool;
+// Automatically generated. Tests for the `Shift` constructor of the `:expr` type.
+pub fip fun is-shift[16,3,16,7] : (^ expr : expr) -> std/core/types/bool;
+pub  fun show[23,9,23,12] : (v : value) -> std/core/types/string;
+pub  fun eq[30,9,30,10] : (v1 : value, v2 : value) -> std/core/types/bool;
+ fun (==)[86,5,86,8] : (e1 : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>, e2 : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>) -> std/core/types/bool;
+pub  fun extend[39,9,39,14] : (prev : env, new : (std/core/types/string, value)) -> env;
+// monadic lift
+ fun @mlift-eval@10056'[1,0,1,0] : (c@0 : (cont :: V -> V)<value>, i : std/core/types/string, @y-x10024 : (std/core/types/maybe :: V -> V)<(std/core/types/string, value)>) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value;
+pub  fun apply[74,9,74,13] : (f : value, arg : value, c : (cont :: V -> V)<value>) -> <(std/core/pure :: E)> value;
+pub  fun eval'[45,9,45,13] : (e : expr, env : env, c : (cont :: V -> V)<value>) -> <(std/core/pure :: E)> value;
+pub  fun eval[42,9,42,12] : (e : expr) -> <(std/core/pure :: E)> value;
+// monadic lift
+ fun @mlift-run@10057[1,0,1,0] : (@y-x10043 : value) -> <(std/core/pure :: E)> (std/core/exn/error :: V -> V)<value>;
+pub  fun run[83,9,83,11] : (e : expr) -> <(std/core/types/div :: X)> (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>;
+pub val interpret-tests[92,9,92,23] : forall<a> () -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<a>>> ();
+ 
+//------------------------------
+//#kki: external declarations
+ 
+ 
+//------------------------------
+//#kki: inline definitions
+ 
+//.inline-section
+inline borrow "^" fip fun is-int // inline size: 1
+  = fn(value: value){
+    match (value) {
+      ((interpret/Int((@pat@0: std/core/types/int) : std/core/types/int) : value ) as @pat: value)
+         -> std/core/types/True;
+      (@pat@1: value)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-fnVal // inline size: 1
+  = fn(value: value){
+    match (value) {
+      ((interpret/FnVal((@pat@0: std/core/types/string) : std/core/types/string, (@pat@1: expr) : expr, (@pat@2: (std/core/types/list :: V -> V)<(std/core/types/string, value)>) : (std/core/types/list :: V -> V)<(std/core/types/string, value)>) : value ) as @pat: value)
+         -> std/core/types/True;
+      (@pat@3: value)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-cont // inline size: 1
+  = fn(value: value){
+    match (value) {
+      ((interpret/Cont((@pat@0: (cont :: V -> V)<value>) : (cont :: V -> V)<value>) : value ) as @pat: value)
+         -> std/core/types/True;
+      (@pat@1: value)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-lit // inline size: 1
+  = fn(expr: expr){
+    match (expr) {
+      ((interpret/Lit((@pat@0: value) : value) : expr ) as @pat: expr)
+         -> std/core/types/True;
+      (@pat@1: expr)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-var // inline size: 1
+  = fn(expr: expr){
+    match (expr) {
+      ((interpret/Var((@pat@0: std/core/types/string) : std/core/types/string) : expr ) as @pat: expr)
+         -> std/core/types/True;
+      (@pat@1: expr)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-let // inline size: 1
+  = fn(expr: expr){
+    match (expr) {
+      ((interpret/Let((@pat@0: std/core/types/string) : std/core/types/string, (@pat@1: expr) : expr, (@pat@2: expr) : expr) : expr ) as @pat: expr)
+         -> std/core/types/True;
+      (@pat@3: expr)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-fn // inline size: 1
+  = fn(expr: expr){
+    match (expr) {
+      ((interpret/Fn((@pat@0: std/core/types/string) : std/core/types/string, (@pat@1: expr) : expr) : expr ) as @pat: expr)
+         -> std/core/types/True;
+      (@pat@2: expr)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-app // inline size: 1
+  = fn(expr: expr){
+    match (expr) {
+      ((interpret/App((@pat@0: expr) : expr, (@pat@1: expr) : expr) : expr ) as @pat: expr)
+         -> std/core/types/True;
+      (@pat@2: expr)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-reset // inline size: 1
+  = fn(expr: expr){
+    match (expr) {
+      ((interpret/Reset((@pat@0: expr) : expr) : expr ) as @pat: expr)
+         -> std/core/types/True;
+      (@pat@1: expr)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-shift // inline size: 1
+  = fn(expr: expr){
+    match (expr) {
+      ((interpret/Shift((@pat@0: expr) : expr) : expr ) as @pat: expr)
+         -> std/core/types/True;
+      (@pat@1: expr)
+         -> std/core/types/False;
+    };
+  };
+ fun eq // inline size: 2
+  = fn(v1: value, v2: value){
+    match (v1, v2) {
+      ((interpret/Int((i2: std/core/types/int) : std/core/types/int) : value ) as @pat@1: value), ((interpret/Int((i1: std/core/types/int) : std/core/types/int) : value ) as @pat@0: value)
+         -> std/core/int/(==)(i1, i2);
+      (@pat@2: value), (@pat: value)
+         -> std/core/types/False;
+    };
+  };
+ fun (==) // inline size: 4
+  = fn(e1: (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>, e2: (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>){
+    match (e1, e2) {
+      ((std/core/types/Right((r2: value) : value) : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value> ) as @pat@1: (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>), ((std/core/types/Right((r1: value) : value) : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value> ) as @pat@0: ((std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>))
+         -> (match (r1, r2) {
+          ((interpret/Int((i2: std/core/types/int) : std/core/types/int) : value ) as @pat@1@0: value), ((interpret/Int((i1: std/core/types/int) : std/core/types/int) : value ) as @pat@0@0: value)
+             -> std/core/int/(==)(i1, i2);
+          (@pat@2: value), (@pat: value)
+             -> std/core/types/False;
+        });
+      ((std/core/types/Left(((@skip std/core/exn/Exception((@pat@7: std/core/types/string) : std/core/types/string, (@pat@8: std/core/exn/exception-info) : std/core/exn/exception-info) : std/core/exn/exception ) as e2@0: std/core/exn/exception) : std/core/exn/exception) : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value> ) as @pat@6: (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>), ((std/core/types/Left(((@skip std/core/exn/Exception((@pat@4: std/core/types/string) : std/core/types/string, (@pat@5: std/core/exn/exception-info) : std/core/exn/exception-info) : std/core/exn/exception ) as e1@0: std/core/exn/exception) : std/core/exn/exception) : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value> ) as @pat@3: ((std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>))
+         -> std/core/types/True;
+      (@pat@2@0: ((std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>)), (@pat@9: ((std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>))
+         -> std/core/types/False;
+    };
+  };
+ fun extend // inline size: 3
+  = fn(prev: env, new: (std/core/types/string, value)){
+    val ys@10003[1,0,1,0] : (std/core/types/list :: V -> V)<(std/core/types/string, value)>
+          = std/core/types/Cons<(std/core/types/string, value)>(new, (std/core/types/Nil<(std/core/types/string, value)>));
+    match (prev) {
+      ((std/core/types/Nil() : (std/core/types/list :: V -> V)<(std/core/types/string, value)> ) as @pat@0: ((std/core/types/list :: V -> V)<(std/core/types/string, value)>))
+         -> ys@10003;
+      (@pat: ((std/core/types/list :: V -> V)<(std/core/types/string, value)>))
+         -> std/core/list/@unroll-append@10004<(std/core/types/string, value)>(prev, ys@10003);
+    };
+  };
+ fun eval // inline size: 1
+  = fn<<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(e: expr){
+    interpret/eval'(e, (std/core/types/Nil<(std/core/types/string, value)>), (fn<<(std/core/pure :: E)>>(x: value){
+        x;
+      }));
+  };

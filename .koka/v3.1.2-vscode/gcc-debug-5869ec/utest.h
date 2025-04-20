@@ -185,8 +185,8 @@ static inline kk_utest__test_suite kk_utest__test_suite_unbox(kk_box_t _x, kk_bo
 
 static inline kk_integer_t kk_utest_test_fs__cfc(kk_utest__test test_0, kk_context_t* _ctx) { /* forall<a,e,b> (test : test<a,e,b>) -> int */ 
   {
-    struct kk_utest__Hnd_test* _con_x353 = kk_utest__as_Hnd_test(test_0, _ctx);
-    kk_integer_t _x = _con_x353->_cfc;
+    struct kk_utest__Hnd_test* _con_x246 = kk_utest__as_Hnd_test(test_0, _ctx);
+    kk_integer_t _x = _con_x246->_cfc;
     return kk_integer_dup(_x, _ctx);
   }
 }
@@ -195,8 +195,8 @@ static inline kk_integer_t kk_utest_test_fs__cfc(kk_utest__test test_0, kk_conte
 
 static inline kk_std_core_hnd__clause2 kk_utest_test_fs__fun_test_fail(kk_utest__test test_0, kk_context_t* _ctx) { /* forall<a,e,b> (test : test<a,e,b>) -> hnd/clause2<string,string,(),test<a>,e,b> */ 
   {
-    struct kk_utest__Hnd_test* _con_x354 = kk_utest__as_Hnd_test(test_0, _ctx);
-    kk_std_core_hnd__clause2 _x = _con_x354->_fun_test_fail;
+    struct kk_utest__Hnd_test* _con_x247 = kk_utest__as_Hnd_test(test_0, _ctx);
+    kk_std_core_hnd__clause2 _x = _con_x247->_fun_test_fail;
     return kk_std_core_hnd__clause2_dup(_x, _ctx);
   }
 }
@@ -205,8 +205,8 @@ static inline kk_std_core_hnd__clause2 kk_utest_test_fs__fun_test_fail(kk_utest_
 
 static inline kk_integer_t kk_utest_test_case_fs__cfc(kk_utest__test_case _this, kk_context_t* _ctx) { /* forall<a,e,b> (test-case<a,e,b>) -> int */ 
   {
-    struct kk_utest__Hnd_test_case* _con_x355 = kk_utest__as_Hnd_test_case(_this, _ctx);
-    kk_integer_t _x = _con_x355->_cfc;
+    struct kk_utest__Hnd_test_case* _con_x248 = kk_utest__as_Hnd_test_case(_this, _ctx);
+    kk_integer_t _x = _con_x248->_cfc;
     return kk_integer_dup(_x, _ctx);
   }
 }
@@ -215,8 +215,8 @@ static inline kk_integer_t kk_utest_test_case_fs__cfc(kk_utest__test_case _this,
 
 static inline kk_std_core_hnd__clause2 kk_utest_test_case_fs__fun_test_case_fail(kk_utest__test_case _this, kk_context_t* _ctx) { /* forall<a,e,b> (test-case<a,e,b>) -> hnd/clause2<string,string,(),test-case<a>,e,b> */ 
   {
-    struct kk_utest__Hnd_test_case* _con_x356 = kk_utest__as_Hnd_test_case(_this, _ctx);
-    kk_std_core_hnd__clause2 _x = _con_x356->_fun_test_case_fail;
+    struct kk_utest__Hnd_test_case* _con_x249 = kk_utest__as_Hnd_test_case(_this, _ctx);
+    kk_std_core_hnd__clause2 _x = _con_x249->_fun_test_case_fail;
     return kk_std_core_hnd__clause2_dup(_x, _ctx);
   }
 }
@@ -225,8 +225,8 @@ static inline kk_std_core_hnd__clause2 kk_utest_test_case_fs__fun_test_case_fail
 
 static inline kk_box_t kk_utest_test_failure_fs_expected(kk_utest__test_failure _this, kk_context_t* _ctx) { /* forall<a,b> (test-failure<a,b>) -> a */ 
   {
-    struct kk_utest_TestFailure* _con_x357 = kk_utest__as_TestFailure(_this, _ctx);
-    kk_box_t _x = _con_x357->expected;
+    struct kk_utest_TestFailure* _con_x250 = kk_utest__as_TestFailure(_this, _ctx);
+    kk_box_t _x = _con_x250->expected;
     return kk_box_dup(_x, _ctx);
   }
 }
@@ -235,8 +235,8 @@ static inline kk_box_t kk_utest_test_failure_fs_expected(kk_utest__test_failure 
 
 static inline kk_box_t kk_utest_test_failure_fs_actual(kk_utest__test_failure _this, kk_context_t* _ctx) { /* forall<a,b> (test-failure<a,b>) -> b */ 
   {
-    struct kk_utest_TestFailure* _con_x358 = kk_utest__as_TestFailure(_this, _ctx);
-    kk_box_t _x = _con_x358->actual;
+    struct kk_utest_TestFailure* _con_x251 = kk_utest__as_TestFailure(_this, _ctx);
+    kk_box_t _x = _con_x251->actual;
     return kk_box_dup(_x, _ctx);
   }
 }
@@ -245,8 +245,8 @@ static inline kk_box_t kk_utest_test_failure_fs_actual(kk_utest__test_failure _t
 
 static inline kk_string_t kk_utest_test_failure_fs_msg(kk_utest__test_failure _this, kk_context_t* _ctx) { /* forall<a,b> (test-failure<a,b>) -> string */ 
   {
-    struct kk_utest_TestFailure* _con_x359 = kk_utest__as_TestFailure(_this, _ctx);
-    kk_string_t _x = _con_x359->msg;
+    struct kk_utest_TestFailure* _con_x252 = kk_utest__as_TestFailure(_this, _ctx);
+    kk_string_t _x = _con_x252->msg;
     return kk_string_dup(_x, _ctx);
   }
 }
@@ -257,8 +257,8 @@ kk_utest__test_failure kk_utest_test_failure_fs__copy(kk_utest__test_failure _th
 
 static inline kk_integer_t kk_utest_test_suite_fs__cfc(kk_utest__test_suite _this, kk_context_t* _ctx) { /* forall<a,e,b> (test-suite<a,e,b>) -> int */ 
   {
-    struct kk_utest__Hnd_test_suite* _con_x366 = kk_utest__as_Hnd_test_suite(_this, _ctx);
-    kk_integer_t _x = _con_x366->_cfc;
+    struct kk_utest__Hnd_test_suite* _con_x259 = kk_utest__as_Hnd_test_suite(_this, _ctx);
+    kk_integer_t _x = _con_x259->_cfc;
     return kk_integer_dup(_x, _ctx);
   }
 }
@@ -267,8 +267,8 @@ static inline kk_integer_t kk_utest_test_suite_fs__cfc(kk_utest__test_suite _thi
 
 static inline kk_std_core_hnd__clause1 kk_utest_test_suite_fs__fun_test_suite_fail(kk_utest__test_suite _this, kk_context_t* _ctx) { /* forall<a,e,b> (test-suite<a,e,b>) -> hnd/clause1<(string, string, string),(),test-suite<a>,e,b> */ 
   {
-    struct kk_utest__Hnd_test_suite* _con_x367 = kk_utest__as_Hnd_test_suite(_this, _ctx);
-    kk_std_core_hnd__clause1 _x = _con_x367->_fun_test_suite_fail;
+    struct kk_utest__Hnd_test_suite* _con_x260 = kk_utest__as_Hnd_test_suite(_this, _ctx);
+    kk_std_core_hnd__clause1 _x = _con_x260->_fun_test_suite_fail;
     return kk_std_core_hnd__clause1_dup(_x, _ctx);
   }
 }
@@ -281,8 +281,8 @@ kk_box_t kk_utest__handle_test(kk_utest__test hnd, kk_function_t ret, kk_functio
 
 static inline kk_std_core_hnd__clause2 kk_utest__select_test_fail(kk_utest__test hnd, kk_context_t* _ctx) { /* forall<a,e,b> (hnd : test<a,e,b>) -> hnd/clause2<string,string,(),test<a>,e,b> */ 
   {
-    struct kk_utest__Hnd_test* _con_x371 = kk_utest__as_Hnd_test(hnd, _ctx);
-    kk_std_core_hnd__clause2 _fun_test_fail = _con_x371->_fun_test_fail;
+    struct kk_utest__Hnd_test* _con_x264 = kk_utest__as_Hnd_test(hnd, _ctx);
+    kk_std_core_hnd__clause2 _fun_test_fail = _con_x264->_fun_test_fail;
     return kk_std_core_hnd__clause2_dup(_fun_test_fail, _ctx);
   }
 }
@@ -290,18 +290,18 @@ static inline kk_std_core_hnd__clause2 kk_utest__select_test_fail(kk_utest__test
 // Call the `fun test-fail` operation of the effect `:test`
 
 static inline kk_unit_t kk_utest_test_fail(kk_string_t expected, kk_string_t actual, kk_context_t* _ctx) { /* forall<a> (expected : string, actual : string) -> (test<a>) () */ 
-  kk_std_core_hnd__ev evx_10057 = kk_evv_at(((KK_IZ(0))),kk_context()); /*hnd/ev<utest/test<_697>>*/;
-  kk_box_t _x_x372;
+  kk_std_core_hnd__ev evx_10045 = kk_evv_at(((KK_IZ(0))),kk_context()); /*hnd/ev<utest/test<_690>>*/;
+  kk_box_t _x_x265;
   {
-    struct kk_std_core_hnd_Ev* _con_x373 = kk_std_core_hnd__as_Ev(evx_10057, _ctx);
-    kk_box_t _box_x9 = _con_x373->hnd;
-    int32_t m = _con_x373->marker;
+    struct kk_std_core_hnd_Ev* _con_x266 = kk_std_core_hnd__as_Ev(evx_10045, _ctx);
+    kk_box_t _box_x9 = _con_x266->hnd;
+    int32_t m = _con_x266->marker;
     kk_utest__test h = kk_utest__test_unbox(_box_x9, KK_BORROWED, _ctx);
     kk_utest__test_dup(h, _ctx);
     {
-      struct kk_utest__Hnd_test* _con_x374 = kk_utest__as_Hnd_test(h, _ctx);
-      kk_integer_t _pat_0_0 = _con_x374->_cfc;
-      kk_std_core_hnd__clause2 _fun_test_fail = _con_x374->_fun_test_fail;
+      struct kk_utest__Hnd_test* _con_x267 = kk_utest__as_Hnd_test(h, _ctx);
+      kk_integer_t _pat_0_0 = _con_x267->_cfc;
+      kk_std_core_hnd__clause2 _fun_test_fail = _con_x267->_fun_test_fail;
       if kk_likely(kk_datatype_ptr_is_unique(h, _ctx)) {
         kk_integer_drop(_pat_0_0, _ctx);
         kk_datatype_ptr_free(h, _ctx);
@@ -312,11 +312,11 @@ static inline kk_unit_t kk_utest_test_fail(kk_string_t expected, kk_string_t act
       }
       {
         kk_function_t _fun_unbox_x14 = _fun_test_fail.clause;
-        _x_x372 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_box_t, kk_box_t, kk_context_t*), _fun_unbox_x14, (_fun_unbox_x14, m, evx_10057, kk_string_box(expected), kk_string_box(actual), _ctx), _ctx); /*1016*/
+        _x_x265 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_box_t, kk_box_t, kk_context_t*), _fun_unbox_x14, (_fun_unbox_x14, m, evx_10045, kk_string_box(expected), kk_string_box(actual), _ctx), _ctx); /*1016*/
       }
     }
   }
-  kk_unit_unbox(_x_x372); return kk_Unit;
+  kk_unit_unbox(_x_x265); return kk_Unit;
 }
 
 extern kk_std_core_hnd__htag kk_utest__tag_test_case;
@@ -327,8 +327,8 @@ kk_box_t kk_utest__handle_test_case(kk_utest__test_case hnd, kk_function_t ret, 
 
 static inline kk_std_core_hnd__clause2 kk_utest__select_test_case_fail(kk_utest__test_case hnd, kk_context_t* _ctx) { /* forall<a,e,b> (hnd : test-case<a,e,b>) -> hnd/clause2<string,string,(),test-case<a>,e,b> */ 
   {
-    struct kk_utest__Hnd_test_case* _con_x378 = kk_utest__as_Hnd_test_case(hnd, _ctx);
-    kk_std_core_hnd__clause2 _fun_test_case_fail = _con_x378->_fun_test_case_fail;
+    struct kk_utest__Hnd_test_case* _con_x271 = kk_utest__as_Hnd_test_case(hnd, _ctx);
+    kk_std_core_hnd__clause2 _fun_test_case_fail = _con_x271->_fun_test_case_fail;
     return kk_std_core_hnd__clause2_dup(_fun_test_case_fail, _ctx);
   }
 }
@@ -336,18 +336,18 @@ static inline kk_std_core_hnd__clause2 kk_utest__select_test_case_fail(kk_utest_
 // Call the `fun test-case-fail` operation of the effect `:test-case`
 
 static inline kk_unit_t kk_utest_test_case_fail(kk_string_t expected, kk_string_t actual, kk_context_t* _ctx) { /* forall<a> (expected : string, actual : string) -> (test-case<a>) () */ 
-  kk_std_core_hnd__ev evx_10062 = kk_evv_at(((KK_IZ(0))),kk_context()); /*hnd/ev<utest/test-case<_853>>*/;
-  kk_box_t _x_x379;
+  kk_std_core_hnd__ev evx_10050 = kk_evv_at(((KK_IZ(0))),kk_context()); /*hnd/ev<utest/test-case<_846>>*/;
+  kk_box_t _x_x272;
   {
-    struct kk_std_core_hnd_Ev* _con_x380 = kk_std_core_hnd__as_Ev(evx_10062, _ctx);
-    kk_box_t _box_x27 = _con_x380->hnd;
-    int32_t m = _con_x380->marker;
+    struct kk_std_core_hnd_Ev* _con_x273 = kk_std_core_hnd__as_Ev(evx_10050, _ctx);
+    kk_box_t _box_x27 = _con_x273->hnd;
+    int32_t m = _con_x273->marker;
     kk_utest__test_case h = kk_utest__test_case_unbox(_box_x27, KK_BORROWED, _ctx);
     kk_utest__test_case_dup(h, _ctx);
     {
-      struct kk_utest__Hnd_test_case* _con_x381 = kk_utest__as_Hnd_test_case(h, _ctx);
-      kk_integer_t _pat_0_0 = _con_x381->_cfc;
-      kk_std_core_hnd__clause2 _fun_test_case_fail = _con_x381->_fun_test_case_fail;
+      struct kk_utest__Hnd_test_case* _con_x274 = kk_utest__as_Hnd_test_case(h, _ctx);
+      kk_integer_t _pat_0_0 = _con_x274->_cfc;
+      kk_std_core_hnd__clause2 _fun_test_case_fail = _con_x274->_fun_test_case_fail;
       if kk_likely(kk_datatype_ptr_is_unique(h, _ctx)) {
         kk_integer_drop(_pat_0_0, _ctx);
         kk_datatype_ptr_free(h, _ctx);
@@ -358,11 +358,11 @@ static inline kk_unit_t kk_utest_test_case_fail(kk_string_t expected, kk_string_
       }
       {
         kk_function_t _fun_unbox_x32 = _fun_test_case_fail.clause;
-        _x_x379 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_box_t, kk_box_t, kk_context_t*), _fun_unbox_x32, (_fun_unbox_x32, m, evx_10062, kk_string_box(expected), kk_string_box(actual), _ctx), _ctx); /*1016*/
+        _x_x272 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_box_t, kk_box_t, kk_context_t*), _fun_unbox_x32, (_fun_unbox_x32, m, evx_10050, kk_string_box(expected), kk_string_box(actual), _ctx), _ctx); /*1016*/
       }
     }
   }
-  kk_unit_unbox(_x_x379); return kk_Unit;
+  kk_unit_unbox(_x_x272); return kk_Unit;
 }
 
 extern kk_std_core_hnd__htag kk_utest__tag_test_suite;
@@ -373,8 +373,8 @@ kk_box_t kk_utest__handle_test_suite(kk_utest__test_suite hnd, kk_function_t ret
 
 static inline kk_std_core_hnd__clause1 kk_utest__select_test_suite_fail(kk_utest__test_suite hnd, kk_context_t* _ctx) { /* forall<a,e,b> (hnd : test-suite<a,e,b>) -> hnd/clause1<(string, string, string),(),test-suite<a>,e,b> */ 
   {
-    struct kk_utest__Hnd_test_suite* _con_x385 = kk_utest__as_Hnd_test_suite(hnd, _ctx);
-    kk_std_core_hnd__clause1 _fun_test_suite_fail = _con_x385->_fun_test_suite_fail;
+    struct kk_utest__Hnd_test_suite* _con_x278 = kk_utest__as_Hnd_test_suite(hnd, _ctx);
+    kk_std_core_hnd__clause1 _fun_test_suite_fail = _con_x278->_fun_test_suite_fail;
     return kk_std_core_hnd__clause1_dup(_fun_test_suite_fail, _ctx);
   }
 }
@@ -383,35 +383,29 @@ static inline kk_std_core_hnd__clause1 kk_utest__select_test_suite_fail(kk_utest
 
 
 // lift anonymous function
-struct kk_utest_test_suite_fail_fun387__t {
+struct kk_utest_test_suite_fail_fun280__t {
   struct kk_function_s _base;
 };
-extern kk_std_core_hnd__clause1 kk_utest_test_suite_fail_fun387(kk_function_t _fself, kk_box_t _b_x50, kk_context_t* _ctx);
-static inline kk_function_t kk_utest_new_test_suite_fail_fun387(kk_context_t* _ctx) {
-  kk_define_static_function(_fself, kk_utest_test_suite_fail_fun387, _ctx)
+extern kk_std_core_hnd__clause1 kk_utest_test_suite_fail_fun280(kk_function_t _fself, kk_box_t _b_x50, kk_context_t* _ctx);
+static inline kk_function_t kk_utest_new_test_suite_fail_fun280(kk_context_t* _ctx) {
+  kk_define_static_function(_fself, kk_utest_test_suite_fail_fun280, _ctx)
   return kk_function_dup(_fself,kk_context());
 }
 
 
 static inline kk_unit_t kk_utest_test_suite_fail(kk_string_t suite_name, kk_string_t expected, kk_string_t actual, kk_context_t* _ctx) { /* forall<a> (suite-name : string, expected : string, actual : string) -> (test-suite<a>) () */ 
-  kk_std_core_hnd__ev _b_x45_51 = kk_evv_at(((KK_IZ(0))),kk_context()); /*hnd/ev<utest/test-suite<_1012>>*/;
-  kk_box_t _x_x386 = kk_std_core_hnd__perform3(_b_x45_51, kk_utest_new_test_suite_fail_fun387(_ctx), kk_string_box(suite_name), kk_string_box(expected), kk_string_box(actual), _ctx); /*3023*/
-  kk_unit_unbox(_x_x386); return kk_Unit;
+  kk_std_core_hnd__ev _b_x45_51 = kk_evv_at(((KK_IZ(0))),kk_context()); /*hnd/ev<utest/test-suite<_1005>>*/;
+  kk_box_t _x_x279 = kk_std_core_hnd__perform3(_b_x45_51, kk_utest_new_test_suite_fail_fun280(_ctx), kk_string_box(suite_name), kk_string_box(expected), kk_string_box(actual), _ctx); /*3016*/
+  kk_unit_unbox(_x_x279); return kk_Unit;
 }
 
-kk_unit_t kk_utest_assert_eq(kk_box_t expected, kk_box_t actual, kk_function_t _implicit_fs__lp__eq__eq__rp_, kk_function_t _implicit_fs_show, kk_context_t* _ctx); /* forall<a,b> (expected : a, actual : a, ?(==) : (a, a) -> bool, ?show : (a) -> string) -> (test<b>) () */ 
+kk_unit_t kk_utest_assert_eq(kk_function_t actual, kk_function_t expected, kk_function_t _implicit_fs__lp__eq__eq__rp_, kk_function_t _implicit_fs_show, kk_context_t* _ctx); /* forall<a,b> (actual : () -> div a, expected : () -> div a, ?(==) : (a, a) -> bool, ?show : (a) -> string) -> <div,test<b>> () */ 
 
-kk_unit_t kk_utest__mlift_assert_eq_eff_10054(kk_box_t expected_sq_, kk_function_t _implicit_fs__lp__eq__eq__rp_, kk_function_t _implicit_fs_show, kk_box_t actual_sq_, kk_context_t* _ctx); /* forall<_a,b,c> (expected' : b, ?(==) : (b, b) -> bool, ?show : (b) -> string, actual' : b) -> (test<c>) () */ 
+kk_unit_t kk_utest_test(kk_string_t test_name, kk_function_t tests, kk_context_t* _ctx); /* forall<a> (test-name : string, tests : () -> <div,test<a>> ()) -> <div,test-case<a>> () */ 
 
-kk_unit_t kk_utest__mlift_assert_eq_eff_10055(kk_function_t actual, kk_function_t _implicit_fs__lp__eq__eq__rp_, kk_function_t _implicit_fs_show, kk_box_t expected_sq_, kk_context_t* _ctx); /* forall<_a,b,c> (actual : () -> (test<c>) b, ?(==) : (b, b) -> bool, ?show : (b) -> string, expected' : b) -> (test<c>) () */ 
+kk_unit_t kk_utest_suite(kk_string_t suite_name, kk_function_t test_cases, kk_context_t* _ctx); /* forall<a> (suite-name : string, test-cases : () -> <div,test-case<a>> ()) -> <div,test-suite<a>> () */ 
 
-kk_unit_t kk_utest_assert_eq_eff(kk_function_t expected, kk_function_t actual, kk_function_t _implicit_fs__lp__eq__eq__rp_, kk_function_t _implicit_fs_show, kk_context_t* _ctx); /* forall<a,b> (expected : () -> (test<b>) a, actual : () -> (test<b>) a, ?(==) : (a, a) -> bool, ?show : (a) -> string) -> (test<b>) () */ 
-
-kk_unit_t kk_utest_test(kk_string_t test_name, kk_function_t tests, kk_context_t* _ctx); /* forall<a> (test-name : string, tests : () -> (test<a>) ()) -> (test-case<a>) () */ 
-
-kk_unit_t kk_utest_suite(kk_string_t suite_name, kk_function_t test_cases, kk_context_t* _ctx); /* forall<a> (suite-name : string, test-cases : () -> (test-case<a>) ()) -> (test-suite<a>) () */ 
-
-kk_unit_t kk_utest_run_utest(kk_function_t test_suites, kk_context_t* _ctx); /* forall<a> (test-suites : () -> (test-suite<a>) ()) -> console/console () */ 
+kk_unit_t kk_utest_run_utest(kk_function_t test_suites, kk_context_t* _ctx); /* forall<a> (test-suites : () -> <div,test-suite<a>> ()) -> <div,console/console> () */ 
 
 void kk_utest__init(kk_context_t* _ctx);
 
