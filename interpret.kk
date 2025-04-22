@@ -8,14 +8,14 @@ import std/num/random
 
 import utest
 
-pub type expr
+pub rec type expr
   Lit(value: value)
   Var(x: string)
   Let(name: string, e1: expr, e2: expr)
   Fn(x: string, e1: expr)
   App(e1: expr, e2: expr)
-  Reset(e: expr)
-  Shift(e: expr)
+  // Op(id: string, e: expr)
+  Handle(e: expr, h: list<(string, expr)>)
   Prim(op: string, exprs: list<expr>)
 
 pub rec type value
@@ -46,48 +46,51 @@ pub fun extend(prev: env, new: (string, value)): env
   prev.append([new])
 
 pub fun eval(e: expr)
-  eval'(e, [], [], fn(x) x)
+  eval'(e, [], [], [], fn(x) x)
 
-pub fun eval'(e: expr, env: env, prim-env: prim_env, c: cont<value>): <div, exn> value
+pub fun eval'(e: expr, env: env, prim-env: prim_env, h: list<(string, expr)>, c: cont<value>): <div, exn> value
   match e
     Var(i) -> 
       match env.find(fn((i', _)) i == i')
         Just((_, v)) -> c(v)
         Nothing -> throw("undefined variable " ++ i.show())
     Let(name, e1, e2) ->
-      eval'(e1, env, prim-env, fn(e1')
+      eval'(e1, env, prim-env, h, fn(e1')
         val env' = env.extend((name, e1'))
-        eval'(e2, env', prim-env, c)
+        eval'(e2, env', prim-env, h, c)
       )
     Fn(x, e1) -> 
       c(FnVal(x, e1, env))
     App(e1, e2) -> 
-      eval'(e1, env, prim-env, fn(f)
-        eval'(e2, env, prim-env, fn(arg)
-          apply(f, arg, prim-env, c)
+      eval'(e1, env, prim-env, h, fn(f)
+        eval'(e2, env, prim-env, h, fn(arg)
+          apply(f, arg, prim-env, h, c)
         )
       )
     Lit(value) -> c(value)
-    Shift(x) -> 
-      eval'(x, env, prim-env, fn(e')
-        match e'
-          FnVal(x', body, env') -> eval'(body, env'.extend((x', Cont(c))), prim-env, fn(x) x)
-          _ -> throw("unexpected shift")
-      )
-    Reset(e) -> 
-      c(eval'(e, env, prim-env, fn(x) x))
-    Prim(op, exprs) -> eval-prim(op, exprs, env, c, prim-env)
+    Handle(e, h) -> eval'(e, env, prim-env, h, c)
+    // Op(id, e) -> 
+    //   match h.lookup(fn(id') id == id')
+    //     Just(op) -> eval'(op, env, prim-env, h, fn(op')
+    //       match op'
+    //         FnVal(x, body, env') ->
+    //           val env'' = env'.extend((x, eval'(e, env, prim-env, h, c)))
+    //           eval'(body, env'', prim-env, h, fn(x) x)
+    //         _ -> throw("not a function was treated as handler")
+    //     )
+    //     Nothing -> throw("undefined handler")
+    Prim(op, exprs) -> eval-prim(op, exprs, env, h, c, prim-env)
 
-pub fun eval-prim(id: string, exprs: list<expr>, env: env, c: cont<value>, prim-env: prim_env): <div, exn> value
+pub fun eval-prim(id: string, exprs: list<expr>, env: env, h: list<(string, expr)>, c: cont<value>, prim-env: prim_env): <div, exn> value
   match prim-env.lookup(fn(id') id == id')
-    Just(op) -> op(exprs.map(fn(expr) eval'(expr, env, prim-env, c)))
+    Just(op) -> op(exprs.map(fn(expr) eval'(expr, env, prim-env, h, c)))
     Nothing -> throw("undefined primitive op was evaluted!")
 
-pub fun apply(f: value, arg: value, prim-env: prim_env, c: cont<value>)
+pub fun apply(f: value, arg: value, prim-env: prim_env, h: list<(string, expr)>, c: cont<value>)
   match f
     FnVal(x, body, env) ->
       val env' = env.extend((x, arg))
-      eval'(body, env', prim-env, c)
+      eval'(body, env', prim-env, h, c)
     Cont(c') ->
       c (c'(arg))
     _ -> throw("literal was handled as function!")
@@ -106,7 +109,7 @@ pub val primitive-ops = [
 ]
 
 pub fun run(e: expr): <div> either<exception, value>
-  try(fn() eval'(e, [], primitive-ops, fn(x) x)).either()
+  try(fn() eval'(e, [], primitive-ops, [], fn(x) x)).either()
 
 fun (==)(e1: either<exception, value>, e2: either<exception, value>): bool
   match (e1, e2)
@@ -131,18 +134,18 @@ pub val interpret-tests = fn()
         )
         , fn() Right(Int(3))
       )
-  suite("Shift/Reset") fn()
-    test("") fn()
-      assert-eq(
-        fn() run(
-          Reset(Prim("+", [Lit(Int(1)), Shift(Fn("k", App(Var("k"), Lit(Int(2)))))]))
-        )
-        , fn() Right(Int(3))
-      )
-      assert-eq(
-        fn() run(
-          Let("plus", Fn("a", Fn("b", Prim("+", [Var("a"), Var("b")]))), Reset(App(App(Var("plus"), Lit(Int(1))), Shift(Fn("_", Lit(Int(2)))))))
-        )
-        , fn() Right(Int(2))
-      )
+  // suite("Shift/Reset") fn()
+  //   test("") fn()
+  //     assert-eq(
+  //       fn() run(
+  //         Reset(Prim("+", [Lit(Int(1)), Shift(Fn("k", App(Var("k"), Lit(Int(2)))))]))
+  //       )
+  //       , fn() Right(Int(3))
+  //     )
+  //     assert-eq(
+  //       fn() run(
+  //         Let("plus", Fn("a", Fn("b", Prim("+", [Var("a"), Var("b")]))), Reset(App(App(Var("plus"), Lit(Int(1))), Shift(Fn("_", Lit(Int(2)))))))
+  //       )
+  //       , fn() Right(Int(2))
+  //     )
       

@@ -355,7 +355,7 @@ int64_t kk_std_num_int64_cdiv(int64_t i, int64_t j, kk_context_t* _ctx) { /* (i 
     kk_string_t _x_x329;
     kk_define_string_literal(, _s_x330, 36, "std/num/int64/cdiv: division by zero", _ctx)
     _x_x329 = kk_string_dup(_s_x330, _ctx); /*string*/
-    _x_x328 = kk_std_core_exn_throw(_x_x329, kk_std_core_types__new_None(_ctx), _ctx); /*2572*/
+    _x_x328 = kk_std_core_exn_throw(_x_x329, kk_std_core_types__new_None(_ctx), _ctx); /*3083*/
     return kk_int64_unbox(_x_x328, KK_OWNED, _ctx);
   }
   {
@@ -373,7 +373,7 @@ int64_t kk_std_num_int64_cdiv(int64_t i, int64_t j, kk_context_t* _ctx) { /* (i 
         kk_string_t _x_x339;
         kk_define_string_literal(, _s_x340, 66, "std/num/int64/cdiv: division overflow in cdiv(min-int64, -1.int64)", _ctx)
         _x_x339 = kk_string_dup(_s_x340, _ctx); /*string*/
-        _x_x338 = kk_std_core_exn_throw(_x_x339, kk_std_core_types__new_None(_ctx), _ctx); /*2656*/
+        _x_x338 = kk_std_core_exn_throw(_x_x339, kk_std_core_types__new_None(_ctx), _ctx); /*3167*/
         return kk_int64_unbox(_x_x338, KK_OWNED, _ctx);
       }
       {
@@ -435,7 +435,7 @@ int64_t kk_std_num_int64_cmod(int64_t i, int64_t j, kk_context_t* _ctx) { /* (i 
     kk_string_t _x_x342;
     kk_define_string_literal(, _s_x343, 35, "std/num/int64/cmod: modulus by zero", _ctx)
     _x_x342 = kk_string_dup(_s_x343, _ctx); /*string*/
-    _x_x341 = kk_std_core_exn_throw(_x_x342, kk_std_core_types__new_None(_ctx), _ctx); /*2682*/
+    _x_x341 = kk_std_core_exn_throw(_x_x342, kk_std_core_types__new_None(_ctx), _ctx); /*3193*/
     return kk_int64_unbox(_x_x341, KK_OWNED, _ctx);
   }
   {
@@ -453,7 +453,7 @@ int64_t kk_std_num_int64_cmod(int64_t i, int64_t j, kk_context_t* _ctx) { /* (i 
         kk_string_t _x_x352;
         kk_define_string_literal(, _s_x353, 65, "std/num/int64/cmod: modulus overflow in cmod(min-int64, -1.int64)", _ctx)
         _x_x352 = kk_string_dup(_s_x353, _ctx); /*string*/
-        _x_x351 = kk_std_core_exn_throw(_x_x352, kk_std_core_types__new_None(_ctx), _ctx); /*2766*/
+        _x_x351 = kk_std_core_exn_throw(_x_x352, kk_std_core_types__new_None(_ctx), _ctx); /*3277*/
         return kk_int64_unbox(_x_x351, KK_OWNED, _ctx);
       }
       {

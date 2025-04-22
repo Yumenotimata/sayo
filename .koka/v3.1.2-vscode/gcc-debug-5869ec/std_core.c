@@ -706,8 +706,8 @@ kk_unit_t kk_std_core__default_exn(kk_function_t action, kk_context_t* _ctx) { /
   kk_function_t _b_x29_40 = kk_std_core__new_default_exn_fun120(_ctx); /*(m : hnd/marker<<console/console|1180>,()>, hnd/ev<exn>, x : exception) -> <console/console|1180> 1169*/;
   kk_std_core_exn__exn _x_x128;
   kk_std_core_hnd__clause1 _x_x129 = kk_std_core_hnd__new_Clause1(kk_std_core__new_default_exn_fun130(_b_x29_40, _ctx), _ctx); /*hnd/clause1<1015,1016,1017,1018,1019>*/
-  _x_x128 = kk_std_core_exn__new_Hnd_exn(kk_reuse_null, 0, kk_integer_from_small(0), _x_x129, _ctx); /*exn<14,15>*/
-  _x_x119 = kk_std_core_exn__handle_exn(_x_x128, kk_std_core__new_default_exn_fun132(_ctx), kk_std_core__new_default_exn_fun133(action, _ctx), _ctx); /*2547*/
+  _x_x128 = kk_std_core_exn__new_Hnd_exn(kk_reuse_null, 0, kk_integer_from_small(0), _x_x129, _ctx); /*exn<1005,1006>*/
+  _x_x119 = kk_std_core_exn__handle_exn(_x_x128, kk_std_core__new_default_exn_fun132(_ctx), kk_std_core__new_default_exn_fun133(action, _ctx), _ctx); /*3176*/
   kk_unit_unbox(_x_x119); return kk_Unit;
 }
 

@@ -3171,7 +3171,7 @@ static kk_box_t kk_std_text_parse_many_acc_fun1200(kk_function_t _fself, kk_cont
   struct kk_std_text_parse_many_acc_fun1200__t* _self = kk_function_as(struct kk_std_text_parse_many_acc_fun1200__t*, _fself, _ctx);
   kk_std_core_types__list acc_0 = _self->acc_0; /* list<2462> */
   kk_drop_match(_self, {kk_std_core_types__list_dup(acc_0, _ctx);}, {}, _ctx)
-  kk_std_core_types__list _x_x1201 = kk_std_core_list__lift_reverse_append_4948(kk_std_core_types__new_Nil(_ctx), acc_0, _ctx); /*list<950>*/
+  kk_std_core_types__list _x_x1201 = kk_std_core_list__lift_reverse_append_4948(kk_std_core_types__new_Nil(_ctx), acc_0, _ctx); /*list<4463>*/
   return kk_std_core_types__list_box(_x_x1201, _ctx);
 }
 

@@ -50,14 +50,14 @@ pub recursive rec type value[21,1,25,22] {
   pub con FnVal[24,3,24,7](x: std/core/types/string, body: expr, env: (std/core/types/list :: V -> V)<(std/core/types/string, value)>){0,3,8} : (x : std/core/types/string, body : expr, env : (std/core/types/list :: V -> V)<(std/core/types/string, value)>) -> value;
   pub con Cont[25,3,25,6](c: ((cont :: V -> V)<value> == 1 (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value)){0,1,8} : (c : ((cont :: V -> V)<value> == 1 (value) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value)) -> value;
 };
-pub recursive type expr[11,1,19,37] {
+pub recursive rec type expr[11,1,19,37] {
   pub con Lit[12,3,12,5](value: value){0,1,8} : (value : value) -> expr;
   pub con Var[13,3,13,5](x: std/core/types/string){0,1,8} : (x : std/core/types/string) -> expr;
   pub con Let[14,3,14,5](name: std/core/types/string, e1: expr, e2: expr){0,3,8} : (name : std/core/types/string, e1 : expr, e2 : expr) -> expr;
   pub con Fn[15,3,15,4](x: std/core/types/string, e1: expr){0,2,8} : (x : std/core/types/string, e1 : expr) -> expr;
   pub con App[16,3,16,5](e1: expr, e2: expr){0,2,8} : (e1 : expr, e2 : expr) -> expr;
-  pub con Reset[17,3,17,7](e: expr){0,1,8} : (e : expr) -> expr;
-  pub con Shift[18,3,18,7](e: expr){0,1,8} : (e : expr) -> expr;
+  // Op(id: string, e: expr)
+  pub con Handle[18,3,18,8](e: expr, h: (std/core/types/list :: V -> V)<(std/core/types/string, expr)>){0,2,8} : (e : expr, h : (std/core/types/list :: V -> V)<(std/core/types/string, expr)>) -> expr;
   pub con Prim[19,3,19,6](op: std/core/types/string, exprs: (std/core/types/list :: V -> V)<expr>){0,2,8} : (op : std/core/types/string, exprs : (std/core/types/list :: V -> V)<expr>) -> expr;
 };
 pub alias env[39,1,39,37] = (std/core/types/list :: V -> V)<(std/core/types/string, value)> = 1;
@@ -84,36 +84,30 @@ pub fip fun is-let[14,3,14,5] : (^ expr : expr) -> std/core/types/bool;
 pub fip fun is-fn[15,3,15,4] : (^ expr : expr) -> std/core/types/bool;
 // Automatically generated. Tests for the `App` constructor of the `:expr` type.
 pub fip fun is-app[16,3,16,5] : (^ expr : expr) -> std/core/types/bool;
-// Automatically generated. Tests for the `Reset` constructor of the `:expr` type.
-pub fip fun is-reset[17,3,17,7] : (^ expr : expr) -> std/core/types/bool;
-// Automatically generated. Tests for the `Shift` constructor of the `:expr` type.
-pub fip fun is-shift[18,3,18,7] : (^ expr : expr) -> std/core/types/bool;
+// Automatically generated. Tests for the `Handle` constructor of the `:expr` type.
+pub fip fun is-handle[18,3,18,8] : (^ expr : expr) -> std/core/types/bool;
 // Automatically generated. Tests for the `Prim` constructor of the `:expr` type.
 pub fip fun is-prim[19,3,19,6] : (^ expr : expr) -> std/core/types/bool;
 pub  fun show[27,9,27,12] : (v : value) -> std/core/types/string;
 pub  fun eq[34,9,34,10] : (v1 : value, v2 : value) -> std/core/types/bool;
- fun (==)[111,5,111,8] : (e1 : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>, e2 : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>) -> std/core/types/bool;
+ fun (==)[114,5,114,8] : (e1 : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>, e2 : (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>) -> std/core/types/bool;
 pub  fun extend[45,9,45,14] : (prev : env, new : (std/core/types/string, value)) -> env;
 // monadic lift
- fun @mlift-eval@10078'[1,0,1,0] : (c@0 : (cont :: V -> V)<value>, i : std/core/types/string, @y-x10017 : (std/core/types/maybe :: V -> V)<(std/core/types/string, value)>) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value;
+ fun @mlift-eval@10061'[1,0,1,0] : (c@0 : (cont :: V -> V)<value>, i : std/core/types/string, @y-x10013 : (std/core/types/maybe :: V -> V)<(std/core/types/string, value)>) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value;
 // monadic lift
- fun @mlift-eval-prim@10079[1,0,1,0] : (c@1 : (cont :: V -> V)<value>, env@1 : env, exprs@0 : (std/core/types/list :: V -> V)<expr>, prim-env@1 : prim_env, @y-x10036 : (std/core/types/maybe :: V -> V)<((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value>) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value;
-pub  fun apply[86,9,86,13] : (f : value, arg : value, prim-env : prim_env, c : (cont :: V -> V)<value>) -> <(std/core/pure :: E)> value;
-pub  fun eval'[51,9,51,13] : (e : expr, env : env, prim-env : prim_env, c : (cont :: V -> V)<value>) -> <(std/core/pure :: E)> value;
-pub  fun eval-prim[81,9,81,17] : (id : std/core/types/string, exprs : (std/core/types/list :: V -> V)<expr>, env : env, c : (cont :: V -> V)<value>, prim-env : prim_env) -> <(std/core/pure :: E)> value;
+ fun @mlift-eval-prim@10062[1,0,1,0] : (c@1 : (cont :: V -> V)<value>, env@1 : env, exprs@0 : (std/core/types/list :: V -> V)<expr>, h@1 : (std/core/types/list :: V -> V)<(std/core/types/string, expr)>, prim-env@1 : prim_env, @y-x10027 : (std/core/types/maybe :: V -> V)<((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value>) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value;
+pub  fun apply[89,9,89,13] : (f : value, arg : value, prim-env : prim_env, h : (std/core/types/list :: V -> V)<(std/core/types/string, expr)>, c : (cont :: V -> V)<value>) -> <(std/core/pure :: E)> value;
+pub  fun eval'[51,9,51,13] : (e : expr, env : env, prim-env : prim_env, h : (std/core/types/list :: V -> V)<(std/core/types/string, expr)>, c : (cont :: V -> V)<value>) -> <(std/core/pure :: E)> value;
+pub  fun eval-prim[84,9,84,17] : (id : std/core/types/string, exprs : (std/core/types/list :: V -> V)<expr>, env : env, h : (std/core/types/list :: V -> V)<(std/core/types/string, expr)>, c : (cont :: V -> V)<value>, prim-env : prim_env) -> <(std/core/pure :: E)> value;
 pub  fun eval[48,9,48,12] : (e : expr) -> <(std/core/pure :: E)> value;
-pub  fun arg2[95,9,95,12] : (args : (std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> (value, value);
+pub  fun arg2[98,9,98,12] : (args : (std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> (value, value);
 // monadic lift
- fun @mlift-primitive-ops@10080[1,0,1,0] : forall<(e :: E)> (@y-x10047 : (value, value)) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>|(e :: E)> value;
-pub val primitive-ops[100,9,100,21] : forall<(e :: E)> (std/core/types/list :: V -> V)<(std/core/types/string, (args : (std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>|(e :: E)> value)>;
-pub  fun run[108,9,108,11] : (e : expr) -> <(std/core/types/div :: X)> (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>;
+ fun @mlift-primitive-ops@10063[1,0,1,0] : forall<(e :: E)> (@y-x10038 : (value, value)) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>|(e :: E)> value;
+pub val primitive-ops[103,9,103,21] : forall<(e :: E)> (std/core/types/list :: V -> V)<(std/core/types/string, (args : (std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>|(e :: E)> value)>;
+pub  fun run[111,9,111,11] : (e : expr) -> <(std/core/types/div :: X)> (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,value>;
 // monadic lift
- fun @mlift-interpret-tests@10081[1,0,1,0] : forall<a> (wild_@1 : ()) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test :: (V, E, V) -> V)<a>>> ();
-// monadic lift
- fun @mlift-interpret-tests@10082[1,0,1,0] : forall<a> (wild_@0 : ()) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<a>>> ();
-// monadic lift
- fun @mlift-interpret-tests@10083[1,0,1,0] : forall<a> (wild_ : ()) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<a>>> ();
-pub val interpret-tests[117,9,117,23] : forall<a> () -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<a>>> ();
+ fun @mlift-interpret-tests@10064[1,0,1,0] : forall<a> (wild_ : ()) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<a>>> ();
+pub val interpret-tests[120,9,120,23] : forall<a> () -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<a>>> ();
  
 //------------------------------
 //#kki: external declarations
@@ -123,14 +117,14 @@ pub val interpret-tests[117,9,117,23] : forall<a> () -> <(std/core/types/div :: 
 //#kki: inline definitions
  
 //.inline-section
-specialize "*____"  fun eval-prim // inline size: 1
-  = fn<<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(id: std/core/types/string, exprs@0: (std/core/types/list :: V -> V)<expr>, env@1: env, c@1: (cont :: V -> V)<value>, prim-env@1: prim_env){
+specialize "*_____"  fun eval-prim // inline size: 1
+  = fn<<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(id: std/core/types/string, exprs@0: (std/core/types/list :: V -> V)<expr>, env@1: env, h@1: (std/core/types/list :: V -> V)<(std/core/types/string, expr)>, c@1: (cont :: V -> V)<value>, prim-env@1: prim_env){
     match ((std/core/list/lookup<std/core/types/string,((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value,<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(prim-env@1, (fn<<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(id': std/core/types/string){
         (std/core/types/@open<(std/core/types/total :: E),<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>,(std/core/types/string, std/core/types/string) -> std/core/types/bool,(std/core/types/string, std/core/types/string) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> std/core/types/bool>(std/core/string/(==))(id, id'));
       })))) {
-      ((std/core/types/Just((op@0: ((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value) : ((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value) : (std/core/types/maybe :: V -> V)<((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value> ) as @pat@15: ((std/core/types/maybe :: V -> V)<((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value>))
+      ((std/core/types/Just((op@0: ((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value) : ((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value) : (std/core/types/maybe :: V -> V)<((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value> ) as @pat@12: ((std/core/types/maybe :: V -> V)<((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value>))
          -> op@0((std/core/list/map<expr,value,<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(exprs@0, (fn<<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(expr: expr){
-            (interpret/eval'(expr, env@1, prim-env@1, c@1));
+            (interpret/eval'(expr, env@1, prim-env@1, h@1, c@1));
           }))));
       ((@skip std/core/types/Nothing() : (std/core/types/maybe :: V -> V)<((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value> ) as @pat@0@1: ((std/core/types/maybe :: V -> V)<((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value>))
          -> std/core/exn/throw<value>("undefined primitive op was evaluted!", (std/core/types/@None<std/core/exn/exception-info>));
@@ -217,21 +211,12 @@ inline borrow "^" fip fun is-app // inline size: 1
          -> std/core/types/False;
     };
   };
-inline borrow "^" fip fun is-reset // inline size: 1
+inline borrow "^" fip fun is-handle // inline size: 1
   = fn(expr: expr){
     match (expr) {
-      ((interpret/Reset((@pat@0: expr) : expr) : expr ) as @pat: expr)
+      ((interpret/Handle((@pat@0: expr) : expr, (@pat@1: (std/core/types/list :: V -> V)<(std/core/types/string, expr)>) : (std/core/types/list :: V -> V)<(std/core/types/string, expr)>) : expr ) as @pat: expr)
          -> std/core/types/True;
-      (@pat@1: expr)
-         -> std/core/types/False;
-    };
-  };
-inline borrow "^" fip fun is-shift // inline size: 1
-  = fn(expr: expr){
-    match (expr) {
-      ((interpret/Shift((@pat@0: expr) : expr) : expr ) as @pat: expr)
-         -> std/core/types/True;
-      (@pat@1: expr)
+      (@pat@2: expr)
          -> std/core/types/False;
     };
   };
@@ -275,7 +260,7 @@ inline borrow "^" fip fun is-prim // inline size: 1
   };
  fun eval // inline size: 1
   = fn<<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(e: expr){
-    interpret/eval'(e, (std/core/types/Nil<(std/core/types/string, value)>), (std/core/types/Nil<(std/core/types/string, ((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value)>), (fn<<(std/core/pure :: E)>>(x: value){
+    interpret/eval'(e, (std/core/types/Nil<(std/core/types/string, value)>), (std/core/types/Nil<(std/core/types/string, ((std/core/types/list :: V -> V)<value>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> value)>), (std/core/types/Nil<(std/core/types/string, expr)>), (fn<<(std/core/pure :: E)>>(x: value){
         x;
       }));
   };
