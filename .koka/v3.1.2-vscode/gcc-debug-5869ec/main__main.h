@@ -23,15 +23,18 @@
 #include "std_core_console.h"
 #include "std_core.h"
 #include "main.h"
-#include "utest.h"
 
 // type declarations
 
 // value declarations
 
-kk_unit_t kk_main__main__expr(kk_context_t* _ctx); /* () -> <console/console,div> () */ 
+static inline kk_unit_t kk_main__main__expr(kk_context_t* _ctx) { /* () -> <console/console,div> () */ 
+  kk_main_main(_ctx); return kk_Unit;
+}
 
-kk_unit_t kk_main__main__main(kk_context_t* _ctx); /* () -> <st<global>,console/console,div,fsys,ndet,net,ui> () */ 
+static inline kk_unit_t kk_main__main__main(kk_context_t* _ctx) { /* () -> <st<global>,console/console,div,fsys,ndet,net,ui> () */ 
+  kk_main_main(_ctx); return kk_Unit;
+}
 
 void kk_main__main__init(kk_context_t* _ctx);
 

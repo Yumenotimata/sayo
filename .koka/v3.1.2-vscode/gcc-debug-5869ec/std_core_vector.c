@@ -100,7 +100,7 @@ kk_box_t kk_std_core_vector__index(kk_vector_t v, kk_integer_t index, kk_context
     kk_string_t _x_x44;
     kk_define_string_literal(, _s_x45, 19, "index out of bounds", _ctx)
     _x_x44 = kk_string_dup(_s_x45, _ctx); /*string*/
-    kk_std_core_types__optional _x_x46 = kk_std_core_types__new_Optional(kk_std_core_exn__exception_info_box(kk_std_core_exn__new_ExnRange(_ctx), _ctx), _ctx); /*? 1003*/
+    kk_std_core_types__optional _x_x46 = kk_std_core_types__new_Optional(kk_std_core_exn__exception_info_box(kk_std_core_exn__new_ExnRange(_ctx), _ctx), _ctx); /*? 7*/
     return kk_std_core_exn_throw(_x_x44, _x_x46, _ctx);
   }
 }
@@ -182,7 +182,7 @@ kk_unit_t kk_std_core_vector__lift_forz_868(kk_function_t action_0, kk_ssize_t n
     kk_function_t _x_x57 = kk_function_dup(action_0, _ctx); /*(ssize_t) -> 470 ()*/
     kk_function_call(kk_unit_t, (kk_function_t, kk_ssize_t, kk_context_t*), _x_x57, (_x_x57, i_0, _ctx), _ctx);
     if (kk_yielding(kk_context())) {
-      kk_box_t _x_x58 = kk_std_core_hnd_yield_extend(kk_std_core_vector__new_lift_forz_868_fun59(action_0, i_0, n_0, _ctx), _ctx); /*3003*/
+      kk_box_t _x_x58 = kk_std_core_hnd_yield_extend(kk_std_core_vector__new_lift_forz_868_fun59(action_0, i_0, n_0, _ctx), _ctx); /*2978*/
       kk_unit_unbox(_x_x58); return kk_Unit;
     }
     {
@@ -253,7 +253,7 @@ static kk_unit_t kk_std_core_vector_vector_init_fun63(kk_function_t _fself, kk_s
   x_0_10057 = kk_function_call(kk_box_t, (kk_function_t, kk_integer_t, kk_context_t*), f, (f, _x_x64, _ctx), _ctx); /*512*/
   if (kk_yielding(kk_context())) {
     kk_box_drop(x_0_10057, _ctx);
-    kk_box_t _x_x65 = kk_std_core_hnd_yield_extend(kk_std_core_vector_new_vector_init_fun66(v, i_0, _ctx), _ctx); /*3003*/
+    kk_box_t _x_x65 = kk_std_core_hnd_yield_extend(kk_std_core_vector_new_vector_init_fun66(v, i_0, _ctx), _ctx); /*2978*/
     kk_unit_unbox(_x_x65); return kk_Unit;
   }
   {
@@ -296,7 +296,7 @@ kk_vector_t kk_std_core_vector_vector_init(kk_integer_t n, kk_function_t f, kk_c
   _x_x62 = kk_std_core_vector_new_vector_init_fun63(f, v, _ctx); /*(i@0 : ssize_t) -> 513 ()*/
   kk_std_core_vector__lift_forz_868(_x_x62, len, i, _ctx);
   if (kk_yielding(kk_context())) {
-    kk_box_t _x_x68 = kk_std_core_hnd_yield_extend(kk_std_core_vector_new_vector_init_fun69(v, _ctx), _ctx); /*3003*/
+    kk_box_t _x_x68 = kk_std_core_hnd_yield_extend(kk_std_core_vector_new_vector_init_fun69(v, _ctx), _ctx); /*2978*/
     return kk_vector_unbox(_x_x68, _ctx);
   }
   {
@@ -465,7 +465,7 @@ kk_std_core_types__maybe kk_std_core_vector__lift_for_whilez_869(kk_function_t a
     x_0_10064 = kk_function_call(kk_std_core_types__maybe, (kk_function_t, kk_ssize_t, kk_context_t*), _x_x75, (_x_x75, i_0, _ctx), _ctx); /*maybe<664>*/
     if (kk_yielding(kk_context())) {
       kk_std_core_types__maybe_drop(x_0_10064, _ctx);
-      kk_box_t _x_x76 = kk_std_core_hnd_yield_extend(kk_std_core_vector__new_lift_for_whilez_869_fun77(action_0, i_0, n_0, _ctx), _ctx); /*3003*/
+      kk_box_t _x_x76 = kk_std_core_hnd_yield_extend(kk_std_core_vector__new_lift_for_whilez_869_fun77(action_0, i_0, n_0, _ctx), _ctx); /*2978*/
       return kk_std_core_types__maybe_unbox(_x_x76, KK_OWNED, _ctx);
     }
     if (kk_std_core_types__is_Nothing(x_0_10064, _ctx)) {
@@ -583,7 +583,7 @@ static kk_unit_t kk_std_core_vector_map_fun85(kk_function_t _fself, kk_ssize_t i
   kk_box_t x_0_10070 = kk_function_call(kk_box_t, (kk_function_t, kk_box_t, kk_context_t*), f, (f, x_10019, _ctx), _ctx); /*765*/;
   if (kk_yielding(kk_context())) {
     kk_box_drop(x_0_10070, _ctx);
-    kk_box_t _x_x86 = kk_std_core_hnd_yield_extend(kk_std_core_vector_new_map_fun87(w, i_0, _ctx), _ctx); /*3003*/
+    kk_box_t _x_x86 = kk_std_core_hnd_yield_extend(kk_std_core_vector_new_map_fun87(w, i_0, _ctx), _ctx); /*2978*/
     kk_unit_unbox(_x_x86); return kk_Unit;
   }
   {
@@ -630,7 +630,7 @@ kk_vector_t kk_std_core_vector_map(kk_vector_t v, kk_function_t f, kk_context_t*
   _x_x84 = kk_std_core_vector_new_map_fun85(f, v, w, _ctx); /*(i@0 : ssize_t) -> 766 ()*/
   kk_std_core_vector__lift_forz_868(_x_x84, n_10003, i, _ctx);
   if (kk_yielding(kk_context())) {
-    kk_box_t _x_x89 = kk_std_core_hnd_yield_extend(kk_std_core_vector_new_map_fun90(w, _ctx), _ctx); /*3003*/
+    kk_box_t _x_x89 = kk_std_core_hnd_yield_extend(kk_std_core_vector_new_map_fun90(w, _ctx), _ctx); /*2978*/
     return kk_vector_unbox(_x_x89, _ctx);
   }
   {

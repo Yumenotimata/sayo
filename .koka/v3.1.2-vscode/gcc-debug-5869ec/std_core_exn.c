@@ -133,7 +133,7 @@ kk_box_t kk_std_core_exn_throw(kk_string_t message, kk_std_core_types__optional 
           _x_x114 = kk_std_core_exn__new_ExnError(_ctx); /*exception-info*/
         }
         _x_x113 = kk_std_core_exn__new_Exception(message, _x_x114, _ctx); /*exception*/
-        _x_x112 = kk_std_core_exn__exception_box(_x_x113, _ctx); /*1009*/
+        _x_x112 = kk_std_core_exn__exception_box(_x_x113, _ctx); /*45*/
         return kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_box_t, kk_context_t*), _fun_unbox_x22, (_fun_unbox_x22, m, ev_10033, _x_x112, _ctx), _ctx);
       }
     }
@@ -183,7 +183,7 @@ kk_box_t kk_std_core_exn_error_pattern(kk_string_t location, kk_string_t definit
         kk_std_core_exn__exception _x_x126;
         kk_std_core_exn__exception_info _x_x127 = kk_std_core_exn__new_ExnPattern(kk_reuse_null, 0, location, definition, _ctx); /*exception-info*/
         _x_x126 = kk_std_core_exn__new_Exception(message_10003, _x_x127, _ctx); /*exception*/
-        _x_x125 = kk_std_core_exn__exception_box(_x_x126, _ctx); /*1009*/
+        _x_x125 = kk_std_core_exn__exception_box(_x_x126, _ctx); /*45*/
         return kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_box_t, kk_context_t*), _fun_unbox_x31, (_fun_unbox_x31, m, ev_10036, _x_x125, _ctx), _ctx);
       }
     }
@@ -281,7 +281,7 @@ static kk_box_t kk_std_core_exn_exn_fs_try_fun134(kk_function_t _fself, kk_box_t
 kk_box_t kk_std_core_exn_exn_fs_try(kk_function_t action, kk_function_t hndl, kk_context_t* _ctx) { /* forall<a,e> (action : () -> <exn|e> a, hndl : (exception) -> e a) -> e a */ 
   kk_function_t _b_x35_39 = kk_std_core_exn_exn_fs_new_try_fun128(hndl, _ctx); /*(m : hnd/marker<638,637>, hnd/ev<exn>, x : exception) -> 638 625*/;
   kk_std_core_exn__exn _x_x130;
-  kk_std_core_hnd__clause1 _x_x131 = kk_std_core_hnd__new_Clause1(kk_std_core_exn_exn_fs_new_try_fun132(_b_x35_39, _ctx), _ctx); /*hnd/clause1<1015,1016,1017,1018,1019>*/
+  kk_std_core_hnd__clause1 _x_x131 = kk_std_core_hnd__new_Clause1(kk_std_core_exn_exn_fs_new_try_fun132(_b_x35_39, _ctx), _ctx); /*hnd/clause1<45,46,47,48,49>*/
   _x_x130 = kk_std_core_exn__new_Hnd_exn(kk_reuse_null, 0, kk_integer_from_small(0), _x_x131, _ctx); /*exn<14,15>*/
   return kk_std_core_exn__handle_exn(_x_x130, kk_std_core_exn_exn_fs_new_try_fun134(_ctx), action, _ctx);
 }
@@ -331,9 +331,9 @@ static kk_function_t kk_std_core_exn_new_try_fun138(kk_function_t _b_x42, kk_con
 
 static kk_std_core_exn__error kk_std_core_exn_try_fun138(kk_function_t _fself, kk_std_core_hnd__resume_result _b_x43, kk_context_t* _ctx) {
   struct kk_std_core_exn_try_fun138__t* _self = kk_function_as(struct kk_std_core_exn_try_fun138__t*, _fself, _ctx);
-  kk_function_t _b_x42 = _self->_b_x42; /* (hnd/resume-result<3004,3007>) -> 3006 3007 */
+  kk_function_t _b_x42 = _self->_b_x42; /* (hnd/resume-result<3225,3228>) -> 3227 3228 */
   kk_drop_match(_self, {kk_function_dup(_b_x42, _ctx);}, {}, _ctx)
-  kk_box_t _x_x139 = kk_function_call(kk_box_t, (kk_function_t, kk_std_core_hnd__resume_result, kk_context_t*), _b_x42, (_b_x42, _b_x43, _ctx), _ctx); /*3007*/
+  kk_box_t _x_x139 = kk_function_call(kk_box_t, (kk_function_t, kk_std_core_hnd__resume_result, kk_context_t*), _b_x42, (_b_x42, _b_x43, _ctx), _ctx); /*3228*/
   return kk_std_core_exn__error_unbox(_x_x139, KK_OWNED, _ctx);
 }
 static kk_box_t kk_std_core_exn_try_fun137(kk_function_t _fself, kk_function_t _b_x42, kk_context_t* _ctx) {
@@ -430,7 +430,7 @@ static kk_box_t kk_std_core_exn_try_fun146(kk_function_t _fself, kk_context_t* _
   kk_std_core_exn__error _x_x147;
   if (kk_yielding(kk_context())) {
     kk_box_drop(x_0_10041, _ctx);
-    kk_box_t _x_x148 = kk_std_core_hnd_yield_extend(kk_std_core_exn_new_try_fun149(_ctx), _ctx); /*3003*/
+    kk_box_t _x_x148 = kk_std_core_hnd_yield_extend(kk_std_core_exn_new_try_fun149(_ctx), _ctx); /*2978*/
     _x_x147 = kk_std_core_exn__error_unbox(_x_x148, KK_OWNED, _ctx); /*error<677>*/
   }
   else {
@@ -443,7 +443,7 @@ kk_std_core_exn__error kk_std_core_exn_try(kk_function_t action, kk_context_t* _
   kk_box_t _x_x135;
   kk_function_t _b_x44_57 = kk_std_core_exn_new_try_fun136(_ctx); /*(m : hnd/marker<678,error<677>>, hnd/ev<exn>, x : exception) -> 678 625*/;
   kk_std_core_exn__exn _x_x141;
-  kk_std_core_hnd__clause1 _x_x142 = kk_std_core_hnd__new_Clause1(kk_std_core_exn_new_try_fun143(_b_x44_57, _ctx), _ctx); /*hnd/clause1<1015,1016,1017,1018,1019>*/
+  kk_std_core_hnd__clause1 _x_x142 = kk_std_core_hnd__new_Clause1(kk_std_core_exn_new_try_fun143(_b_x44_57, _ctx), _ctx); /*hnd/clause1<45,46,47,48,49>*/
   _x_x141 = kk_std_core_exn__new_Hnd_exn(kk_reuse_null, 0, kk_integer_from_small(0), _x_x142, _ctx); /*exn<14,15>*/
   _x_x135 = kk_std_core_exn__handle_exn(_x_x141, kk_std_core_exn_new_try_fun145(_ctx), kk_std_core_exn_new_try_fun146(action, _ctx), _ctx); /*373*/
   return kk_std_core_exn__error_unbox(_x_x135, KK_OWNED, _ctx);
@@ -540,7 +540,7 @@ static kk_box_t kk_std_core_exn_catch_fun157(kk_function_t _fself, kk_box_t _x, 
 kk_box_t kk_std_core_exn_catch(kk_function_t action, kk_function_t hndl, kk_context_t* _ctx) { /* forall<a,e> (action : () -> <exn|e> a, hndl : (exception) -> e a) -> e a */ 
   kk_function_t _b_x64_68 = kk_std_core_exn_new_catch_fun151(hndl, _ctx); /*(m : hnd/marker<708,707>, hnd/ev<exn>, x : exception) -> 708 625*/;
   kk_std_core_exn__exn _x_x153;
-  kk_std_core_hnd__clause1 _x_x154 = kk_std_core_hnd__new_Clause1(kk_std_core_exn_new_catch_fun155(_b_x64_68, _ctx), _ctx); /*hnd/clause1<1015,1016,1017,1018,1019>*/
+  kk_std_core_hnd__clause1 _x_x154 = kk_std_core_hnd__new_Clause1(kk_std_core_exn_new_catch_fun155(_b_x64_68, _ctx), _ctx); /*hnd/clause1<45,46,47,48,49>*/
   _x_x153 = kk_std_core_exn__new_Hnd_exn(kk_reuse_null, 0, kk_integer_from_small(0), _x_x154, _ctx); /*exn<14,15>*/
   return kk_std_core_exn__handle_exn(_x_x153, kk_std_core_exn_new_catch_fun157(_ctx), action, _ctx);
 }
@@ -627,7 +627,7 @@ kk_box_t kk_std_core_exn_exn_error_range(kk_context_t* _ctx) { /* forall<a> () -
         kk_define_string_literal(, _s_x166, 18, "index out-of-range", _ctx)
         _x_x165 = kk_string_dup(_s_x166, _ctx); /*string*/
         _x_x164 = kk_std_core_exn__new_Exception(_x_x165, kk_std_core_exn__new_ExnRange(_ctx), _ctx); /*exception*/
-        _x_x163 = kk_std_core_exn__exception_box(_x_x164, _ctx); /*1009*/
+        _x_x163 = kk_std_core_exn__exception_box(_x_x164, _ctx); /*45*/
         return kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_box_t, kk_context_t*), _fun_unbox_x83, (_fun_unbox_x83, m, ev_10050, _x_x163, _ctx), _ctx);
       }
     }

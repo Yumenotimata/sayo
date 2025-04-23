@@ -15,7 +15,7 @@ static kk_function_t kk_std_core_maybe_new_map_fun32(kk_context_t* _ctx) {
 static kk_box_t kk_std_core_maybe_map_fun32(kk_function_t _fself, kk_box_t _b_x1, kk_context_t* _ctx) {
   kk_unused(_fself);
   kk_box_t _y_x10004_3 = _b_x1; /*183*/;
-  kk_std_core_types__maybe _x_x33 = kk_std_core_types__new_Just(_y_x10004_3, _ctx); /*maybe<1027>*/
+  kk_std_core_types__maybe _x_x33 = kk_std_core_types__new_Just(_y_x10004_3, _ctx); /*maybe<1264>*/
   return kk_std_core_types__maybe_box(_x_x33, _ctx);
 }
 
@@ -29,7 +29,7 @@ kk_std_core_types__maybe kk_std_core_maybe_map(kk_std_core_types__maybe m, kk_fu
     kk_box_t x_0_10010 = kk_function_call(kk_box_t, (kk_function_t, kk_box_t, kk_context_t*), f, (f, x, _ctx), _ctx); /*183*/;
     if (kk_yielding(kk_context())) {
       kk_box_drop(x_0_10010, _ctx);
-      kk_box_t _x_x31 = kk_std_core_hnd_yield_extend(kk_std_core_maybe_new_map_fun32(_ctx), _ctx); /*3003*/
+      kk_box_t _x_x31 = kk_std_core_hnd_yield_extend(kk_std_core_maybe_new_map_fun32(_ctx), _ctx); /*2978*/
       return kk_std_core_types__maybe_unbox(_x_x31, KK_OWNED, _ctx);
     }
     {
@@ -105,37 +105,37 @@ kk_std_core_types__order2 kk_std_core_maybe_order2(kk_std_core_types__maybe mb1,
       if (kk_std_core_types__is_Eq2(_match_x27, _ctx)) {
         kk_box_t z = _match_x27._cons.Eq2.eq;
         kk_box_t _x_x35;
-        kk_std_core_types__maybe _x_x36 = kk_std_core_types__new_Just(z, _ctx); /*maybe<1027>*/
-        _x_x35 = kk_std_core_types__maybe_box(_x_x36, _ctx); /*1030*/
+        kk_std_core_types__maybe _x_x36 = kk_std_core_types__new_Just(z, _ctx); /*maybe<1421>*/
+        _x_x35 = kk_std_core_types__maybe_box(_x_x36, _ctx); /*102*/
         return kk_std_core_types__new_Eq2(_x_x35, _ctx);
       }
       if (kk_std_core_types__is_Lt2(_match_x27, _ctx)) {
         kk_box_t l = _match_x27._cons.Lt2.lt;
         kk_box_t g = _match_x27._cons.Lt2.gt;
         kk_box_t _x_x37;
-        kk_std_core_types__maybe _x_x38 = kk_std_core_types__new_Just(l, _ctx); /*maybe<1027>*/
-        _x_x37 = kk_std_core_types__maybe_box(_x_x38, _ctx); /*1031*/
+        kk_std_core_types__maybe _x_x38 = kk_std_core_types__new_Just(l, _ctx); /*maybe<1444>*/
+        _x_x37 = kk_std_core_types__maybe_box(_x_x38, _ctx); /*102*/
         kk_box_t _x_x39;
-        kk_std_core_types__maybe _x_x40 = kk_std_core_types__new_Just(g, _ctx); /*maybe<1027>*/
-        _x_x39 = kk_std_core_types__maybe_box(_x_x40, _ctx); /*1031*/
+        kk_std_core_types__maybe _x_x40 = kk_std_core_types__new_Just(g, _ctx); /*maybe<1444>*/
+        _x_x39 = kk_std_core_types__maybe_box(_x_x40, _ctx); /*102*/
         return kk_std_core_types__new_Lt2(_x_x37, _x_x39, _ctx);
       }
       {
         kk_box_t l_0 = _match_x27._cons.Gt2.lt;
         kk_box_t g_0 = _match_x27._cons.Gt2.gt;
         kk_box_t _x_x41;
-        kk_std_core_types__maybe _x_x42 = kk_std_core_types__new_Just(l_0, _ctx); /*maybe<1027>*/
-        _x_x41 = kk_std_core_types__maybe_box(_x_x42, _ctx); /*1031*/
+        kk_std_core_types__maybe _x_x42 = kk_std_core_types__new_Just(l_0, _ctx); /*maybe<1467>*/
+        _x_x41 = kk_std_core_types__maybe_box(_x_x42, _ctx); /*102*/
         kk_box_t _x_x43;
-        kk_std_core_types__maybe _x_x44 = kk_std_core_types__new_Just(g_0, _ctx); /*maybe<1027>*/
-        _x_x43 = kk_std_core_types__maybe_box(_x_x44, _ctx); /*1031*/
+        kk_std_core_types__maybe _x_x44 = kk_std_core_types__new_Just(g_0, _ctx); /*maybe<1467>*/
+        _x_x43 = kk_std_core_types__maybe_box(_x_x44, _ctx); /*102*/
         return kk_std_core_types__new_Gt2(_x_x41, _x_x43, _ctx);
       }
     }
     {
       kk_box_t _x_x45;
-      kk_std_core_types__maybe _x_x46 = kk_std_core_types__new_Just(x, _ctx); /*maybe<1027>*/
-      _x_x45 = kk_std_core_types__maybe_box(_x_x46, _ctx); /*1031*/
+      kk_std_core_types__maybe _x_x46 = kk_std_core_types__new_Just(x, _ctx); /*maybe<1486>*/
+      _x_x45 = kk_std_core_types__maybe_box(_x_x46, _ctx); /*102*/
       return kk_std_core_types__new_Gt2(kk_std_core_types__maybe_box(kk_std_core_types__new_Nothing(_ctx), _ctx), _x_x45, _ctx);
     }
   }
@@ -179,7 +179,7 @@ kk_string_t kk_std_core_maybe_show(kk_std_core_types__maybe mb, kk_function_t _i
     kk_string_t x_0_10014 = kk_function_call(kk_string_t, (kk_function_t, kk_box_t, kk_context_t*), _implicit_fs_show, (_implicit_fs_show, x, _ctx), _ctx); /*string*/;
     if (kk_yielding(kk_context())) {
       kk_string_drop(x_0_10014, _ctx);
-      kk_box_t _x_x52 = kk_std_core_hnd_yield_extend(kk_std_core_maybe_new_show_fun53(_ctx), _ctx); /*3003*/
+      kk_box_t _x_x52 = kk_std_core_hnd_yield_extend(kk_std_core_maybe_new_show_fun53(_ctx), _ctx); /*2978*/
       return kk_string_unbox(_x_x52);
     }
     {

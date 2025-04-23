@@ -22,7 +22,6 @@ import * as $std_core_delayed from './std_core_delayed.mjs';
 import * as $std_core_console from './std_core_console.mjs';
 import * as $std_core from './std_core.mjs';
 import * as $utest from './utest.mjs';
-import * as $interpret from './interpret.mjs';
  
 // externals
  
@@ -30,15 +29,20 @@ import * as $interpret from './interpret.mjs';
  
 // declarations
  
-export var tests;
-var tests = $std_core_types.Cons(function() {
-    return $std_core_hnd._open_at0($std_core_hnd._evv_index($utest._tag_test_suite), $interpret.interpret_tests);
-  }, $std_core_types.Nil);
- 
 export function main() /* () -> <console/console,div> () */  {
    
-  $std_core_list.map(tests, function(test /* () -> <div,utest/test-suite<_56>> () */ ) {
-      return $utest.run_utest(test);
-    });
+  $utest.run_utest(function() {
+    return $utest.suite("", function() {
+        return $utest.test("", function() {
+            return $utest.assert_eq(function() {
+                return 1;
+              }, function() {
+                return 2;
+              }, (function(_x0, _x1) {
+                return $std_core_types._int_eq(_x0,_x1);
+              }), $std_core_int.show);
+          });
+      });
+  });
   return $std_core_types.Unit;
 }

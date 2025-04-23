@@ -1,16 +1,11 @@
 import utest
 
-import interpret
-import utest
-
-val tests = [interpret-tests]
+import expr
+import value
 
 fun main()
-
-  tests.map fn(test)
-    run-utest(test)
-  // val program = Handle(Op("read", Lit(Unit)), [("read", Fn("_", Lit(Int(1))))])
-  // eval(program)
-
-
+  val test = Let("x", Let("x", Lit(Int(1)), App(Lam("x", Var("x")), Lit(Int(0)))), Var("x"))
+  match uniquify(test)
+    Left(e) -> println(e)
+    Right(uexpr) -> println(show(uexpr))
   return ()

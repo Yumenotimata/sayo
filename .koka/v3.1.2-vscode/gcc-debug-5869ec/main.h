@@ -23,13 +23,12 @@
 #include "std_core_console.h"
 #include "std_core.h"
 #include "utest.h"
-#include "interpret.h"
+#include "expr.h"
+#include "value.h"
 
 // type declarations
 
 // value declarations
-
-extern kk_std_core_types__list kk_main_tests;
 
 kk_unit_t kk_main_main(kk_context_t* _ctx); /* () -> <console/console,div> () */ 
 

@@ -32,17 +32,37 @@ import * as $utest from './utest.mjs';
  
 export function _expr() /* () -> <console/console,div> () */  {
    
-  $std_core_list.map($main.tests, function(test /* () -> <div,utest/test-suite<_56>> () */ ) {
-      return $utest.run_utest(test);
-    });
+  $utest.run_utest(function() {
+    return $utest.suite("", function() {
+        return $utest.test("", function() {
+            return $utest.assert_eq(function() {
+                return 1;
+              }, function() {
+                return 2;
+              }, (function(_x0, _x1) {
+                return $std_core_types._int_eq(_x0,_x1);
+              }), $std_core_int.show);
+          });
+      });
+  });
   return $std_core_types.Unit;
 }
  
 export function _main() /* () -> <st<global>,console/console,div,fsys,ndet,net,ui> () */  {
    
-  $std_core_list.map($main.tests, function(test /* () -> <div,utest/test-suite<_56>> () */ ) {
-      return $utest.run_utest(test);
-    });
+  $utest.run_utest(function() {
+    return $utest.suite("", function() {
+        return $utest.test("", function() {
+            return $utest.assert_eq(function() {
+                return 1;
+              }, function() {
+                return 2;
+              }, (function(_x0, _x1) {
+                return $std_core_types._int_eq(_x0,_x1);
+              }), $std_core_int.show);
+          });
+      });
+  });
   return $std_core_types.Unit;
 }
  

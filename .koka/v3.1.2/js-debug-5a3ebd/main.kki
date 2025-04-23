@@ -23,7 +23,6 @@ import std/core/delayed = std/core/delayed pub = "";
 import std/core/console = std/core/console pub = "";
 import std/core = std/core = "";
 import utest = utest = "";
-import interpret = interpret = "";
  
 //------------------------------
 //#kki: external imports
@@ -44,8 +43,7 @@ import interpret = interpret = "";
 //------------------------------
 //#kki: declarations
  
-pub val tests[6,5,6,9] : forall<a,(e :: E)> (std/core/types/list :: V -> V)<() -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<a>>|(e :: E)> ()>;
-pub  fun main[8,5,8,8] : () -> <(std/core/console/console :: X),(std/core/types/div :: X)> ();
+pub  fun main[3,5,3,8] : () -> <(std/core/console/console :: X),(std/core/types/div :: X)> ();
  
 //------------------------------
 //#kki: external declarations
@@ -55,11 +53,19 @@ pub  fun main[8,5,8,8] : () -> <(std/core/console/console :: X),(std/core/types/
 //#kki: inline definitions
  
 //.inline-section
- fun main // inline size: 2
+ fun main // inline size: 4
   = fn<<(std/core/console/console :: X),(std/core/types/div :: X)>>(){
-    val _[10,3,10,11] : (std/core/types/list :: V -> V)<()>
-          = std/core/list/map<() -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<_a>>> (),(),<(std/core/console/console :: X),(std/core/types/div :: X)>>((main/tests<_a,(std/core/types/total :: E)>), (fn<<(std/core/console/console :: X),(std/core/types/div :: X)>>(test: () -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<_56>>> ()){
-              (utest/run-utest<_a>(test));
-            }));
+    val _[4,3,4,14] : ()
+          = utest/run-utest<_a>((fn<<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-suite :: (V, E, V) -> V)<_a>>>>(){
+            (utest/suite<_a>("", (fn<<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test-case :: (V, E, V) -> V)<_a>>>>(){
+                (utest/test<_a>("", (fn<<(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(utest/test :: (V, E, V) -> V)<_a>>>>(){
+                    (utest/assert-eq<std/core/types/int,_a>((fn<<(std/core/types/div :: X)>>(){
+                        1;
+                      }), (fn<<(std/core/types/div :: X)>>(){
+                        2;
+                      }), std/core/int/(==), std/core/int/show));
+                  })));
+              })));
+          }));
     std/core/types/Unit;
   };

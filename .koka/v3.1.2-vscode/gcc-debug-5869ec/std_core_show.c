@@ -313,7 +313,7 @@ kk_string_t kk_std_core_show_string_fs_show(kk_string_t s, kk_context_t* _ctx) {
   kk_std_core_types__list _b_x29_32 = kk_std_core_string_list(s, _ctx); /*list<char>*/;
   kk_function_t _b_x30_33 = kk_std_core_show_string_fs_new_show_fun128(_ctx); /*(c : char) -> string*/;
   kk_string_t _x_x129;
-  kk_std_core_types__list _x_x130 = kk_std_core_list_map(_b_x29_32, kk_std_core_show_string_fs_new_show_fun131(_b_x30_33, _ctx), _ctx); /*list<1002>*/
+  kk_std_core_types__list _x_x130 = kk_std_core_list_map(_b_x29_32, kk_std_core_show_string_fs_new_show_fun131(_b_x30_33, _ctx), _ctx); /*list<1969>*/
   _x_x129 = kk_std_core_list_join(_x_x130, _ctx); /*string*/
   kk_string_t _x_x134;
   kk_define_string_literal(, _s_x135, 1, "\"", _ctx)
