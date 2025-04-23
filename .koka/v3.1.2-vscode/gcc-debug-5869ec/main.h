@@ -25,6 +25,7 @@
 #include "utest.h"
 #include "expr.h"
 #include "value.h"
+#include "types.h"
 
 // type declarations
 

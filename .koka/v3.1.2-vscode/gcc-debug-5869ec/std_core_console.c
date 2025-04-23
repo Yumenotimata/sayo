@@ -13,7 +13,7 @@ kk_unit_t kk_std_core_console_prints(kk_string_t s, kk_context_t* _ctx) { /* (s 
   kk_std_core_types__maybe _match_x30;
   kk_box_t _x_x31;
   kk_ref_t _x_x32 = kk_ref_dup(kk_std_core_console_redirect, _ctx); /*ref<global,maybe<(string) -> console/console ()>>*/
-  _x_x31 = kk_ref_get(_x_x32,kk_context()); /*1001*/
+  _x_x31 = kk_ref_get(_x_x32,kk_context()); /*209*/
   _match_x30 = kk_std_core_types__maybe_unbox(_x_x31, KK_OWNED, _ctx); /*maybe<(string) -> console/console ()>*/
   if (kk_std_core_types__is_Nothing(_match_x30, _ctx)) {
     kk_std_core_console_xprints(s, _ctx); return kk_Unit;
@@ -55,8 +55,8 @@ static kk_box_t kk_std_core_console_print_redirect_fun38(kk_function_t _fself, k
 
 kk_unit_t kk_std_core_console_print_redirect(kk_function_t print, kk_context_t* _ctx) { /* (print : (msg : string) -> console ()) -> <st<global>,console,ndet> () */ 
   kk_box_t _x_x36;
-  kk_std_core_types__maybe _x_x37 = kk_std_core_types__new_Just(kk_function_box(kk_std_core_console_new_print_redirect_fun38(print, _ctx), _ctx), _ctx); /*maybe<1027>*/
-  _x_x36 = kk_std_core_types__maybe_box(_x_x37, _ctx); /*1000*/
+  kk_std_core_types__maybe _x_x37 = kk_std_core_types__new_Just(kk_function_box(kk_std_core_console_new_print_redirect_fun38(print, _ctx), _ctx), _ctx); /*maybe<91>*/
+  _x_x36 = kk_std_core_types__maybe_box(_x_x37, _ctx); /*195*/
   kk_ref_set_borrow(kk_std_core_console_redirect,_x_x36,kk_context()); return kk_Unit;
 }
  
@@ -70,7 +70,7 @@ kk_unit_t kk_std_core_console_printsln(kk_string_t s, kk_context_t* _ctx) { /* (
   kk_std_core_types__maybe _match_x29;
   kk_box_t _x_x41;
   kk_ref_t _x_x42 = kk_ref_dup(kk_std_core_console_redirect, _ctx); /*ref<global,maybe<(string) -> console/console ()>>*/
-  _x_x41 = kk_ref_get(_x_x42,kk_context()); /*1001*/
+  _x_x41 = kk_ref_get(_x_x42,kk_context()); /*1451*/
   _match_x29 = kk_std_core_types__maybe_unbox(_x_x41, KK_OWNED, _ctx); /*maybe<(string) -> console/console ()>*/
   if (kk_std_core_types__is_Nothing(_match_x29, _ctx)) {
     kk_std_core_console_xprintsln(s, _ctx); return kk_Unit;

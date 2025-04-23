@@ -47,12 +47,15 @@ pub fun uniquify'(e: expr, us: usubst): <exn, unique, div> uexpr
     App(e1, e2) -> UApp(uniquify'(e1, us), uniquify'(e2, us))
     Let(x, e1, e2) -> 
       val x' = gen(x)
-      val us' = us.append([(x, x')])
+      val us' = us.append(x +-> x')
       ULet(x', uniquify'(e1, us), uniquify'(e2, us'))
     Lam(a, body) -> 
       val a' = gen(a)
-      ULam(a', uniquify'(body, us.append([(a, a')])))
+      ULam(a', uniquify'(body, us.append(a +-> a')))
     Lit(v) -> ULit(v)
     Var(x) -> match us.filter(fn((x', _)) x == x').last()
       Just((_, uid)) -> UVar(uid)
       Nothing -> throw("undefined variable: " ++ show(x))
+
+fun (+->)(id: string, uid: string)
+  [(id, uid)]

@@ -146,7 +146,7 @@ kk_unit_t kk_std_core__mlift_while_10072(kk_function_t action_0, kk_function_t p
     kk_function_t _x_x75 = kk_function_dup(action_0, _ctx); /*() -> <div|370> ()*/
     kk_function_call(kk_unit_t, (kk_function_t, kk_context_t*), _x_x75, (_x_x75, _ctx), _ctx);
     if (kk_yielding(kk_context())) {
-      kk_box_t _x_x76 = kk_std_core_hnd_yield_extend(kk_std_core__new_mlift_while_10072_fun77(action_0, predicate_0, _ctx), _ctx); /*3003*/
+      kk_box_t _x_x76 = kk_std_core_hnd_yield_extend(kk_std_core__new_mlift_while_10072_fun77(action_0, predicate_0, _ctx), _ctx); /*2978*/
       kk_unit_unbox(_x_x76); return kk_Unit;
     }
     {
@@ -223,7 +223,7 @@ kk_unit_t kk_std_core_while(kk_function_t predicate_1, kk_function_t action_1, k
   kk_function_t _x_x79 = kk_function_dup(predicate_1, _ctx); /*() -> <div|370> bool*/
   x_0_10081 = kk_function_call(bool, (kk_function_t, kk_context_t*), _x_x79, (_x_x79, _ctx), _ctx); /*bool*/
   if (kk_yielding(kk_context())) {
-    kk_box_t _x_x80 = kk_std_core_hnd_yield_extend(kk_std_core_new_while_fun81(action_1, predicate_1, _ctx), _ctx); /*3003*/
+    kk_box_t _x_x80 = kk_std_core_hnd_yield_extend(kk_std_core_new_while_fun81(action_1, predicate_1, _ctx), _ctx); /*2978*/
     kk_unit_unbox(_x_x80); return kk_Unit;
   }
   if (x_0_10081) {
@@ -231,7 +231,7 @@ kk_unit_t kk_std_core_while(kk_function_t predicate_1, kk_function_t action_1, k
     kk_function_t _x_x83 = kk_function_dup(action_1, _ctx); /*() -> <div|370> ()*/
     kk_function_call(kk_unit_t, (kk_function_t, kk_context_t*), _x_x83, (_x_x83, _ctx), _ctx);
     if (kk_yielding(kk_context())) {
-      kk_box_t _x_x84 = kk_std_core_hnd_yield_extend(kk_std_core_new_while_fun85(action_1, predicate_1, _ctx), _ctx); /*3003*/
+      kk_box_t _x_x84 = kk_std_core_hnd_yield_extend(kk_std_core_new_while_fun85(action_1, predicate_1, _ctx), _ctx); /*2978*/
       kk_unit_unbox(_x_x84); return kk_Unit;
     }
     { // tailcall
@@ -445,7 +445,7 @@ kk_unit_t kk_std_core_range_fs__lift_for_1256(kk_function_t action_0, kk_integer
     kk_integer_t _x_x105 = kk_integer_dup(i_0, _ctx); /*int*/
     kk_function_call(kk_unit_t, (kk_function_t, kk_integer_t, kk_context_t*), _x_x106, (_x_x106, _x_x105, _ctx), _ctx);
     if (kk_yielding(kk_context())) {
-      kk_box_t _x_x107 = kk_std_core_hnd_yield_extend(kk_std_core_range_fs__new_lift_for_1256_fun108(action_0, end_0, i_0, _ctx), _ctx); /*3003*/
+      kk_box_t _x_x107 = kk_std_core_hnd_yield_extend(kk_std_core_range_fs__new_lift_for_1256_fun108(action_0, end_0, i_0, _ctx), _ctx); /*2978*/
       kk_unit_unbox(_x_x107); return kk_Unit;
     }
     {
@@ -528,7 +528,7 @@ kk_std_core_types__maybe kk_std_core_range_fs__lift_for_while_1257(kk_function_t
     x_0_10096 = kk_function_call(kk_std_core_types__maybe, (kk_function_t, kk_integer_t, kk_context_t*), _x_x115, (_x_x115, _x_x114, _ctx), _ctx); /*maybe<961>*/
     if (kk_yielding(kk_context())) {
       kk_std_core_types__maybe_drop(x_0_10096, _ctx);
-      kk_box_t _x_x116 = kk_std_core_hnd_yield_extend(kk_std_core_range_fs__new_lift_for_while_1257_fun117(action_0, end_0, i_0, _ctx), _ctx); /*3003*/
+      kk_box_t _x_x116 = kk_std_core_hnd_yield_extend(kk_std_core_range_fs__new_lift_for_while_1257_fun117(action_0, end_0, i_0, _ctx), _ctx); /*2978*/
       return kk_std_core_types__maybe_unbox(_x_x116, KK_OWNED, _ctx);
     }
     if (kk_std_core_types__is_Nothing(x_0_10096, _ctx)) {
@@ -611,9 +611,9 @@ static kk_function_t kk_std_core__new_default_exn_fun122(kk_function_t _b_x27, k
 
 static kk_unit_t kk_std_core__default_exn_fun122(kk_function_t _fself, kk_std_core_hnd__resume_result _b_x28, kk_context_t* _ctx) {
   struct kk_std_core__default_exn_fun122__t* _self = kk_function_as(struct kk_std_core__default_exn_fun122__t*, _fself, _ctx);
-  kk_function_t _b_x27 = _self->_b_x27; /* (hnd/resume-result<3180,3183>) -> 3182 3183 */
+  kk_function_t _b_x27 = _self->_b_x27; /* (hnd/resume-result<3225,3228>) -> 3227 3228 */
   kk_drop_match(_self, {kk_function_dup(_b_x27, _ctx);}, {}, _ctx)
-  kk_box_t _x_x123 = kk_function_call(kk_box_t, (kk_function_t, kk_std_core_hnd__resume_result, kk_context_t*), _b_x27, (_b_x27, _b_x28, _ctx), _ctx); /*3183*/
+  kk_box_t _x_x123 = kk_function_call(kk_box_t, (kk_function_t, kk_std_core_hnd__resume_result, kk_context_t*), _b_x27, (_b_x27, _b_x28, _ctx), _ctx); /*3228*/
   kk_unit_unbox(_x_x123); return kk_Unit;
 }
 static kk_box_t kk_std_core__default_exn_fun121(kk_function_t _fself, kk_function_t _b_x27, kk_context_t* _ctx) {
@@ -705,9 +705,9 @@ kk_unit_t kk_std_core__default_exn(kk_function_t action, kk_context_t* _ctx) { /
   kk_box_t _x_x119;
   kk_function_t _b_x29_40 = kk_std_core__new_default_exn_fun120(_ctx); /*(m : hnd/marker<<console/console|1180>,()>, hnd/ev<exn>, x : exception) -> <console/console|1180> 1169*/;
   kk_std_core_exn__exn _x_x128;
-  kk_std_core_hnd__clause1 _x_x129 = kk_std_core_hnd__new_Clause1(kk_std_core__new_default_exn_fun130(_b_x29_40, _ctx), _ctx); /*hnd/clause1<1015,1016,1017,1018,1019>*/
-  _x_x128 = kk_std_core_exn__new_Hnd_exn(kk_reuse_null, 0, kk_integer_from_small(0), _x_x129, _ctx); /*exn<1005,1006>*/
-  _x_x119 = kk_std_core_exn__handle_exn(_x_x128, kk_std_core__new_default_exn_fun132(_ctx), kk_std_core__new_default_exn_fun133(action, _ctx), _ctx); /*3176*/
+  kk_std_core_hnd__clause1 _x_x129 = kk_std_core_hnd__new_Clause1(kk_std_core__new_default_exn_fun130(_b_x29_40, _ctx), _ctx); /*hnd/clause1<45,46,47,48,49>*/
+  _x_x128 = kk_std_core_exn__new_Hnd_exn(kk_reuse_null, 0, kk_integer_from_small(0), _x_x129, _ctx); /*exn<14,15>*/
+  _x_x119 = kk_std_core_exn__handle_exn(_x_x128, kk_std_core__new_default_exn_fun132(_ctx), kk_std_core__new_default_exn_fun133(action, _ctx), _ctx); /*2547*/
   kk_unit_unbox(_x_x119); return kk_Unit;
 }
 
@@ -719,7 +719,7 @@ kk_integer_t kk_std_core_unique(kk_context_t* _ctx) { /* () -> ndet int */
   kk_integer_t u;
   kk_box_t _x_x135;
   kk_ref_t _x_x136 = kk_ref_dup(kk_std_core_unique_count, _ctx); /*ref<global,int>*/
-  _x_x135 = kk_ref_get(_x_x136,kk_context()); /*3251*/
+  _x_x135 = kk_ref_get(_x_x136,kk_context()); /*2459*/
   u = kk_integer_unbox(_x_x135, _ctx); /*int*/
   kk_integer_t _b_x50_52;
   kk_integer_t _x_x137 = kk_integer_dup(u, _ctx); /*int*/

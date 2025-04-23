@@ -103,22 +103,23 @@ val @tag-unique[34,1,34,13] : (std/core/hnd/htag :: ((E, V) -> V) -> V)<(unique 
  fun @select-gen[35,7,35,25] : forall<(e :: E),a> (^ hnd : (unique :: (E, V) -> V)<(e :: E),a>) -> (std/core/hnd/clause1 :: (V, V, (E, V) -> V, E, V) -> V)<std/core/types/string,uid,(unique :: (E, V) -> V),(e :: E),a>;
 // Call the `fun gen` operation of the effect `:unique`
  fun gen[35,7,35,9] : (x : std/core/types/string) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> uid;
+ fun (+->)[60,5,60,9] : (id : std/core/types/string, uid : std/core/types/string) -> (std/core/types/list :: V -> V)<(std/core/types/string, std/core/types/string)>;
 // monadic lift
- fun @mlift-trmc-uniquify@10041'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, e2 : expr, us : usubst, @trmc-x10004 : uexpr) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>,(std/core/types/div :: X)> uexpr;
+ fun @mlift-trmc-uniquify@10045'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, e2 : expr, us : usubst, @trmc-x10004 : uexpr) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>,(std/core/types/div :: X)> uexpr;
 // monadic lift
- fun @mlift-trmc-uniquify@10042'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, e2@0 : expr, us' : (std/core/types/list :: V -> V)<(std/core/types/string, uid)>, x' : uid, @trmc-x10007 : uexpr) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>,(std/core/types/div :: X)> uexpr;
+ fun @mlift-trmc-uniquify@10046'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, e2@0 : expr, us' : (std/core/types/list :: V -> V)<(std/core/types/string, uid)>, x' : uid, @trmc-x10007 : uexpr) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>,(std/core/types/div :: X)> uexpr;
 // monadic lift
- fun @mlift-trmc-uniquify@10043'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, e1@0 : expr, e2@0 : expr, us : usubst, x : std/core/types/string, x' : uid) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>,(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> uexpr;
+ fun @mlift-trmc-uniquify@10047'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, e1@0 : expr, e2@0 : expr, us : usubst, x : std/core/types/string, x' : uid) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>,(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> uexpr;
 // monadic lift
- fun @mlift-trmc-uniquify@10044'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, a : std/core/types/string, body : expr, us : usubst, a' : uid) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>,(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> uexpr;
+ fun @mlift-trmc-uniquify@10048'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, a : std/core/types/string, body : expr, us : usubst, a' : uid) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>,(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> uexpr;
 // monadic lift
- fun @mlift-trmc-uniquify@10045'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, @y-x10025 : uexpr) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> uexpr;
+ fun @mlift-trmc-uniquify@10049'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, @y-x10025 : uexpr) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> uexpr;
 // monadic lift
- fun @mlift-trmc-uniquify@10046'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, x@0@0 : std/core/types/string, @y-x10024 : (std/core/types/list :: V -> V)<(std/core/types/string, uid)>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> uexpr;
+ fun @mlift-trmc-uniquify@10050'[1,0,1,0] : (@acc : (std/core/types/ctx :: V -> V)<uexpr>, x@0@0 : std/core/types/string, @y-x10024 : (std/core/types/list :: V -> V)<(std/core/types/string, uid)>) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> uexpr;
 pub  fun @trmc-uniquify'[45,9,45,17] : (e : expr, us : usubst, @acc : (std/core/types/ctx :: V -> V)<uexpr>) -> <(std/core/pure :: E),(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> uexpr;
 pub  fun uniquify'[45,9,45,17] : (e : expr, us : usubst) -> <(std/core/pure :: E),(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> uexpr;
 // monadic lift
- fun @mlift-uniquify@10047[1,0,1,0] : (@y-x10030 : (std/core/exn/error :: V -> V)<uexpr>) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,uexpr>;
+ fun @mlift-uniquify@10051[1,0,1,0] : (@y-x10030 : (std/core/exn/error :: V -> V)<uexpr>) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,uexpr>;
 pub  fun uniquify[37,9,37,16] : (e : expr) -> <(std/core/types/div :: X)> (std/core/types/either :: (V, V) -> V)<std/core/exn/exception,uexpr>;
  
 //------------------------------
@@ -243,4 +244,8 @@ inline borrow "^"  fun @select-gen // inline size: 0
 inline  fun gen // inline size: 5
   = fn<<(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>>>(x: std/core/types/string){
     std/core/hnd/@perform1<std/core/types/string,uid,(unique :: (E, V) -> V),<(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>>>((std/core/types/@open<(std/core/types/total :: E),<(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>>,(i : std/core/hnd/ev-index) -> (std/core/hnd/ev :: ((E, V) -> V) -> V)<(unique :: (E, V) -> V)>,(i : std/core/hnd/ev-index) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> (std/core/hnd/ev :: ((E, V) -> V) -> V)<(unique :: (E, V) -> V)>>((std/core/hnd/@evv-at<(unique :: (E, V) -> V)>))((std/core/types/@open<(std/core/types/total :: E),<(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>>,(i : std/core/types/int) -> std/core/types/ssize_t,(i : std/core/types/int) -> <(std/core/types/handled :: ((E, V) -> V) -> X)<(unique :: (E, V) -> V)>> std/core/types/ssize_t>(std/core/types/@make-ssize_t)(0)))), expr/@select-gen, x);
+  };
+ fun (+->) // inline size: 2
+  = fn(id: std/core/types/string, uid: std/core/types/string){
+    std/core/types/Cons<(std/core/types/string, std/core/types/string)>((std/core/types/Tuple2<std/core/types/string,std/core/types/string>(id, uid)), (std/core/types/Nil<(std/core/types/string, std/core/types/string)>));
   };
