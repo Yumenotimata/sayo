@@ -46,7 +46,7 @@ pub recursive rec type types[3,1,6,17] {
   pub con TCon[5,3,5,6](id: std/core/types/string){0,1,8} : (id : std/core/types/string) -> types;
   pub con TVar[6,3,6,6](u: std/core/types/string){0,1,8} : (u : std/core/types/string) -> types;
 };
-pub alias subst[12,1,12,39] = (std/core/types/list :: V -> V)<(std/core/types/string, types)> = 1;
+pub alias subst[14,1,14,39] = (std/core/types/list :: V -> V)<(std/core/types/string, types)> = 1;
  
 //------------------------------
 //#kki: declarations
@@ -60,20 +60,21 @@ pub fip fun is-tvar[6,3,6,6] : (^ types : types) -> std/core/types/bool;
 pub val t-unit[8,9,8,14] : types;
 pub val t-int[9,9,9,13] : types;
 pub val t-arrow[10,9,10,15] : types;
-pub  fun show[14,9,14,12] : (t : types) -> <(std/core/types/div :: X)> std/core/types/string;
- fun (+->)[20,5,20,9] : (u : std/core/types/string, t : types) -> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
- fun (==)[23,5,23,8] : (t : types, t' : types) -> <(std/core/types/div :: X)> std/core/types/bool;
+pub  fun t-fn[11,9,11,12] : (a : types, b : types) -> types;
+pub  fun show[16,9,16,12] : (t : types) -> <(std/core/types/div :: X)> std/core/types/string;
+ fun (+->)[22,5,22,9] : (u : std/core/types/string, t : types) -> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
+ fun (==)[25,5,25,8] : (t : types, t' : types) -> <(std/core/types/div :: X)> std/core/types/bool;
 // TODO: 出役チェック
-pub  fun tvar[52,9,52,12] : (u : std/core/types/string, t : types) -> <(std/core/types/div :: X)> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
- fun @trmc-apply[30,5,30,9] : (t : types, s : subst, @acc : (std/core/types/ctx :: V -> V)<types>) -> <(std/core/types/div :: X)> types;
- fun apply[30,5,30,9] : (t : types, s : subst) -> <(std/core/types/div :: X)> types;
+pub  fun tvar[54,9,54,12] : (u : std/core/types/string, t : types) -> <(std/core/types/div :: X)> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
+ fun @trmc-apply[32,5,32,9] : (t : types, s : subst, @acc : (std/core/types/ctx :: V -> V)<types>) -> <(std/core/types/div :: X)> types;
+ fun apply[32,5,32,9] : (t : types, s : subst) -> <(std/core/types/div :: X)> types;
 // monadic lift
  fun @mlift-unify@10030[1,0,1,0] : (s' : subst, @y-x10008 : (std/core/types/list :: V -> V)<(std/core/types/string, types)>) -> <(std/core/types/div :: X),(std/core/console/console :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
 // monadic lift
  fun @mlift-unify@10031[1,0,1,0] : (s : subst, s' : subst) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/console/console :: X)> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
 // monadic lift
  fun @mlift-unify@10032[1,0,1,0] : (r : types, r' : types, s : subst) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/console/console :: X)> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
-pub  fun unify[39,9,39,13] : (a : types, b : types) -> <(std/core/pure :: E),(std/core/console/console :: X)> subst;
+pub  fun unify[41,9,41,13] : (a : types, b : types) -> <(std/core/pure :: E),(std/core/console/console :: X)> subst;
  
 //------------------------------
 //#kki: external declarations
@@ -109,6 +110,10 @@ inline borrow "^" fip fun is-tvar // inline size: 1
       (@pat@1: types)
          -> std/core/types/False;
     };
+  };
+ fun t-fn // inline size: 2
+  = fn(a: types, b: types){
+    types/TApp((types/TApp(types/t-arrow, a)), b);
   };
  fun (+->) // inline size: 2
   = fn(u: std/core/types/string, t: types){

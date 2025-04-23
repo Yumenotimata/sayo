@@ -26,6 +26,7 @@
 #include "expr.h"
 #include "value.h"
 #include "types.h"
+#include "infer.h"
 
 // type declarations
 

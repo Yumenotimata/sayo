@@ -26,6 +26,7 @@ import utest = utest = "";
 import expr = expr = "";
 import value = value = "";
 import types = types = "";
+import infer = infer = "";
  
 //------------------------------
 //#kki: external imports
@@ -46,7 +47,7 @@ import types = types = "";
 //------------------------------
 //#kki: declarations
  
-pub  fun main[7,5,7,8] : () -> <(std/core/console/console :: X),(std/core/types/div :: X)> ();
+pub  fun main[8,5,8,8] : () -> <(std/core/console/console :: X),(std/core/types/div :: X)> ();
  
 //------------------------------
 //#kki: external declarations

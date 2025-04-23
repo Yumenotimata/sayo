@@ -8,6 +8,8 @@ pub rec type types
 pub val t-unit = TCon("Unit")
 pub val t-int = TCon("Int")
 pub val t-arrow = TCon("->")
+pub fun t-fn(a: types, b: types)
+  TApp(TApp(t-arrow, a), b)
 
 pub alias subst = list<(string, types)>
 
@@ -15,7 +17,7 @@ pub fun show(t: types): <div> string
   match t
     TApp(l, r) -> show(t) ++ " " ++ show(r)
     TCon(id) -> id
-    TVar(u) -> u
+    TVar(u) -> "'" ++ u
 
 fun (+->)(u: string, t: types)
   [(u, t)]
@@ -27,7 +29,7 @@ fun (==)(t: types, t': types): <div> bool
     (TVar(u), TVar(u')) -> u == u'
     _ -> False
 
-fun apply(t: types, s: subst)
+fun apply(t: types, s: subst): <div> types
   match t
     TApp(l, r) -> TApp(l.apply(s), r.apply(s))
     TVar(u) -> 

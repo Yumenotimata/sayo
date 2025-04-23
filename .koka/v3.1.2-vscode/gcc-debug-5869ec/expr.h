@@ -266,12 +266,12 @@ typedef kk_datatype_ptr_t kk_expr__unique;
 struct kk_expr__Hnd_unique {
   struct kk_expr__unique_s _base;
   kk_integer_t _cfc;
-  kk_std_core_hnd__clause1 _fun_gen;
+  kk_std_core_hnd__clause0 _fun_gen;
 };
 static inline kk_expr__unique kk_expr__base_Hnd_unique(struct kk_expr__Hnd_unique* _x, kk_context_t* _ctx) {
   return kk_datatype_from_base(&_x->_base, _ctx);
 }
-static inline kk_expr__unique kk_expr__new_Hnd_unique(kk_reuse_t _at, int32_t _cpath, kk_integer_t _cfc, kk_std_core_hnd__clause1 _fun_gen, kk_context_t* _ctx) {
+static inline kk_expr__unique kk_expr__new_Hnd_unique(kk_reuse_t _at, int32_t _cpath, kk_integer_t _cfc, kk_std_core_hnd__clause0 _fun_gen, kk_context_t* _ctx) {
   struct kk_expr__Hnd_unique* _con = kk_block_alloc_at_as(struct kk_expr__Hnd_unique, _at, 2 /* scan count */, _cpath, (kk_tag_t)(1), _ctx);
   _con->_cfc = _cfc;
   _con->_fun_gen = _fun_gen;
@@ -302,7 +302,7 @@ static inline kk_expr__unique kk_expr__unique_unbox(kk_box_t _x, kk_borrow_t _bo
 
 static inline bool kk_expr_is_app(kk_expr__expr expr, kk_context_t* _ctx) { /* (expr : expr) -> bool */ 
   if (kk_expr__is_App(expr, _ctx)) {
-    struct kk_expr_App* _con_x339 = kk_expr__as_App(expr, _ctx);
+    struct kk_expr_App* _con_x305 = kk_expr__as_App(expr, _ctx);
     return true;
   }
   {
@@ -314,7 +314,7 @@ static inline bool kk_expr_is_app(kk_expr__expr expr, kk_context_t* _ctx) { /* (
 
 static inline bool kk_expr_is_let(kk_expr__expr expr, kk_context_t* _ctx) { /* (expr : expr) -> bool */ 
   if (kk_expr__is_Let(expr, _ctx)) {
-    struct kk_expr_Let* _con_x340 = kk_expr__as_Let(expr, _ctx);
+    struct kk_expr_Let* _con_x306 = kk_expr__as_Let(expr, _ctx);
     return true;
   }
   {
@@ -326,7 +326,7 @@ static inline bool kk_expr_is_let(kk_expr__expr expr, kk_context_t* _ctx) { /* (
 
 static inline bool kk_expr_is_lam(kk_expr__expr expr, kk_context_t* _ctx) { /* (expr : expr) -> bool */ 
   if (kk_expr__is_Lam(expr, _ctx)) {
-    struct kk_expr_Lam* _con_x341 = kk_expr__as_Lam(expr, _ctx);
+    struct kk_expr_Lam* _con_x307 = kk_expr__as_Lam(expr, _ctx);
     return true;
   }
   {
@@ -338,7 +338,7 @@ static inline bool kk_expr_is_lam(kk_expr__expr expr, kk_context_t* _ctx) { /* (
 
 static inline bool kk_expr_is_lit(kk_expr__expr expr, kk_context_t* _ctx) { /* (expr : expr) -> bool */ 
   if (kk_expr__is_Lit(expr, _ctx)) {
-    struct kk_expr_Lit* _con_x342 = kk_expr__as_Lit(expr, _ctx);
+    struct kk_expr_Lit* _con_x308 = kk_expr__as_Lit(expr, _ctx);
     return true;
   }
   {
@@ -350,7 +350,7 @@ static inline bool kk_expr_is_lit(kk_expr__expr expr, kk_context_t* _ctx) { /* (
 
 static inline bool kk_expr_is_var(kk_expr__expr expr, kk_context_t* _ctx) { /* (expr : expr) -> bool */ 
   if (kk_expr__is_Var(expr, _ctx)) {
-    struct kk_expr_Var* _con_x343 = kk_expr__as_Var(expr, _ctx);
+    struct kk_expr_Var* _con_x309 = kk_expr__as_Var(expr, _ctx);
     return true;
   }
   {
@@ -362,7 +362,7 @@ static inline bool kk_expr_is_var(kk_expr__expr expr, kk_context_t* _ctx) { /* (
 
 static inline bool kk_expr_is_uapp(kk_expr__uexpr uexpr, kk_context_t* _ctx) { /* (uexpr : uexpr) -> bool */ 
   if (kk_expr__is_UApp(uexpr, _ctx)) {
-    struct kk_expr_UApp* _con_x344 = kk_expr__as_UApp(uexpr, _ctx);
+    struct kk_expr_UApp* _con_x310 = kk_expr__as_UApp(uexpr, _ctx);
     return true;
   }
   {
@@ -374,7 +374,7 @@ static inline bool kk_expr_is_uapp(kk_expr__uexpr uexpr, kk_context_t* _ctx) { /
 
 static inline bool kk_expr_is_ulet(kk_expr__uexpr uexpr, kk_context_t* _ctx) { /* (uexpr : uexpr) -> bool */ 
   if (kk_expr__is_ULet(uexpr, _ctx)) {
-    struct kk_expr_ULet* _con_x345 = kk_expr__as_ULet(uexpr, _ctx);
+    struct kk_expr_ULet* _con_x311 = kk_expr__as_ULet(uexpr, _ctx);
     return true;
   }
   {
@@ -386,7 +386,7 @@ static inline bool kk_expr_is_ulet(kk_expr__uexpr uexpr, kk_context_t* _ctx) { /
 
 static inline bool kk_expr_is_ulam(kk_expr__uexpr uexpr, kk_context_t* _ctx) { /* (uexpr : uexpr) -> bool */ 
   if (kk_expr__is_ULam(uexpr, _ctx)) {
-    struct kk_expr_ULam* _con_x346 = kk_expr__as_ULam(uexpr, _ctx);
+    struct kk_expr_ULam* _con_x312 = kk_expr__as_ULam(uexpr, _ctx);
     return true;
   }
   {
@@ -398,7 +398,7 @@ static inline bool kk_expr_is_ulam(kk_expr__uexpr uexpr, kk_context_t* _ctx) { /
 
 static inline bool kk_expr_is_ulit(kk_expr__uexpr uexpr, kk_context_t* _ctx) { /* (uexpr : uexpr) -> bool */ 
   if (kk_expr__is_ULit(uexpr, _ctx)) {
-    struct kk_expr_ULit* _con_x347 = kk_expr__as_ULit(uexpr, _ctx);
+    struct kk_expr_ULit* _con_x313 = kk_expr__as_ULit(uexpr, _ctx);
     return true;
   }
   {
@@ -410,7 +410,7 @@ static inline bool kk_expr_is_ulit(kk_expr__uexpr uexpr, kk_context_t* _ctx) { /
 
 static inline bool kk_expr_is_uvar(kk_expr__uexpr uexpr, kk_context_t* _ctx) { /* (uexpr : uexpr) -> bool */ 
   if (kk_expr__is_UVar(uexpr, _ctx)) {
-    struct kk_expr_UVar* _con_x348 = kk_expr__as_UVar(uexpr, _ctx);
+    struct kk_expr_UVar* _con_x314 = kk_expr__as_UVar(uexpr, _ctx);
     return true;
   }
   {
@@ -422,19 +422,19 @@ static inline bool kk_expr_is_uvar(kk_expr__uexpr uexpr, kk_context_t* _ctx) { /
 
 static inline kk_integer_t kk_expr_unique_fs__cfc(kk_expr__unique unique, kk_context_t* _ctx) { /* forall<e,a> (unique : unique<e,a>) -> int */ 
   {
-    struct kk_expr__Hnd_unique* _con_x349 = kk_expr__as_Hnd_unique(unique, _ctx);
-    kk_integer_t _x = _con_x349->_cfc;
+    struct kk_expr__Hnd_unique* _con_x315 = kk_expr__as_Hnd_unique(unique, _ctx);
+    kk_integer_t _x = _con_x315->_cfc;
     return kk_integer_dup(_x, _ctx);
   }
 }
  
 // Automatically generated. Retrieves the `@fun-gen` constructor field of the `:unique` type.
 
-static inline kk_std_core_hnd__clause1 kk_expr_unique_fs__fun_gen(kk_expr__unique unique, kk_context_t* _ctx) { /* forall<e,a> (unique : unique<e,a>) -> hnd/clause1<string,uid,unique,e,a> */ 
+static inline kk_std_core_hnd__clause0 kk_expr_unique_fs__fun_gen(kk_expr__unique unique, kk_context_t* _ctx) { /* forall<e,a> (unique : unique<e,a>) -> hnd/clause0<int,unique,e,a> */ 
   {
-    struct kk_expr__Hnd_unique* _con_x350 = kk_expr__as_Hnd_unique(unique, _ctx);
-    kk_std_core_hnd__clause1 _x = _con_x350->_fun_gen;
-    return kk_std_core_hnd__clause1_dup(_x, _ctx);
+    struct kk_expr__Hnd_unique* _con_x316 = kk_expr__as_Hnd_unique(unique, _ctx);
+    kk_std_core_hnd__clause0 _x = _con_x316->_fun_gen;
+    return kk_std_core_hnd__clause0_dup(_x, _ctx);
   }
 }
 
@@ -446,70 +446,93 @@ kk_box_t kk_expr__handle_unique(kk_expr__unique hnd, kk_function_t ret, kk_funct
  
 // select `gen` operation out of effect `:unique`
 
-static inline kk_std_core_hnd__clause1 kk_expr__select_gen(kk_expr__unique hnd, kk_context_t* _ctx) { /* forall<e,a> (hnd : unique<e,a>) -> hnd/clause1<string,uid,unique,e,a> */ 
+static inline kk_std_core_hnd__clause0 kk_expr__select_gen(kk_expr__unique hnd, kk_context_t* _ctx) { /* forall<e,a> (hnd : unique<e,a>) -> hnd/clause0<int,unique,e,a> */ 
   {
-    struct kk_expr__Hnd_unique* _con_x389 = kk_expr__as_Hnd_unique(hnd, _ctx);
-    kk_std_core_hnd__clause1 _fun_gen = _con_x389->_fun_gen;
-    return kk_std_core_hnd__clause1_dup(_fun_gen, _ctx);
+    struct kk_expr__Hnd_unique* _con_x355 = kk_expr__as_Hnd_unique(hnd, _ctx);
+    kk_std_core_hnd__clause0 _fun_gen = _con_x355->_fun_gen;
+    return kk_std_core_hnd__clause0_dup(_fun_gen, _ctx);
   }
 }
  
 // Call the `fun gen` operation of the effect `:unique`
 
-static inline kk_string_t kk_expr_gen(kk_string_t x, kk_context_t* _ctx) { /* (x : string) -> unique uid */ 
-  kk_std_core_hnd__ev ev_10053 = kk_evv_at(((KK_IZ(0))),kk_context()); /*hnd/ev<expr/unique>*/;
-  kk_box_t _x_x390;
+static inline kk_integer_t kk_expr_gen(kk_context_t* _ctx) { /* () -> unique int */ 
+  kk_std_core_hnd__ev ev_10059 = kk_evv_at(((KK_IZ(0))),kk_context()); /*hnd/ev<expr/unique>*/;
+  kk_box_t _x_x356;
   {
-    struct kk_std_core_hnd_Ev* _con_x391 = kk_std_core_hnd__as_Ev(ev_10053, _ctx);
-    kk_box_t _box_x8 = _con_x391->hnd;
-    int32_t m = _con_x391->marker;
+    struct kk_std_core_hnd_Ev* _con_x357 = kk_std_core_hnd__as_Ev(ev_10059, _ctx);
+    kk_box_t _box_x8 = _con_x357->hnd;
+    int32_t m = _con_x357->marker;
     kk_expr__unique h = kk_expr__unique_unbox(_box_x8, KK_BORROWED, _ctx);
     kk_expr__unique_dup(h, _ctx);
     {
-      struct kk_expr__Hnd_unique* _con_x392 = kk_expr__as_Hnd_unique(h, _ctx);
-      kk_integer_t _pat_0_0 = _con_x392->_cfc;
-      kk_std_core_hnd__clause1 _fun_gen = _con_x392->_fun_gen;
+      struct kk_expr__Hnd_unique* _con_x358 = kk_expr__as_Hnd_unique(h, _ctx);
+      kk_integer_t _pat_0_0 = _con_x358->_cfc;
+      kk_std_core_hnd__clause0 _fun_gen = _con_x358->_fun_gen;
       if kk_likely(kk_datatype_ptr_is_unique(h, _ctx)) {
         kk_integer_drop(_pat_0_0, _ctx);
         kk_datatype_ptr_free(h, _ctx);
       }
       else {
-        kk_std_core_hnd__clause1_dup(_fun_gen, _ctx);
+        kk_std_core_hnd__clause0_dup(_fun_gen, _ctx);
         kk_datatype_ptr_decref(h, _ctx);
       }
       {
-        kk_function_t _fun_unbox_x12 = _fun_gen.clause;
-        _x_x390 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_box_t, kk_context_t*), _fun_unbox_x12, (_fun_unbox_x12, m, ev_10053, kk_string_box(x), _ctx), _ctx); /*46*/
+        kk_function_t _fun_unbox_x11 = _fun_gen.clause;
+        _x_x356 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_context_t*), _fun_unbox_x11, (_fun_unbox_x11, m, ev_10059, _ctx), _ctx); /*1005*/
       }
     }
   }
-  return kk_string_unbox(_x_x390);
+  return kk_integer_unbox(_x_x356, _ctx);
+}
+ 
+// monadic lift
+
+static inline kk_integer_t kk_expr__mlift_handle_unique_10049(kk_ref_t unique_num, kk_unit_t wild__, kk_context_t* _ctx) { /* forall<h,e> (unique-num : local-var<h,int>, wild_ : ()) -> <local<h>|e> int */ 
+  kk_box_t _x_x359 = kk_ref_get(unique_num,kk_context()); /*1000*/
+  return kk_integer_unbox(_x_x359, _ctx);
 }
 
-static inline kk_std_core_types__list kk_expr__lp__plus__dash__gt__rp_(kk_string_t id, kk_string_t uid, kk_context_t* _ctx) { /* (id : string, uid : string) -> list<(string, string)> */ 
-  kk_box_t _x_x393;
-  kk_std_core_types__tuple2 _x_x394 = kk_std_core_types__new_Tuple2(kk_string_box(id), kk_string_box(uid), _ctx); /*(1910, 1911)*/
-  _x_x393 = kk_std_core_types__tuple2_box(_x_x394, _ctx); /*1863*/
-  return kk_std_core_types__new_Cons(kk_reuse_null, 0, _x_x393, kk_std_core_types__new_Nil(_ctx), _ctx);
+kk_integer_t kk_expr__mlift_handle_unique_10050(kk_ref_t unique_num, kk_integer_t _y_x10013, kk_context_t* _ctx); /* forall<h,e> (unique-num : local-var<h,int>, int) -> <local<h>|e> int */ 
+
+kk_box_t kk_expr_handle_unique(kk_function_t f, kk_context_t* _ctx); /* forall<a,e> (f : () -> <unique|e> a) -> e a */ 
+ 
+// monadic lift
+
+static inline kk_string_t kk_expr__mlift_uid_10051(kk_string_t x, kk_integer_t _y_x10020, kk_context_t* _ctx) { /* (x : string, int) -> unique string */ 
+  kk_string_t _x_x374;
+  kk_define_string_literal(, _s_x375, 1, "$", _ctx)
+  _x_x374 = kk_string_dup(_s_x375, _ctx); /*string*/
+  kk_string_t _x_x376;
+  kk_string_t _x_x377 = kk_std_core_int_show(_y_x10020, _ctx); /*string*/
+  _x_x376 = kk_std_core_types__lp__plus__plus__rp_(x, _x_x377, _ctx); /*string*/
+  return kk_std_core_types__lp__plus__plus__rp_(_x_x374, _x_x376, _ctx);
 }
 
-kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10045_sq_(kk_std_core_types__cctx _acc, kk_expr__expr e2, kk_std_core_types__list us, kk_expr__uexpr _trmc_x10004, kk_context_t* _ctx); /* (ctx<uexpr>, e2 : expr, us : usubst, uexpr) -> <exn,unique,div> uexpr */ 
+kk_string_t kk_expr_uid(kk_string_t x, kk_context_t* _ctx); /* (x : string) -> unique string */ 
 
-kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10046_sq_(kk_std_core_types__cctx _acc_0, kk_expr__expr e2_0, kk_std_core_types__list us_sq_, kk_string_t x_sq_, kk_expr__uexpr _trmc_x10007, kk_context_t* _ctx); /* (ctx<uexpr>, e2@0 : expr, us' : list<(string, uid)>, x' : uid, uexpr) -> <exn,unique,div> uexpr */ 
+static inline kk_std_core_types__list kk_expr__lp__plus__dash__gt__rp_(kk_string_t id, kk_string_t uid_0, kk_context_t* _ctx) { /* (id : string, uid : string) -> list<(string, string)> */ 
+  kk_box_t _x_x392;
+  kk_std_core_types__tuple2 _x_x393 = kk_std_core_types__new_Tuple2(kk_string_box(id), kk_string_box(uid_0), _ctx); /*(3119, 3120)*/
+  _x_x392 = kk_std_core_types__tuple2_box(_x_x393, _ctx); /*1024*/
+  return kk_std_core_types__new_Cons(kk_reuse_null, 0, _x_x392, kk_std_core_types__new_Nil(_ctx), _ctx);
+}
 
-kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10047_sq_(kk_std_core_types__cctx _acc_1, kk_expr__expr e1_0, kk_expr__expr e2_0_0, kk_std_core_types__list us_0, kk_string_t x, kk_string_t x_0_sq_, kk_context_t* _ctx); /* (ctx<uexpr>, e1@0 : expr, e2@0 : expr, us : usubst, x : string, x' : uid) -> <unique,div,exn> uexpr */ 
+kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10052_sq_(kk_std_core_types__cctx _acc, kk_expr__expr e2, kk_std_core_types__list us, kk_expr__uexpr _trmc_x10003, kk_context_t* _ctx); /* (ctx<uexpr>, e2 : expr, us : usubst, uexpr) -> <exn,unique,div> uexpr */ 
 
-kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10048_sq_(kk_std_core_types__cctx _acc_2, kk_string_t a, kk_expr__expr body, kk_std_core_types__list us_1, kk_string_t a_sq_, kk_context_t* _ctx); /* (ctx<uexpr>, a : string, body : expr, us : usubst, a' : uid) -> <unique,div,exn> uexpr */ 
+kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10053_sq_(kk_std_core_types__cctx _acc_0, kk_expr__expr e2_0, kk_std_core_types__list us_sq_, kk_string_t x_sq_, kk_expr__uexpr _trmc_x10006, kk_context_t* _ctx); /* (ctx<uexpr>, e2@0 : expr, us' : list<(string, uid)>, x' : string, uexpr) -> <exn,unique,div> uexpr */ 
 
-kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10049_sq_(kk_std_core_types__cctx _acc_3, kk_expr__uexpr _y_x10025, kk_context_t* _ctx); /* (ctx<uexpr>, uexpr) -> <exn,div,unique> uexpr */ 
+kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10054_sq_(kk_std_core_types__cctx _acc_1, kk_expr__expr e1_0, kk_expr__expr e2_0_0, kk_std_core_types__list us_0, kk_string_t x, kk_string_t x_0_sq_, kk_context_t* _ctx); /* (ctx<uexpr>, e1@0 : expr, e2@0 : expr, us : usubst, x : string, x' : string) -> <unique,div,exn> uexpr */ 
 
-kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10050_sq_(kk_std_core_types__cctx _acc_4, kk_string_t x_0_0, kk_std_core_types__list _y_x10024, kk_context_t* _ctx); /* (ctx<uexpr>, x@0@0 : string, list<(string, uid)>) -> <exn,div,unique> uexpr */ 
+kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10055_sq_(kk_std_core_types__cctx _acc_2, kk_string_t a, kk_expr__expr body, kk_std_core_types__list us_1, kk_string_t a_sq_, kk_context_t* _ctx); /* (ctx<uexpr>, a : string, body : expr, us : usubst, a' : string) -> <unique,div,exn> uexpr */ 
+
+kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10056_sq_(kk_std_core_types__cctx _acc_3, kk_expr__uexpr _y_x10030, kk_context_t* _ctx); /* (ctx<uexpr>, uexpr) -> <exn,div,unique> uexpr */ 
+
+kk_expr__uexpr kk_expr__mlift_trmc_uniquify_10057_sq_(kk_std_core_types__cctx _acc_4, kk_string_t x_0_0, kk_std_core_types__list _y_x10029, kk_context_t* _ctx); /* (ctx<uexpr>, x@0 : string, list<(string, uid)>) -> <exn,div,unique> uexpr */ 
 
 kk_expr__uexpr kk_expr__trmc_uniquify_sq_(kk_expr__expr e, kk_std_core_types__list us_2, kk_std_core_types__cctx _acc_5, kk_context_t* _ctx); /* (e : expr, us : usubst, ctx<uexpr>) -> <pure,unique> uexpr */ 
 
 kk_expr__uexpr kk_expr_uniquify_sq_(kk_expr__expr e_0, kk_std_core_types__list us_3, kk_context_t* _ctx); /* (e : expr, us : usubst) -> <pure,unique> uexpr */ 
-
-kk_std_core_types__either kk_expr__mlift_uniquify_10051(kk_std_core_exn__error _y_x10030, kk_context_t* _ctx); /* (error<uexpr>) -> <div,unique> either<exception,uexpr> */ 
 
 kk_std_core_types__either kk_expr_uniquify(kk_expr__expr e, kk_context_t* _ctx); /* (e : expr) -> div either<exception,uexpr> */ 
 

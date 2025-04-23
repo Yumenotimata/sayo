@@ -31,26 +31,35 @@ pub fun show(e: uexpr): <div> string
 
 pub alias usubst = list<(string, uid)>
 
-effect unique
-  fun gen(x: string): uid
+pub effect unique
+  fun gen(): int
+
+pub fun handle-unique(f: () -> <unique | e> a): e a
+  var unique-num := -1
+  with fun gen()
+    unique-num := unique-num + 1
+    return unique-num
+  f()
+
+fun uid(x: string): <unique> string
+  "$" ++ x ++ show(gen())
 
 pub fun uniquify(e: expr): <div> either<exception, uexpr>
-  var unique-num := -1
-  
-  with fun gen(x)
-    unique-num := unique-num + 1
-    return "$" ++ x ++ show(unique-num)
-  try(fn() uniquify'(e, [])).either()
+  try(fn() 
+    handle-unique(fn() 
+      uniquify'(e, [])
+    )
+  ).either()
 
 pub fun uniquify'(e: expr, us: usubst): <exn, unique, div> uexpr
   match e
     App(e1, e2) -> UApp(uniquify'(e1, us), uniquify'(e2, us))
     Let(x, e1, e2) -> 
-      val x' = gen(x)
+      val x' = uid(x)
       val us' = us.append(x +-> x')
       ULet(x', uniquify'(e1, us), uniquify'(e2, us'))
     Lam(a, body) -> 
-      val a' = gen(a)
+      val a' = uid(a)
       ULam(a', uniquify'(body, us.append(a +-> a')))
     Lit(v) -> ULit(v)
     Var(x) -> match us.filter(fn((x', _)) x == x').last()
