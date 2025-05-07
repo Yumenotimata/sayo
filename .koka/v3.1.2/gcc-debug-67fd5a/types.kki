@@ -1,0 +1,122 @@
+module interface types
+ 
+//------------------------------
+//#kki: import declarations
+ 
+import std/core/types = std/core/types pub = "";
+import std/core/hnd = std/core/hnd pub = "";
+import std/core/exn = std/core/exn pub = "";
+import std/core/bool = std/core/bool pub = "";
+import std/core/order = std/core/order pub = "";
+import std/core/char = std/core/char pub = "";
+import std/core/int = std/core/int pub = "";
+import std/core/vector = std/core/vector pub = "";
+import std/core/string = std/core/string pub = "";
+import std/core/sslice = std/core/sslice pub = "";
+import std/core/list = std/core/list pub = "";
+import std/core/maybe = std/core/maybe pub = "";
+import std/core/either = std/core/either pub = "";
+import std/core/tuple = std/core/tuple pub = "";
+import std/core/show = std/core/show pub = "";
+import std/core/debug = std/core/debug pub = "";
+import std/core/delayed = std/core/delayed pub = "";
+import std/core/console = std/core/console pub = "";
+import std/core = std/core = "";
+ 
+//------------------------------
+//#kki: external imports
+ 
+ 
+//------------------------------
+//#kki: fixity declarations
+ 
+ 
+//------------------------------
+//#kki: local imported aliases
+ 
+// An alias for pure effects: a pure function always returns the same result
+// when called with the same arguments but may not terminate or raise an exception.
+local alias std/core/pure[52,1,52,26] :: E = <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/div :: X)> = 1;
+ 
+//------------------------------
+//#kki: type declarations
+ 
+pub recursive rec type types[3,1,6,17] {
+  pub con TApp[4,3,4,6](l: types, r: types){0,2,8} : (l : types, r : types) -> types;
+  pub con TCon[5,3,5,6](id: std/core/types/string){0,1,8} : (id : std/core/types/string) -> types;
+  pub con TVar[6,3,6,6](u: std/core/types/string){0,1,8} : (u : std/core/types/string) -> types;
+};
+pub alias subst[15,1,15,39] = (std/core/types/list :: V -> V)<(std/core/types/string, types)> = 1;
+ 
+//------------------------------
+//#kki: declarations
+ 
+// Automatically generated. Tests for the `TApp` constructor of the `:types` type.
+pub fip fun is-tapp[4,3,4,6] : (^ types : types) -> std/core/types/bool;
+// Automatically generated. Tests for the `TCon` constructor of the `:types` type.
+pub fip fun is-tcon[5,3,5,6] : (^ types : types) -> std/core/types/bool;
+// Automatically generated. Tests for the `TVar` constructor of the `:types` type.
+pub fip fun is-tvar[6,3,6,6] : (^ types : types) -> std/core/types/bool;
+pub val t-unit[8,9,8,14] : types;
+pub val t-int[9,9,9,13] : types;
+pub val t-string[10,9,10,16] : types;
+pub val t-arrow[11,9,11,15] : types;
+pub  fun t-fn[12,9,12,12] : (a : types, b : types) -> types;
+pub  fun show[17,9,17,12] : (t : types) -> <(std/core/types/div :: X)> std/core/types/string;
+ fun (+->)[23,5,23,9] : (u : std/core/types/string, t : types) -> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
+ fun (==)[26,5,26,8] : (t : types, t' : types) -> <(std/core/types/div :: X)> std/core/types/bool;
+// TODO: 出役チェック
+pub  fun tvar[55,9,55,12] : (u : std/core/types/string, t : types) -> <(std/core/types/div :: X)> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
+ fun @trmc-apply[33,5,33,9] : (t : types, s : subst, @acc : (std/core/types/ctx :: V -> V)<types>) -> <(std/core/types/div :: X)> types;
+ fun apply[33,5,33,9] : (t : types, s : subst) -> <(std/core/types/div :: X)> types;
+// monadic lift
+ fun @mlift-unify@10030[1,0,1,0] : (s' : subst, @y-x10008 : (std/core/types/list :: V -> V)<(std/core/types/string, types)>) -> <(std/core/types/div :: X),(std/core/console/console :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
+// monadic lift
+ fun @mlift-unify@10031[1,0,1,0] : (s : subst, s' : subst) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/console/console :: X)> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
+// monadic lift
+ fun @mlift-unify@10032[1,0,1,0] : (r : types, r' : types, s : subst) -> <(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/console/console :: X)> (std/core/types/list :: V -> V)<(std/core/types/string, types)>;
+pub  fun unify[42,9,42,13] : (a : types, b : types) -> <(std/core/pure :: E),(std/core/console/console :: X)> subst;
+ 
+//------------------------------
+//#kki: external declarations
+ 
+ 
+//------------------------------
+//#kki: inline definitions
+ 
+//.inline-section
+inline borrow "^" fip fun is-tapp // inline size: 1
+  = fn(types: types){
+    match (types) {
+      ((types/TApp((@pat@0: types) : types, (@pat@1: types) : types) : types ) as @pat: types)
+         -> std/core/types/True;
+      (@pat@2: types)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-tcon // inline size: 1
+  = fn(types: types){
+    match (types) {
+      ((types/TCon((@pat@0: std/core/types/string) : std/core/types/string) : types ) as @pat: types)
+         -> std/core/types/True;
+      (@pat@1: types)
+         -> std/core/types/False;
+    };
+  };
+inline borrow "^" fip fun is-tvar // inline size: 1
+  = fn(types: types){
+    match (types) {
+      ((types/TVar((@pat@0: std/core/types/string) : std/core/types/string) : types ) as @pat: types)
+         -> std/core/types/True;
+      (@pat@1: types)
+         -> std/core/types/False;
+    };
+  };
+ fun t-fn // inline size: 2
+  = fn(a: types, b: types){
+    types/TApp((types/TApp(types/t-arrow, a)), b);
+  };
+ fun (+->) // inline size: 2
+  = fn(u: std/core/types/string, t: types){
+    std/core/types/Cons<(std/core/types/string, types)>((std/core/types/Tuple2<std/core/types/string,types>(u, t)), (std/core/types/Nil<(std/core/types/string, types)>));
+  };

@@ -7,6 +7,7 @@ pub rec type types
 
 pub val t-unit = TCon("Unit")
 pub val t-int = TCon("Int")
+pub val t-string = TCon("String")
 pub val t-arrow = TCon("->")
 pub fun t-fn(a: types, b: types)
   TApp(TApp(t-arrow, a), b)

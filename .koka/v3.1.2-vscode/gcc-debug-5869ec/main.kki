@@ -39,6 +39,11 @@ import infer = infer = "";
 //------------------------------
 //#kki: local imported aliases
  
+local alias expr/uid[15,1,15,22] = std/core/types/string = 1;
+local alias infer/tenv[8,1,8,35] = (std/core/types/list :: V -> V)<((expr/uid == 1 std/core/types/string), types/types)> = 2;
+// An alias for pure effects: a pure function always returns the same result
+// when called with the same arguments but may not terminate or raise an exception.
+local alias std/core/pure[52,1,52,26] :: E = <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/div :: X)> = 1;
  
 //------------------------------
 //#kki: type declarations
@@ -47,7 +52,11 @@ import infer = infer = "";
 //------------------------------
 //#kki: declarations
  
-pub  fun main[8,5,8,8] : () -> <(std/core/console/console :: X),(std/core/types/div :: X)> ();
+// monadic lift
+ fun @mlift-main@10011[1,0,1,0] : (@y-x10000 : infer/tenv) -> <(std/core/pure :: E),(std/core/console/console :: X)> ();
+// monadic lift
+ fun @mlift-main@10012[1,0,1,0] : (@c-x10003 : ()) -> ();
+pub  fun main[8,5,8,8] : () -> <(std/core/pure :: E),(std/core/console/console :: X)> ();
  
 //------------------------------
 //#kki: external declarations

@@ -133,7 +133,7 @@ static kk_function_t kk_utest_new_assert_eq_fun286(kk_box_t _b_x62, kk_context_t
 
 static bool kk_utest_assert_eq_fun286(kk_function_t _fself, kk_box_t _b_x66, kk_box_t _b_x67, kk_context_t* _ctx) {
   struct kk_utest_assert_eq_fun286__t* _self = kk_function_as(struct kk_utest_assert_eq_fun286__t*, _fself, _ctx);
-  kk_box_t _b_x62 = _self->_b_x62; /* 8724 */
+  kk_box_t _b_x62 = _self->_b_x62; /* 1002 */
   kk_drop_match(_self, {kk_box_dup(_b_x62, _ctx);}, {}, _ctx)
   kk_box_t _x_x287;
   kk_function_t _x_x288 = kk_function_unbox(_b_x62, _ctx); /*(63, 64) -> 65*/
@@ -230,7 +230,7 @@ kk_unit_t kk_utest_assert_eq(kk_function_t actual, kk_function_t expected, kk_fu
   kk_function_t _x_x282 = kk_function_dup(actual, _ctx); /*() -> div 1149*/
   _x_x2_10040 = kk_std_core_hnd__open_none0(_x_x282, _ctx); /*1149*/
   bool _match_x238;
-  kk_box_t _x_x283 = kk_std_core_hnd__open_none3(kk_utest_new_assert_eq_fun284(_ctx), _x_x1_10039, _x_x2_10040, kk_function_box(kk_utest_new_assert_eq_fun289(_implicit_fs__lp__eq__eq__rp_, _ctx), _ctx), _ctx); /*8725*/
+  kk_box_t _x_x283 = kk_std_core_hnd__open_none3(kk_utest_new_assert_eq_fun284(_ctx), _x_x1_10039, _x_x2_10040, kk_function_box(kk_utest_new_assert_eq_fun289(_implicit_fs__lp__eq__eq__rp_, _ctx), _ctx), _ctx); /*1003*/
   _match_x238 = kk_bool_unbox(_x_x283); /*bool*/
   if (_match_x238) {
     kk_box_t _x_x1_0_10042 = kk_std_core_hnd__open_none0(expected, _ctx); /*1149*/;
@@ -238,12 +238,12 @@ kk_unit_t kk_utest_assert_eq(kk_function_t actual, kk_function_t expected, kk_fu
     kk_box_t _x_x291;
     kk_function_t _x_x292;
     kk_function_dup(_implicit_fs_show, _ctx);
-    _x_x292 = kk_utest_new_assert_eq_fun293(_implicit_fs_show, _ctx); /*(8579) -> 8581 8580*/
-    _x_x291 = kk_std_core_hnd__open_none1(_x_x292, _x_x1_0_10042, _ctx); /*8580*/
+    _x_x292 = kk_utest_new_assert_eq_fun293(_implicit_fs_show, _ctx); /*(1000) -> 1002 1001*/
+    _x_x291 = kk_std_core_hnd__open_none1(_x_x292, _x_x1_0_10042, _ctx); /*1001*/
     expected_0_10003 = kk_string_unbox(_x_x291); /*string*/
     kk_box_t _x_x1_1_10043 = kk_std_core_hnd__open_none0(actual, _ctx); /*1149*/;
     kk_string_t actual_0_10004;
-    kk_box_t _x_x295 = kk_std_core_hnd__open_none1(kk_utest_new_assert_eq_fun296(_implicit_fs_show, _ctx), _x_x1_1_10043, _ctx); /*8580*/
+    kk_box_t _x_x295 = kk_std_core_hnd__open_none1(kk_utest_new_assert_eq_fun296(_implicit_fs_show, _ctx), _x_x1_1_10043, _ctx); /*1001*/
     actual_0_10004 = kk_string_unbox(_x_x295); /*string*/
     kk_std_core_hnd__ev evx_10055 = kk_evv_at(((KK_IZ(0))),kk_context()); /*hnd/ev<utest/test<_690>>*/;
     kk_box_t _x_x298;
@@ -267,7 +267,7 @@ kk_unit_t kk_utest_assert_eq(kk_function_t actual, kk_function_t expected, kk_fu
         }
         {
           kk_function_t _fun_unbox_x88 = _fun_test_fail.clause;
-          _x_x298 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_box_t, kk_box_t, kk_context_t*), _fun_unbox_x88, (_fun_unbox_x88, m, evx_10055, kk_string_box(expected_0_10003), kk_string_box(actual_0_10004), _ctx), _ctx); /*64*/
+          _x_x298 = kk_function_call(kk_box_t, (kk_function_t, int32_t, kk_std_core_hnd__ev, kk_box_t, kk_box_t, kk_context_t*), _fun_unbox_x88, (_fun_unbox_x88, m, evx_10055, kk_string_box(expected_0_10003), kk_string_box(actual_0_10004), _ctx), _ctx); /*1016*/
         }
       }
     }
@@ -336,7 +336,7 @@ static kk_box_t kk_utest_test_fun304(kk_function_t _fself, kk_box_t _b_x114, kk_
 }
 static kk_unit_t kk_utest_test_fun302(kk_function_t _fself, int32_t m, kk_std_core_hnd__ev ev, kk_string_t x1, kk_string_t x2, kk_context_t* _ctx) {
   kk_unused(_fself);
-  kk_box_t _x_x303 = kk_std_core_hnd_under2(ev, kk_utest_new_test_fun304(_ctx), kk_string_box(x1), kk_string_box(x2), _ctx); /*6489*/
+  kk_box_t _x_x303 = kk_std_core_hnd_under2(ev, kk_utest_new_test_fun304(_ctx), kk_string_box(x1), kk_string_box(x2), _ctx); /*3249*/
   kk_unit_unbox(_x_x303); return kk_Unit;
 }
 
@@ -434,7 +434,7 @@ kk_unit_t kk_utest_test(kk_string_t test_name, kk_function_t tests, kk_context_t
   kk_box_t _x_x301;
   kk_function_t _b_x116_130 = kk_utest_new_test_fun302(_ctx); /*(m : hnd/marker<<utest/test-case<1247>,div>,()>, ev : hnd/ev<utest/test<1247>>, x1 : string, x2 : string) -> <utest/test-case<1247>,div> ()*/;
   kk_utest__test _x_x307;
-  kk_std_core_hnd__clause2 _x_x308 = kk_std_core_hnd__new_Clause2(kk_utest_new_test_fun309(_b_x116_130, _ctx), _ctx); /*hnd/clause2<62,63,64,65,66,67>*/
+  kk_std_core_hnd__clause2 _x_x308 = kk_std_core_hnd__new_Clause2(kk_utest_new_test_fun309(_b_x116_130, _ctx), _ctx); /*hnd/clause2<1021,1022,1023,1024,1025,1026>*/
   _x_x307 = kk_utest__new_Hnd_test(kk_reuse_null, 0, kk_integer_from_small(1), _x_x308, _ctx); /*utest/test<10,11,12>*/
   _x_x301 = kk_utest__handle_test(_x_x307, kk_utest_new_test_fun313(_ctx), kk_utest_new_test_fun314(tests, _ctx), _ctx); /*605*/
   kk_unit_unbox(_x_x301); return kk_Unit;
@@ -544,7 +544,7 @@ static kk_unit_t kk_utest_suite_fun318(kk_function_t _fself, int32_t m, kk_std_c
   struct kk_utest_suite_fun318__t* _self = kk_function_as(struct kk_utest_suite_fun318__t*, _fself, _ctx);
   kk_string_t suite_name = _self->suite_name; /* string */
   kk_drop_match(_self, {kk_string_dup(suite_name, _ctx);}, {}, _ctx)
-  kk_box_t _x_x319 = kk_std_core_hnd_under2(ev, kk_utest_new_suite_fun320(suite_name, _ctx), kk_string_box(x1), kk_string_box(x2), _ctx); /*6489*/
+  kk_box_t _x_x319 = kk_std_core_hnd_under2(ev, kk_utest_new_suite_fun320(suite_name, _ctx), kk_string_box(x1), kk_string_box(x2), _ctx); /*3344*/
   kk_unit_unbox(_x_x319); return kk_Unit;
 }
 
@@ -641,7 +641,7 @@ kk_unit_t kk_utest_suite(kk_string_t suite_name, kk_function_t test_cases, kk_co
   kk_box_t _x_x317;
   kk_function_t _b_x152_166 = kk_utest_new_suite_fun318(suite_name, _ctx); /*(m : hnd/marker<<utest/test-suite<1342>,div>,()>, ev : hnd/ev<utest/test-case<1342>>, x1 : string, x2 : string) -> <utest/test-suite<1342>,div> ()*/;
   kk_utest__test_case _x_x327;
-  kk_std_core_hnd__clause2 _x_x328 = kk_std_core_hnd__new_Clause2(kk_utest_new_suite_fun329(_b_x152_166, _ctx), _ctx); /*hnd/clause2<62,63,64,65,66,67>*/
+  kk_std_core_hnd__clause2 _x_x328 = kk_std_core_hnd__new_Clause2(kk_utest_new_suite_fun329(_b_x152_166, _ctx), _ctx); /*hnd/clause2<1021,1022,1023,1024,1025,1026>*/
   _x_x327 = kk_utest__new_Hnd_test_case(kk_reuse_null, 0, kk_integer_from_small(1), _x_x328, _ctx); /*utest/test-case<23,24,25>*/
   _x_x317 = kk_utest__handle_test_case(_x_x327, kk_utest_new_suite_fun333(_ctx), kk_utest_new_suite_fun334(test_cases, _ctx), _ctx); /*761*/
   kk_unit_unbox(_x_x317); return kk_Unit;
@@ -685,13 +685,13 @@ static kk_box_t kk_utest_run_utest_fun341(kk_function_t _fself, int32_t _b_x195,
     kk_std_core_types__list _x_x343;
     kk_box_t _x_x344;
     kk_ref_t _x_x345 = kk_ref_dup(loc, _ctx); /*local-var<1987,list<(string, string, string)>>*/
-    _x_x344 = kk_ref_get(_x_x345,kk_context()); /*2901*/
+    _x_x344 = kk_ref_get(_x_x345,kk_context()); /*3607*/
     _x_x343 = kk_std_core_types__list_unbox(_x_x344, KK_OWNED, _ctx); /*list<(string, string, string)>*/
     kk_std_core_types__list _x_x346;
     kk_box_t _x_x347;
-    kk_std_core_types__tuple3 _x_x348 = kk_std_core_types__new_Tuple3(kk_string_box(x1), kk_string_box(x2), kk_string_box(x3), _ctx); /*(136, 137, 138)*/
-    _x_x347 = kk_std_core_types__tuple3_box(_x_x348, _ctx); /*82*/
-    _x_x346 = kk_std_core_types__new_Cons(kk_reuse_null, 0, _x_x347, kk_std_core_types__new_Nil(_ctx), _ctx); /*list<82>*/
+    kk_std_core_types__tuple3 _x_x348 = kk_std_core_types__new_Tuple3(kk_string_box(x1), kk_string_box(x2), kk_string_box(x3), _ctx); /*(1042, 1043, 1044)*/
+    _x_x347 = kk_std_core_types__tuple3_box(_x_x348, _ctx); /*3631*/
+    _x_x346 = kk_std_core_types__new_Cons(kk_reuse_null, 0, _x_x347, kk_std_core_types__new_Nil(_ctx), _ctx); /*list<3631>*/
     _b_x193_207 = kk_std_core_list_append(_x_x343, _x_x346, _ctx); /*list<(string, string, string)>*/
     kk_unit_t _brw_x236 = kk_Unit;
     kk_ref_set_borrow(loc,(kk_std_core_types__list_box(_b_x193_207, _ctx)),kk_context());
@@ -799,8 +799,8 @@ kk_unit_t kk_utest_run_utest(kk_function_t test_suites, kk_context_t* _ctx) { /*
   kk_std_core_hnd__clause1 _x_x339;
   kk_function_t _x_x340;
   kk_ref_dup(loc, _ctx);
-  _x_x340 = kk_utest_new_run_utest_fun341(loc, _ctx); /*(hnd/marker<48,49>, hnd/ev<47>, 45) -> 48 46*/
-  _x_x339 = kk_std_core_hnd__new_Clause1(_x_x340, _ctx); /*hnd/clause1<45,46,47,48,49>*/
+  _x_x340 = kk_utest_new_run_utest_fun341(loc, _ctx); /*(hnd/marker<1018,1019>, hnd/ev<1017>, 1015) -> 1018 1016*/
+  _x_x339 = kk_std_core_hnd__new_Clause1(_x_x340, _ctx); /*hnd/clause1<1015,1016,1017,1018,1019>*/
   _x_x338 = kk_utest__new_Hnd_test_suite(kk_reuse_null, 0, kk_integer_from_small(1), _x_x339, _ctx); /*utest/test-suite<44,45,46>*/
   _x_x337 = kk_utest__handle_test_suite(_x_x338, kk_utest_new_run_utest_fun349(_ctx), kk_utest_new_run_utest_fun350(test_suites, _ctx), _ctx); /*917*/
   kk_unit_unbox(_x_x337);
@@ -812,7 +812,7 @@ kk_unit_t kk_utest_run_utest(kk_function_t test_suites, kk_context_t* _ctx) { /*
   kk_std_core_types__list xs_10013;
   kk_box_t _x_x354;
   kk_ref_t _x_x355 = kk_ref_dup(loc, _ctx); /*local-var<1987,list<(string, string, string)>>*/
-  _x_x354 = kk_ref_get(_x_x355,kk_context()); /*3270*/
+  _x_x354 = kk_ref_get(_x_x355,kk_context()); /*3976*/
   xs_10013 = kk_std_core_types__list_unbox(_x_x354, KK_OWNED, _ctx); /*list<(string, string, string)>*/
   kk_unit_t res = kk_Unit;
   if (kk_std_core_types__is_Nil(xs_10013, _ctx)) {
@@ -826,12 +826,12 @@ kk_unit_t kk_utest_run_utest(kk_function_t test_suites, kk_context_t* _ctx) { /*
     kk_std_core_types__list _b_x221_224;
     kk_box_t _x_x358;
     kk_ref_t _x_x359 = kk_ref_dup(loc, _ctx); /*local-var<1987,list<(string, string, string)>>*/
-    _x_x358 = kk_ref_get(_x_x359,kk_context()); /*3229*/
+    _x_x358 = kk_ref_get(_x_x359,kk_context()); /*3935*/
     _b_x221_224 = kk_std_core_types__list_unbox(_x_x358, KK_OWNED, _ctx); /*list<(string, string, string)>*/
     kk_std_core_types__list ___2 = kk_std_core_list_map(_b_x221_224, kk_utest_new_run_utest_fun360(_ctx), _ctx); /*list<()>*/;
     kk_std_core_types__list_drop(___2, _ctx);
   }
-  kk_box_t _x_x371 = kk_std_core_hnd_prompt_local_var(loc, kk_unit_box(res), _ctx); /*9564*/
+  kk_box_t _x_x371 = kk_std_core_hnd_prompt_local_var(loc, kk_unit_box(res), _ctx); /*3988*/
   kk_unit_unbox(_x_x371); return kk_Unit;
 }
 

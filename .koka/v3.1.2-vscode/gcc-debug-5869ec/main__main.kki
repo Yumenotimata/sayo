@@ -21,8 +21,8 @@ import std/core/show = std/core/show pub = "";
 import std/core/debug = std/core/debug pub = "";
 import std/core/delayed = std/core/delayed pub = "";
 import std/core/console = std/core/console pub = "";
-import std/core = std/core = "";
 import main = main = "";
+import std/core = std/core = "";
  
 //------------------------------
 //#kki: external imports
@@ -35,6 +35,9 @@ import main = main = "";
 //------------------------------
 //#kki: local imported aliases
  
+// An alias for pure effects: a pure function always returns the same result
+// when called with the same arguments but may not terminate or raise an exception.
+local alias std/core/pure[52,1,52,26] :: E = <(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>,(std/core/types/div :: X)> = 1;
 // Stateful functions can manipulate heap `:h` using allocations, reads and writes.
 local alias std/core/types/st[139,1,139,47]<(h :: H)> :: H -> E = <(std/core/types/read :: H -> X)<(h :: H)>,(std/core/types/write :: H -> X)<(h :: H)>,(std/core/types/alloc :: H -> X)<(h :: H)>> = 1;
  
@@ -45,7 +48,7 @@ local alias std/core/types/st[139,1,139,47]<(h :: H)> :: H -> E = <(std/core/typ
 //------------------------------
 //#kki: declarations
  
-pub  fun @expr[2,9,2,13] : () -> <(std/core/console/console :: X),(std/core/types/div :: X)> ();
+pub  fun @expr[3,9,3,13] : () -> <(std/core/pure :: E),(std/core/console/console :: X)> ();
 pub  fun @main[3,9,3,13] : () -> <(std/core/types/st :: H -> E)<(std/core/types/global :: H)>,(std/core/console/console :: X),(std/core/types/div :: X),(std/core/fsys :: X),(std/core/types/ndet :: X),(std/core/net :: X),(std/core/ui :: X)> ();
  
 //------------------------------
@@ -57,10 +60,10 @@ pub  fun @main[3,9,3,13] : () -> <(std/core/types/st :: H -> E)<(std/core/types/
  
 //.inline-section
  fun @expr // inline size: 1
-  = fn<<(std/core/console/console :: X),(std/core/types/div :: X)>>(){
+  = fn<<(std/core/console/console :: X),(std/core/types/div :: X),(std/core/types/handled :: ((E, V) -> V) -> X)<(std/core/exn/exn :: (E, V) -> V)>>>(){
     main/main();
   };
  fun @main // inline size: 1
   = fn<(std/core/io-noexn :: E)>(){
-    main/main();
+    std/core/@default-exn<<(std/core/types/div :: X),(std/core/types/alloc :: H -> X)<(std/core/types/global :: H)>,(std/core/fsys :: X),(std/core/types/ndet :: X),(std/core/net :: X),(std/core/types/read :: H -> X)<(std/core/types/global :: H)>,(std/core/ui :: X),(std/core/types/write :: H -> X)<(std/core/types/global :: H)>>>(main/main);
   };

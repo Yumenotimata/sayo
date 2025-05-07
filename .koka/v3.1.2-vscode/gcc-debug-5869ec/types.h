@@ -141,22 +141,24 @@ extern kk_types__types kk_types_t_unit;
 
 extern kk_types__types kk_types_t_int;
 
+extern kk_types__types kk_types_t_string;
+
 extern kk_types__types kk_types_t_arrow;
 
 static inline kk_types__types kk_types_t_fn(kk_types__types a, kk_types__types b, kk_context_t* _ctx) { /* (a : types, b : types) -> types */ 
-  kk_types__types _x_x199;
-  kk_types__types _x_x200 = kk_types__types_dup(kk_types_t_arrow, _ctx); /*types/types*/
-  _x_x199 = kk_types__new_TApp(kk_reuse_null, 0, _x_x200, a, _ctx); /*types/types*/
-  return kk_types__new_TApp(kk_reuse_null, 0, _x_x199, b, _ctx);
+  kk_types__types _x_x201;
+  kk_types__types _x_x202 = kk_types__types_dup(kk_types_t_arrow, _ctx); /*types/types*/
+  _x_x201 = kk_types__new_TApp(kk_reuse_null, 0, _x_x202, a, _ctx); /*types/types*/
+  return kk_types__new_TApp(kk_reuse_null, 0, _x_x201, b, _ctx);
 }
 
 kk_string_t kk_types_show(kk_types__types t, kk_context_t* _ctx); /* (t : types) -> div string */ 
 
 static inline kk_std_core_types__list kk_types__lp__plus__dash__gt__rp_(kk_string_t u, kk_types__types t, kk_context_t* _ctx) { /* (u : string, t : types) -> list<(string, types)> */ 
-  kk_box_t _x_x211;
-  kk_std_core_types__tuple2 _x_x212 = kk_std_core_types__new_Tuple2(kk_string_box(u), kk_types__types_box(t, _ctx), _ctx); /*(1038, 1039)*/
-  _x_x211 = kk_std_core_types__tuple2_box(_x_x212, _ctx); /*1024*/
-  return kk_std_core_types__new_Cons(kk_reuse_null, 0, _x_x211, kk_std_core_types__new_Nil(_ctx), _ctx);
+  kk_box_t _x_x213;
+  kk_std_core_types__tuple2 _x_x214 = kk_std_core_types__new_Tuple2(kk_string_box(u), kk_types__types_box(t, _ctx), _ctx); /*(1038, 1039)*/
+  _x_x213 = kk_std_core_types__tuple2_box(_x_x214, _ctx); /*1024*/
+  return kk_std_core_types__new_Cons(kk_reuse_null, 0, _x_x213, kk_std_core_types__new_Nil(_ctx), _ctx);
 }
 
 bool kk_types__lp__eq__eq__rp_(kk_types__types t, kk_types__types t_sq_, kk_context_t* _ctx); /* (t : types, t' : types) -> div bool */ 

@@ -23,15 +23,24 @@
 #include "std_core_console.h"
 #include "std_core.h"
 #include "utest.h"
-#include "interpret.h"
+#include "expr.h"
+#include "value.h"
+#include "types.h"
+#include "infer.h"
 
 // type declarations
 
 // value declarations
 
-extern kk_std_core_types__list kk_main_tests;
+kk_unit_t kk_main__mlift_main_10011(kk_std_core_types__list _y_x10000, kk_context_t* _ctx); /* (infer/tenv) -> <pure,console/console> () */ 
+ 
+// monadic lift
 
-kk_unit_t kk_main_main(kk_context_t* _ctx); /* () -> <console/console,div> () */ 
+static inline kk_unit_t kk_main__mlift_main_10012(kk_unit_t _c_x10003, kk_context_t* _ctx) { /* (()) -> () */ 
+  kk_Unit; return kk_Unit;
+}
+
+kk_unit_t kk_main_main(kk_context_t* _ctx); /* () -> <pure,console/console> () */ 
 
 void kk_main__init(kk_context_t* _ctx);
 

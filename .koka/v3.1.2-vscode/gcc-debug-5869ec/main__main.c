@@ -1,5 +1,9 @@
 // Koka generated module: main/@main, koka version: 3.1.2, platform: 64-bit
 #include "main__main.h"
+extern kk_unit_t kk_main__main__main_fun0(kk_function_t _fself, kk_context_t* _ctx) {
+  kk_unused(_fself);
+  kk_main_main(_ctx); return kk_Unit;
+}
 
 // initialization
 void kk_main__main__init(kk_context_t* _ctx){
@@ -24,8 +28,8 @@ void kk_main__main__init(kk_context_t* _ctx){
   kk_std_core_debug__init(_ctx);
   kk_std_core_delayed__init(_ctx);
   kk_std_core_console__init(_ctx);
-  kk_std_core__init(_ctx);
   kk_main__init(_ctx);
+  kk_std_core__init(_ctx);
   #if defined(KK_CUSTOM_INIT)
     KK_CUSTOM_INIT (_ctx);
   #endif
@@ -39,8 +43,8 @@ void kk_main__main__done(kk_context_t* _ctx){
   #if defined(KK_CUSTOM_DONE)
     KK_CUSTOM_DONE (_ctx);
   #endif
-  kk_main__done(_ctx);
   kk_std_core__done(_ctx);
+  kk_main__done(_ctx);
   kk_std_core_console__done(_ctx);
   kk_std_core_delayed__done(_ctx);
   kk_std_core_debug__done(_ctx);

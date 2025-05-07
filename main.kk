@@ -6,13 +6,12 @@ import types
 import infer
 
 fun main()
-  val test = App(Lam("x", Var("x")), Lit(Int(1)))
+  val test = Let("x", Lam("a", Var("a")), App(Var("x"), Lit(Int(1))))
   match uniquify(test)
-    Left(e) -> println(e)
+    Left(e) -> println("exception" ++ e.show())
     Right(uexpr) -> 
-      match infer(uexpr)
-        Left(e) -> println(e)
-        Right(t) -> println("type: " ++ show(t))
+      println("uniquified: " ++ uexpr.show())
+      println(infer(uexpr).show())
 
   // val t = TApp(TApp(t-arrow, TVar("a")), TVar("b"))
   // val t' = TApp(TApp(t-arrow, TCon("Int")), TVar("a"))

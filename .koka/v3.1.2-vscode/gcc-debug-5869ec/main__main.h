@@ -21,19 +21,31 @@
 #include "std_core_debug.h"
 #include "std_core_delayed.h"
 #include "std_core_console.h"
-#include "std_core.h"
 #include "main.h"
+#include "std_core.h"
 
 // type declarations
 
 // value declarations
 
-static inline kk_unit_t kk_main__main__expr(kk_context_t* _ctx) { /* () -> <console/console,div> () */ 
+static inline kk_unit_t kk_main__main__expr(kk_context_t* _ctx) { /* () -> <pure,console/console> () */ 
   kk_main_main(_ctx); return kk_Unit;
 }
 
+
+// lift anonymous function
+struct kk_main__main__main_fun0__t {
+  struct kk_function_s _base;
+};
+extern kk_unit_t kk_main__main__main_fun0(kk_function_t _fself, kk_context_t* _ctx);
+static inline kk_function_t kk_main__main__new_main_fun0(kk_context_t* _ctx) {
+  kk_define_static_function(_fself, kk_main__main__main_fun0, _ctx)
+  return kk_function_dup(_fself,kk_context());
+}
+
+
 static inline kk_unit_t kk_main__main__main(kk_context_t* _ctx) { /* () -> <st<global>,console/console,div,fsys,ndet,net,ui> () */ 
-  kk_main_main(_ctx); return kk_Unit;
+  kk_std_core__default_exn(kk_main__main__new_main_fun0(_ctx), _ctx); return kk_Unit;
 }
 
 void kk_main__main__init(kk_context_t* _ctx);
