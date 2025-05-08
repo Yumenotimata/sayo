@@ -1,1 +1,1 @@
-/usr/bin/c++     CMakeFiles/sayo.dir/main.cpp.o  -o sayo 
+/usr/bin/c++     CMakeFiles/sayo.dir/main.cpp.o CMakeFiles/sayo.dir/term.cpp.o  -o sayo 

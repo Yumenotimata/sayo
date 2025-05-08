@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/workspaces/sayo/src/main.cpp
-iostream
+../inc/term.hpp
+string
+-
+variant
+-
+memory
+-
+
+/workspaces/sayo/src/term.cpp
+term.hpp
+-
+vector
+-
+string
+-
+tuple
+-
+algorithm
 -
 

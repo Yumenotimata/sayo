@@ -152,6 +152,33 @@ main.cpp.s:
 	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+term.o: term.cpp.o
+
+.PHONY : term.o
+
+# target to build an object file
+term.cpp.o:
+	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/term.cpp.o
+.PHONY : term.cpp.o
+
+term.i: term.cpp.i
+
+.PHONY : term.i
+
+# target to preprocess a source file
+term.cpp.i:
+	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/term.cpp.i
+.PHONY : term.cpp.i
+
+term.s: term.cpp.s
+
+.PHONY : term.s
+
+# target to generate assembly for a file
+term.cpp.s:
+	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/term.cpp.s
+.PHONY : term.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -164,6 +191,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... term.o"
+	@echo "... term.i"
+	@echo "... term.s"
 .PHONY : help
 
 

@@ -92,12 +92,12 @@ src/clean: src/CMakeFiles/sayo.dir/clean
 src/CMakeFiles/sayo.dir/all:
 	$(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/depend
 	$(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=1,2 "Built target sayo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=1,2,3 "Built target sayo"
 .PHONY : src/CMakeFiles/sayo.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/sayo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/sayo/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/sayo/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/sayo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/sayo/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/sayo.dir/rule
