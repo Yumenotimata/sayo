@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/workspaces/sayo/src/main.cpp" "/workspaces/sayo/build/src/CMakeFiles/sayo.dir/main.cpp.o"
-  "/workspaces/sayo/src/term.cpp" "/workspaces/sayo/build/src/CMakeFiles/sayo.dir/term.cpp.o"
-  "/workspaces/sayo/src/value.cpp" "/workspaces/sayo/build/src/CMakeFiles/sayo.dir/value.cpp.o"
+  "/workspaces/sayo/src/main.cpp" "/workspaces/sayo/src/CMakeFiles/sayo.dir/main.cpp.o"
+  "/workspaces/sayo/src/term.cpp" "/workspaces/sayo/src/CMakeFiles/sayo.dir/term.cpp.o"
+  "/workspaces/sayo/src/value.cpp" "/workspaces/sayo/src/CMakeFiles/sayo.dir/value.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src/../inc"
+  "src/../inc"
   )
 
 # Targets to which this target links.

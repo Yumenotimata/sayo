@@ -51,7 +51,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /workspaces/sayo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/sayo/build
+CMAKE_BINARY_DIR = /workspaces/sayo
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /workspaces/sayo/build && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/sayo/build/CMakeFiles /workspaces/sayo/build/src/CMakeFiles/progress.marks
-	cd /workspaces/sayo/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/sayo/build/CMakeFiles 0
+	cd /workspaces/sayo && $(CMAKE_COMMAND) -E cmake_progress_start /workspaces/sayo/CMakeFiles /workspaces/sayo/src/CMakeFiles/progress.marks
+	cd /workspaces/sayo && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /workspaces/sayo/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /workspaces/sayo/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /workspaces/sayo && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /workspaces/sayo/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /workspaces/sayo && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /workspaces/sayo/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /workspaces/sayo && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /workspaces/sayo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /workspaces/sayo && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/sayo.dir/rule:
-	cd /workspaces/sayo/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/sayo.dir/rule
+	cd /workspaces/sayo && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/sayo.dir/rule
 .PHONY : src/CMakeFiles/sayo.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ sayo: src/CMakeFiles/sayo.dir/rule
 
 # fast build rule for target.
 sayo/fast:
-	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/build
+	cd /workspaces/sayo && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/build
 .PHONY : sayo/fast
 
 main.o: main.cpp.o
@@ -131,7 +131,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/main.cpp.o
+	cd /workspaces/sayo && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -140,7 +140,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/main.cpp.i
+	cd /workspaces/sayo && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -149,7 +149,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/main.cpp.s
+	cd /workspaces/sayo && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 term.o: term.cpp.o
@@ -158,7 +158,7 @@ term.o: term.cpp.o
 
 # target to build an object file
 term.cpp.o:
-	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/term.cpp.o
+	cd /workspaces/sayo && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/term.cpp.o
 .PHONY : term.cpp.o
 
 term.i: term.cpp.i
@@ -167,7 +167,7 @@ term.i: term.cpp.i
 
 # target to preprocess a source file
 term.cpp.i:
-	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/term.cpp.i
+	cd /workspaces/sayo && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/term.cpp.i
 .PHONY : term.cpp.i
 
 term.s: term.cpp.s
@@ -176,7 +176,7 @@ term.s: term.cpp.s
 
 # target to generate assembly for a file
 term.cpp.s:
-	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/term.cpp.s
+	cd /workspaces/sayo && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/term.cpp.s
 .PHONY : term.cpp.s
 
 value.o: value.cpp.o
@@ -185,7 +185,7 @@ value.o: value.cpp.o
 
 # target to build an object file
 value.cpp.o:
-	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/value.cpp.o
+	cd /workspaces/sayo && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/value.cpp.o
 .PHONY : value.cpp.o
 
 value.i: value.cpp.i
@@ -194,7 +194,7 @@ value.i: value.cpp.i
 
 # target to preprocess a source file
 value.cpp.i:
-	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/value.cpp.i
+	cd /workspaces/sayo && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/value.cpp.i
 .PHONY : value.cpp.i
 
 value.s: value.cpp.s
@@ -203,7 +203,7 @@ value.s: value.cpp.s
 
 # target to generate assembly for a file
 value.cpp.s:
-	cd /workspaces/sayo/build && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/value.cpp.s
+	cd /workspaces/sayo && $(MAKE) -f src/CMakeFiles/sayo.dir/build.make src/CMakeFiles/sayo.dir/value.cpp.s
 .PHONY : value.cpp.s
 
 # Help Target
@@ -235,6 +235,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /workspaces/sayo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /workspaces/sayo && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

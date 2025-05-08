@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
-../inc/term.hpp
+/workspaces/sayo/src/main.cpp
+iostream
+-
+term.hpp
+-
+
+inc/term.hpp
 string
 -
 variant
@@ -16,17 +22,11 @@ memory
 value.hpp
 -
 
-../inc/value.hpp
+inc/value.hpp
 string
 -
 variant
 -
 memory
--
-
-/workspaces/sayo/src/main.cpp
-iostream
--
-term.hpp
 -
 

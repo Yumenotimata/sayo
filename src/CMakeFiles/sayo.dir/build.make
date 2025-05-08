@@ -46,7 +46,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /workspaces/sayo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /workspaces/sayo/build
+CMAKE_BINARY_DIR = /workspaces/sayo
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/sayo.dir/depend.make
@@ -58,43 +58,43 @@ include src/CMakeFiles/sayo.dir/progress.make
 include src/CMakeFiles/sayo.dir/flags.make
 
 src/CMakeFiles/sayo.dir/main.cpp.o: src/CMakeFiles/sayo.dir/flags.make
-src/CMakeFiles/sayo.dir/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/sayo.dir/main.cpp.o"
-	cd /workspaces/sayo/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sayo.dir/main.cpp.o -c /workspaces/sayo/src/main.cpp
+src/CMakeFiles/sayo.dir/main.cpp.o: src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/sayo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/sayo.dir/main.cpp.o"
+	cd /workspaces/sayo/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sayo.dir/main.cpp.o -c /workspaces/sayo/src/main.cpp
 
 src/CMakeFiles/sayo.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sayo.dir/main.cpp.i"
-	cd /workspaces/sayo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/sayo/src/main.cpp > CMakeFiles/sayo.dir/main.cpp.i
+	cd /workspaces/sayo/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/sayo/src/main.cpp > CMakeFiles/sayo.dir/main.cpp.i
 
 src/CMakeFiles/sayo.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sayo.dir/main.cpp.s"
-	cd /workspaces/sayo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/sayo/src/main.cpp -o CMakeFiles/sayo.dir/main.cpp.s
+	cd /workspaces/sayo/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/sayo/src/main.cpp -o CMakeFiles/sayo.dir/main.cpp.s
 
 src/CMakeFiles/sayo.dir/term.cpp.o: src/CMakeFiles/sayo.dir/flags.make
-src/CMakeFiles/sayo.dir/term.cpp.o: ../src/term.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/sayo.dir/term.cpp.o"
-	cd /workspaces/sayo/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sayo.dir/term.cpp.o -c /workspaces/sayo/src/term.cpp
+src/CMakeFiles/sayo.dir/term.cpp.o: src/term.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/sayo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/sayo.dir/term.cpp.o"
+	cd /workspaces/sayo/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sayo.dir/term.cpp.o -c /workspaces/sayo/src/term.cpp
 
 src/CMakeFiles/sayo.dir/term.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sayo.dir/term.cpp.i"
-	cd /workspaces/sayo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/sayo/src/term.cpp > CMakeFiles/sayo.dir/term.cpp.i
+	cd /workspaces/sayo/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/sayo/src/term.cpp > CMakeFiles/sayo.dir/term.cpp.i
 
 src/CMakeFiles/sayo.dir/term.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sayo.dir/term.cpp.s"
-	cd /workspaces/sayo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/sayo/src/term.cpp -o CMakeFiles/sayo.dir/term.cpp.s
+	cd /workspaces/sayo/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/sayo/src/term.cpp -o CMakeFiles/sayo.dir/term.cpp.s
 
 src/CMakeFiles/sayo.dir/value.cpp.o: src/CMakeFiles/sayo.dir/flags.make
-src/CMakeFiles/sayo.dir/value.cpp.o: ../src/value.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/sayo.dir/value.cpp.o"
-	cd /workspaces/sayo/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sayo.dir/value.cpp.o -c /workspaces/sayo/src/value.cpp
+src/CMakeFiles/sayo.dir/value.cpp.o: src/value.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/sayo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/sayo.dir/value.cpp.o"
+	cd /workspaces/sayo/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sayo.dir/value.cpp.o -c /workspaces/sayo/src/value.cpp
 
 src/CMakeFiles/sayo.dir/value.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sayo.dir/value.cpp.i"
-	cd /workspaces/sayo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/sayo/src/value.cpp > CMakeFiles/sayo.dir/value.cpp.i
+	cd /workspaces/sayo/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/sayo/src/value.cpp > CMakeFiles/sayo.dir/value.cpp.i
 
 src/CMakeFiles/sayo.dir/value.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sayo.dir/value.cpp.s"
-	cd /workspaces/sayo/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/sayo/src/value.cpp -o CMakeFiles/sayo.dir/value.cpp.s
+	cd /workspaces/sayo/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/sayo/src/value.cpp -o CMakeFiles/sayo.dir/value.cpp.s
 
 # Object files for target sayo
 sayo_OBJECTS = \
@@ -110,8 +110,8 @@ src/sayo: src/CMakeFiles/sayo.dir/term.cpp.o
 src/sayo: src/CMakeFiles/sayo.dir/value.cpp.o
 src/sayo: src/CMakeFiles/sayo.dir/build.make
 src/sayo: src/CMakeFiles/sayo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable sayo"
-	cd /workspaces/sayo/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sayo.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/sayo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable sayo"
+	cd /workspaces/sayo/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sayo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/sayo.dir/build: src/sayo
@@ -119,10 +119,10 @@ src/CMakeFiles/sayo.dir/build: src/sayo
 .PHONY : src/CMakeFiles/sayo.dir/build
 
 src/CMakeFiles/sayo.dir/clean:
-	cd /workspaces/sayo/build/src && $(CMAKE_COMMAND) -P CMakeFiles/sayo.dir/cmake_clean.cmake
+	cd /workspaces/sayo/src && $(CMAKE_COMMAND) -P CMakeFiles/sayo.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/sayo.dir/clean
 
 src/CMakeFiles/sayo.dir/depend:
-	cd /workspaces/sayo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/sayo /workspaces/sayo/src /workspaces/sayo/build /workspaces/sayo/build/src /workspaces/sayo/build/src/CMakeFiles/sayo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /workspaces/sayo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /workspaces/sayo /workspaces/sayo/src /workspaces/sayo /workspaces/sayo/src /workspaces/sayo/src/CMakeFiles/sayo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/sayo.dir/depend
 
