@@ -24,9 +24,21 @@ variant
 memory
 -
 
-/workspaces/sayo/src/main.cpp
+/workspaces/sayo/src/term.cpp
+term.hpp
+-
+vector
+-
+string
+-
+tuple
+-
 iostream
 -
-term.hpp
+algorithm
+-
+stdexcept
+-
+stack
 -
 
