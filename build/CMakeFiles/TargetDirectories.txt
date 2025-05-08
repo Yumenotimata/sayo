@@ -1,0 +1,5 @@
+/workspaces/sayo/build/CMakeFiles/rebuild_cache.dir
+/workspaces/sayo/build/CMakeFiles/edit_cache.dir
+/workspaces/sayo/build/src/CMakeFiles/edit_cache.dir
+/workspaces/sayo/build/src/CMakeFiles/rebuild_cache.dir
+/workspaces/sayo/build/src/CMakeFiles/sayo.dir
