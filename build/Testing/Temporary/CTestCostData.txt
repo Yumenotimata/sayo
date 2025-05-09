@@ -1,0 +1,4 @@
+sayo_test 4 0
+sayo-test 0 0
+---
+sayo-test

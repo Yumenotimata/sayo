@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/sayo-test.dir/test.cpp.o  -o sayo-test  ../lib/libgtest_main.a ../lib/libgtest.a -lpthread 
