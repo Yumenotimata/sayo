@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -isystem /workspaces/sayo/build/_deps/googletest-src/googletest/include -isystem /workspaces/sayo/build/_deps/googletest-src/googletest 
+CXX_INCLUDES = -I/workspaces/sayo/test/../inc -isystem /workspaces/sayo/build/_deps/googletest-src/googletest/include -isystem /workspaces/sayo/build/_deps/googletest-src/googletest 
 

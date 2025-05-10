@@ -15,12 +15,18 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(
     sayo-test
-    test.cpp
+    term-test.cpp
 )
 
 target_link_libraries(
     sayo-test
     GTest::gtest_main
+    sayo-lib
+)
+
+target_include_directories(
+    sayo-test
+    PRIVATE ../inc
 )
 
 add_test(

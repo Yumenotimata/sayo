@@ -6,8 +6,32 @@
 
 #IncludeRegexTransform: 
 
-/workspaces/sayo/test/test.cpp
+../inc/term.hpp
+string
+-
+variant
+-
+memory
+-
+value.hpp
+-
+
+../inc/value.hpp
+string
+-
+variant
+-
+memory
+-
+
+/workspaces/sayo/test/term-test.cpp
 gtest/gtest.h
+-
+term.hpp
+-
+value.hpp
+-
+memory
 -
 
 _deps/googletest-src/googletest/include/gtest/gtest-assertion-result.h

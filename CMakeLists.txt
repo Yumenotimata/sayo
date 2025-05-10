@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 add_library(
     sayo-lib
     src/term.cpp
+    src/value.cpp
 )
 
 add_executable(

@@ -70,17 +70,32 @@ CMakeFiles/sayo-lib.dir/src/term.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sayo-lib.dir/src/term.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/sayo/src/term.cpp -o CMakeFiles/sayo-lib.dir/src/term.cpp.s
 
+CMakeFiles/sayo-lib.dir/src/value.cpp.o: CMakeFiles/sayo-lib.dir/flags.make
+CMakeFiles/sayo-lib.dir/src/value.cpp.o: ../src/value.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sayo-lib.dir/src/value.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sayo-lib.dir/src/value.cpp.o -c /workspaces/sayo/src/value.cpp
+
+CMakeFiles/sayo-lib.dir/src/value.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sayo-lib.dir/src/value.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/sayo/src/value.cpp > CMakeFiles/sayo-lib.dir/src/value.cpp.i
+
+CMakeFiles/sayo-lib.dir/src/value.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sayo-lib.dir/src/value.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/sayo/src/value.cpp -o CMakeFiles/sayo-lib.dir/src/value.cpp.s
+
 # Object files for target sayo-lib
 sayo__lib_OBJECTS = \
-"CMakeFiles/sayo-lib.dir/src/term.cpp.o"
+"CMakeFiles/sayo-lib.dir/src/term.cpp.o" \
+"CMakeFiles/sayo-lib.dir/src/value.cpp.o"
 
 # External object files for target sayo-lib
 sayo__lib_EXTERNAL_OBJECTS =
 
 libsayo-lib.a: CMakeFiles/sayo-lib.dir/src/term.cpp.o
+libsayo-lib.a: CMakeFiles/sayo-lib.dir/src/value.cpp.o
 libsayo-lib.a: CMakeFiles/sayo-lib.dir/build.make
 libsayo-lib.a: CMakeFiles/sayo-lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libsayo-lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libsayo-lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/sayo-lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sayo-lib.dir/link.txt --verbose=$(VERBOSE)
 

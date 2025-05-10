@@ -20,5 +20,7 @@ struct value_t {
     value_t(value_inner_t inner) : inner(std::move(inner)) {}
 };
 
+bool operator==(const value_t& l, const value_t& r);
+
 std::unique_ptr<value_t> mk_int(int value);
 std::unique_ptr<value_t> mk_string(std::string value);

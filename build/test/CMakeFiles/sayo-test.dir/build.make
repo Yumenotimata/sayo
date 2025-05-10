@@ -57,29 +57,30 @@ include test/CMakeFiles/sayo-test.dir/progress.make
 # Include the compile flags for this target's objects.
 include test/CMakeFiles/sayo-test.dir/flags.make
 
-test/CMakeFiles/sayo-test.dir/test.cpp.o: test/CMakeFiles/sayo-test.dir/flags.make
-test/CMakeFiles/sayo-test.dir/test.cpp.o: ../test/test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/sayo-test.dir/test.cpp.o"
-	cd /workspaces/sayo/build/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sayo-test.dir/test.cpp.o -c /workspaces/sayo/test/test.cpp
+test/CMakeFiles/sayo-test.dir/term-test.cpp.o: test/CMakeFiles/sayo-test.dir/flags.make
+test/CMakeFiles/sayo-test.dir/term-test.cpp.o: ../test/term-test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/sayo-test.dir/term-test.cpp.o"
+	cd /workspaces/sayo/build/test && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sayo-test.dir/term-test.cpp.o -c /workspaces/sayo/test/term-test.cpp
 
-test/CMakeFiles/sayo-test.dir/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sayo-test.dir/test.cpp.i"
-	cd /workspaces/sayo/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/sayo/test/test.cpp > CMakeFiles/sayo-test.dir/test.cpp.i
+test/CMakeFiles/sayo-test.dir/term-test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sayo-test.dir/term-test.cpp.i"
+	cd /workspaces/sayo/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/sayo/test/term-test.cpp > CMakeFiles/sayo-test.dir/term-test.cpp.i
 
-test/CMakeFiles/sayo-test.dir/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sayo-test.dir/test.cpp.s"
-	cd /workspaces/sayo/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/sayo/test/test.cpp -o CMakeFiles/sayo-test.dir/test.cpp.s
+test/CMakeFiles/sayo-test.dir/term-test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sayo-test.dir/term-test.cpp.s"
+	cd /workspaces/sayo/build/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/sayo/test/term-test.cpp -o CMakeFiles/sayo-test.dir/term-test.cpp.s
 
 # Object files for target sayo-test
 sayo__test_OBJECTS = \
-"CMakeFiles/sayo-test.dir/test.cpp.o"
+"CMakeFiles/sayo-test.dir/term-test.cpp.o"
 
 # External object files for target sayo-test
 sayo__test_EXTERNAL_OBJECTS =
 
-test/sayo-test: test/CMakeFiles/sayo-test.dir/test.cpp.o
+test/sayo-test: test/CMakeFiles/sayo-test.dir/term-test.cpp.o
 test/sayo-test: test/CMakeFiles/sayo-test.dir/build.make
 test/sayo-test: lib/libgtest_main.a
+test/sayo-test: libsayo-lib.a
 test/sayo-test: lib/libgtest.a
 test/sayo-test: test/CMakeFiles/sayo-test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/sayo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable sayo-test"

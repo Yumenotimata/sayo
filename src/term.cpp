@@ -52,6 +52,29 @@ std::string expr_t::to_string() {
     }, inner);
 }
 
+bool operator==(const expr_t&l, const expr_t&r) {
+    return std::visit([](auto&& arg1, auto&& arg2) {
+        using T = decay_t<decltype(arg1)>;
+        if constexpr (std::is_same_v<T, decay_t<decltype(arg2)>>) {
+            if constexpr (std::is_same_v<T, app_t>) {
+                return *arg1.e1 == *arg2.e1 && *arg1.e2 == *arg2.e2;
+            } else if constexpr (std::is_same_v<T, lambda_t>) {
+                return arg1.e == arg2.e && *arg1.body == *arg2.body;
+            } else if constexpr (std::is_same_v<T, let_t>) {
+                return arg1.id == arg2.id && *arg1.e1 == *arg2.e1 && *arg1.e2 == *arg2.e2;
+            } else if constexpr (std::is_same_v<T, var_t>) {
+                return arg1.id == arg2.id;
+            } else if constexpr (std::is_same_v<T, lit_t>) {
+                return *arg1.value == *arg2.value;
+            } else {
+                throw std::runtime_error("Unknown expression type");
+            }
+        } else {
+            return false;
+        }
+    }, l.inner, r.inner);
+}
+
 using uenv = std::vector<std::tuple<std::string, std::string>>;
 // スコープを破棄せずにpopしたいケースがあるのでstackではなくvectorをスタック的に使う
 using uenv_stack = std::vector<uenv>;

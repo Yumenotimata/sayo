@@ -182,32 +182,32 @@ sayo-test/fast:
 	cd /workspaces/sayo/build && $(MAKE) -f test/CMakeFiles/sayo-test.dir/build.make test/CMakeFiles/sayo-test.dir/build
 .PHONY : sayo-test/fast
 
-test.o: test.cpp.o
+term-test.o: term-test.cpp.o
 
-.PHONY : test.o
+.PHONY : term-test.o
 
 # target to build an object file
-test.cpp.o:
-	cd /workspaces/sayo/build && $(MAKE) -f test/CMakeFiles/sayo-test.dir/build.make test/CMakeFiles/sayo-test.dir/test.cpp.o
-.PHONY : test.cpp.o
+term-test.cpp.o:
+	cd /workspaces/sayo/build && $(MAKE) -f test/CMakeFiles/sayo-test.dir/build.make test/CMakeFiles/sayo-test.dir/term-test.cpp.o
+.PHONY : term-test.cpp.o
 
-test.i: test.cpp.i
+term-test.i: term-test.cpp.i
 
-.PHONY : test.i
+.PHONY : term-test.i
 
 # target to preprocess a source file
-test.cpp.i:
-	cd /workspaces/sayo/build && $(MAKE) -f test/CMakeFiles/sayo-test.dir/build.make test/CMakeFiles/sayo-test.dir/test.cpp.i
-.PHONY : test.cpp.i
+term-test.cpp.i:
+	cd /workspaces/sayo/build && $(MAKE) -f test/CMakeFiles/sayo-test.dir/build.make test/CMakeFiles/sayo-test.dir/term-test.cpp.i
+.PHONY : term-test.cpp.i
 
-test.s: test.cpp.s
+term-test.s: term-test.cpp.s
 
-.PHONY : test.s
+.PHONY : term-test.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	cd /workspaces/sayo/build && $(MAKE) -f test/CMakeFiles/sayo-test.dir/build.make test/CMakeFiles/sayo-test.dir/test.cpp.s
-.PHONY : test.cpp.s
+term-test.cpp.s:
+	cd /workspaces/sayo/build && $(MAKE) -f test/CMakeFiles/sayo-test.dir/build.make test/CMakeFiles/sayo-test.dir/term-test.cpp.s
+.PHONY : term-test.cpp.s
 
 # Help Target
 help:
@@ -223,9 +223,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... sayo-test"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... term-test.o"
+	@echo "... term-test.i"
+	@echo "... term-test.s"
 .PHONY : help
 
 

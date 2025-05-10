@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/sayo-lib.dir/src/term.cpp.o"
+  "CMakeFiles/sayo-lib.dir/src/value.cpp.o"
   "libsayo-lib.a"
   "libsayo-lib.pdb"
 )

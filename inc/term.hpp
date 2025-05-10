@@ -63,4 +63,6 @@ struct expr_t {
     expr_t(expr_inner_t inner) : inner(std::move(inner)) {}
 };
 
+bool operator==(const expr_t&l, const expr_t&r);
+
 std::unique_ptr<expr_t> uniquify(std::unique_ptr<expr_t> e);

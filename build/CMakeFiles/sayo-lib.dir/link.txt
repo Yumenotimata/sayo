@@ -1,2 +1,2 @@
-/usr/bin/ar qc libsayo-lib.a  CMakeFiles/sayo-lib.dir/src/term.cpp.o
+/usr/bin/ar qc libsayo-lib.a  CMakeFiles/sayo-lib.dir/src/term.cpp.o CMakeFiles/sayo-lib.dir/src/value.cpp.o
 /usr/bin/ranlib libsayo-lib.a

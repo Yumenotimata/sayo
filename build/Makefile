@@ -312,6 +312,33 @@ src/term.cpp.s:
 	$(MAKE) -f CMakeFiles/sayo-lib.dir/build.make CMakeFiles/sayo-lib.dir/src/term.cpp.s
 .PHONY : src/term.cpp.s
 
+src/value.o: src/value.cpp.o
+
+.PHONY : src/value.o
+
+# target to build an object file
+src/value.cpp.o:
+	$(MAKE) -f CMakeFiles/sayo-lib.dir/build.make CMakeFiles/sayo-lib.dir/src/value.cpp.o
+.PHONY : src/value.cpp.o
+
+src/value.i: src/value.cpp.i
+
+.PHONY : src/value.i
+
+# target to preprocess a source file
+src/value.cpp.i:
+	$(MAKE) -f CMakeFiles/sayo-lib.dir/build.make CMakeFiles/sayo-lib.dir/src/value.cpp.i
+.PHONY : src/value.cpp.i
+
+src/value.s: src/value.cpp.s
+
+.PHONY : src/value.s
+
+# target to generate assembly for a file
+src/value.cpp.s:
+	$(MAKE) -f CMakeFiles/sayo-lib.dir/build.make CMakeFiles/sayo-lib.dir/src/value.cpp.s
+.PHONY : src/value.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -338,6 +365,9 @@ help:
 	@echo "... src/term.o"
 	@echo "... src/term.i"
 	@echo "... src/term.s"
+	@echo "... src/value.o"
+	@echo "... src/value.i"
+	@echo "... src/value.s"
 .PHONY : help
 
 

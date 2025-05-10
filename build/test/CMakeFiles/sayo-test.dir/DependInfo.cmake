@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/workspaces/sayo/test/test.cpp" "/workspaces/sayo/build/test/CMakeFiles/sayo-test.dir/test.cpp.o"
+  "/workspaces/sayo/test/term-test.cpp" "/workspaces/sayo/build/test/CMakeFiles/sayo-test.dir/term-test.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "../test/../inc"
   "_deps/googletest-src/googletest/include"
   "_deps/googletest-src/googletest"
   )
@@ -17,6 +18,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/workspaces/sayo/build/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "/workspaces/sayo/build/CMakeFiles/sayo-lib.dir/DependInfo.cmake"
   "/workspaces/sayo/build/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
   )
 
