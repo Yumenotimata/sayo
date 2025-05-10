@@ -1,3 +1,3 @@
 sayo_test 4 0
-sayo-test 8 0.000384626
+sayo-test 10 0.000276275
 ---

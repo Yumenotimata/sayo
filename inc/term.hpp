@@ -66,3 +66,14 @@ struct expr_t {
 bool operator==(const expr_t&l, const expr_t&r);
 
 std::unique_ptr<expr_t> uniquify(std::unique_ptr<expr_t> e);
+
+class unique_generator {
+    public:
+        unique_generator() : counter(0) {}
+
+        std::string operator()(const std::string& prefix) {
+            return prefix + std::to_string(counter++);
+        }
+    private:
+        int counter;
+};

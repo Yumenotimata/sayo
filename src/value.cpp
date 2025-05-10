@@ -17,7 +17,6 @@ bool operator==(const value_t& l, const value_t& r) {
             if constexpr (std::is_same_v<T, int_v>) {
                 return arg1.value == arg2.value;
             } else if constexpr (std::is_same_v<T, string_v>) {
-                std::cout << arg1.value << " == " << arg2.value << std::endl;
                 return arg1.value == arg2.value;
             }
         } else {

@@ -79,33 +79,28 @@ using uenv = std::vector<std::tuple<std::string, std::string>>;
 // スコープを破棄せずにpopしたいケースがあるのでstackではなくvectorをスタック的に使う
 using uenv_stack = std::vector<uenv>;
 
-std::string gen_uid(std::string id) {
-    static int counter = 0;
-    return id + std::to_string(counter++);
-}
-
 // 関数型に毒されすぎてどっちつかずなコードを書いてしまった。暇があったらインプレース化したい
 // 識別子環境を毎回コピーするのだけはさすがに目についたのでインプレース化
-std::unique_ptr<expr_t> _uniquify(std::unique_ptr<expr_t> e, uenv_stack& uv) {
-    return std::visit([&uv](auto&& arg) -> std::unique_ptr<expr_t> {
+std::unique_ptr<expr_t> _uniquify(std::unique_ptr<expr_t> e, uenv_stack& uv, unique_generator& ugen) {
+    return std::visit([&uv, &ugen](auto&& arg) -> std::unique_ptr<expr_t> {
         using T = std::decay_t<decltype(arg)>;
         if constexpr (std::is_same_v<T, app_t>) {
-            auto e1 = _uniquify(std::move(arg.e1), uv);
-            auto e2 = _uniquify(std::move(arg.e2), uv);
+            auto e1 = _uniquify(std::move(arg.e1), uv, ugen);
+            auto e2 = _uniquify(std::move(arg.e2), uv, ugen);
             return app(std::move(e1), std::move(e2));
         } else if constexpr (std::is_same_v<T, lambda_t>) {
-            auto ue = gen_uid(arg.e);
+            auto ue = ugen(arg.e);
             // 関数という構造そのものがスタック的だから、それをスタックの操作に変換できるのは当たり前っちゃ当たり前
             // ひとつ前のコミットを見ろ
             uv.push_back(std::vector<std::tuple<std::string, std::string>>{std::make_tuple(arg.e, ue)});
-            auto body = _uniquify(std::move(arg.body), uv);
+            auto body = _uniquify(std::move(arg.body), uv, ugen);
             uv.pop_back();
             return lambda(ue, std::move(body));
         } else if constexpr (std::is_same_v<T, let_t>) {
-            std::string uid = gen_uid(arg.id);
+            std::string uid = ugen(arg.id);
             uv.push_back(std::vector<std::tuple<std::string, std::string>>{std::make_tuple(arg.id, uid)});
-            auto e1 = _uniquify(std::move(arg.e1), uv);
-            auto e2 = _uniquify(std::move(arg.e2), uv);
+            auto e1 = _uniquify(std::move(arg.e1), uv, ugen);
+            auto e2 = _uniquify(std::move(arg.e2), uv, ugen);
             uv.pop_back();
             return let(uid, std::move(e1), std::move(e2));
         } else if constexpr (std::is_same_v<T, var_t>) {
@@ -127,5 +122,6 @@ std::unique_ptr<expr_t> _uniquify(std::unique_ptr<expr_t> e, uenv_stack& uv) {
 
 std::unique_ptr<expr_t> uniquify(std::unique_ptr<expr_t> e) {
     uenv_stack uv;
-    return _uniquify(std::move(e), uv);
+    unique_generator ugen;
+    return _uniquify(std::move(e), uv, ugen);
 }
